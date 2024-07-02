@@ -1,0 +1,383 @@
+@media screen and (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+    background: rgb(248, 245, 242) !important;
+
+  }
+
+  .container {
+    max-width: 710px !important;
+    margin: 0 auto !important;
+  }
+  .probal {
+    margin-top: 250px !important;
+}
+
+  .form_poisk {
+    width: 704px !important;
+  }
+
+  .textUsl {
+    width: 640px !important;
+  }
+
+  #clearSearch {
+    margin-left: 634px !important;
+}
+
+  .select_uslugi {
+    width: 704px !important;
+  }
+  .cha-podvinu {
+    margin-top: 0px !important;
+}
+
+#searchResults {
+  display: none !important;
+  
+}
+#searchResults1 {
+  color: rgb(48, 55, 61);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left
+}
+#suggestions {
+  position: absolute;
+  margin-top: 13px;
+  z-index: 10000;
+  background: white;
+  background: rgb(255, 255, 255);
+  width: 704px !important;
+  margin-left: -21px;
+
+
+}
+
+}
+
+
+@media screen and (min-width: 769px) {}
+
+
+
+@media screen and (max-width: 414px) {
+  body, html {
+    overflow-x: hidden;
+    background: rgb(248, 245, 242) !important;
+
+  }
+  .probal {
+    margin-top: 280px !important;
+}
+
+  .container {
+    max-width: 380px !important;
+    margin: 0 auto !important;
+  }
+
+  #suggestions {
+    position: absolute;
+    margin-top: 13px;
+    z-index: 10000;
+    background: white;
+    background: rgb(255, 255, 255);
+    width: 378px !important;
+    margin-left: -21px;
+  
+  
+  }
+
+
+  .form_poisk {
+    width: 379px !important;
+  }
+
+  .cha-podvinu {
+    margin-top: 0px !important;
+}
+
+  .textUsl {
+    width: 328px !important;
+  }
+  .h1_text-chem-pomoch {
+    font-size: 24px !important;
+}
+
+  #clearSearch {
+    margin-left: 321px !important;
+  }
+
+  .select_uslugi {
+    width: 379px !important;
+  }
+
+
+
+
+
+
+
+
+
+}
+
+@media screen and (min-width: 415px) {}
+
+
+
+
+
+
+
+
+
+
+
+body {
+  background: rgb(248, 245, 242);
+}
+
+.select_uslugi {
+  width: 373px;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid rgb(226, 230, 232);
+  background: rgb(255, 255, 255);
+  margin: 0;
+  position: relative;
+  height: auto;
+
+}
+
+.select_uslugi:before {}
+
+.select_uslugi:after {}
+
+.collapsed_uslugi {
+  max-height: 67px;
+}
+
+.collapsed_uslugi:before {}
+
+.collapsed_uslugi:after {}
+
+.option_uslugi {
+  height: 67px;
+  padding: 20px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.shown_uslugi {
+  height: 67px;
+  padding: 20px;
+  cursor: pointer;
+  transition: .4s;
+  background: rgb(255, 255, 255);
+
+}
+
+.option_uslugi {
+  background-color: #ebebeb;
+  height: 67px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.shown_uslugi:hover {
+  height: 67px;
+  padding: 20px;
+  cursor: pointer;
+  transition: .4s;
+  background: rgb(226, 230, 232);
+}
+
+
+.shown_uslugi {
+  font-weight: 400;
+}
+
+#container_uslugi {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.h1_text-chem-pomoch {
+  color: rgb(49, 55, 61);
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 75px;
+  margin-top: 90px;
+}
+
+.left_and-riiiiight {
+  display: flex;
+  gap: 40px;
+}
+
+.strelka {
+  display: flex;
+}
+
+.form_poisk {
+  box-sizing: border-box;
+  padding: 15px 20px 15px 20px;
+  border: 1px solid rgb(226, 230, 232);
+  background: rgb(255, 255, 255);
+  width: 373px;
+  height: 48px;
+  margin-bottom: 15px;
+}
+
+
+.lupa-btn {
+  width: 10px;
+  background: white;
+  border: white;
+  height: 10px;
+}
+
+.textUsl {
+  width: 300px;
+  margin-left: -5px;
+  color: rgb(0, 0, 0);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 0px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+
+#clearSearch {
+  margin-left: 294px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+  margin-top: -9.5px;
+  width: 15px;
+}
+
+#suggestions {
+  position: absolute;
+  margin-top: 13px;
+  z-index: 10000;
+  background: white;
+  background: rgb(255, 255, 255);
+  width: 373px;
+  margin-left: -21px;
+
+
+}
+
+.vseVme {
+  display: flex;
+}
+
+.probal {
+  margin-top: 160px;
+}
+
+.suggestion-item {
+  padding: 15px;
+  box-sizing: border-box;
+  /* Дополнительные/Светло серый */
+  border-bottom: 1px solid rgb(226, 230, 232);
+  /* Основные/белый */
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background: rgb(245, 245, 245);
+}
+
+.suggestion-textName {
+  color: rgb(48, 55, 61);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.red-text {
+  color: rgb(202, 32, 32);
+  position: relative;
+  /* Ensure relative positioning for absolute positioning of ::after */
+}
+
+.red-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  /* Adjust as needed */
+  width: 100%;
+  height: 2px;
+  background-color: rgb(202, 32, 32);
+}
+
+.option_uslugi {
+  width: 100%;
+  /* Чтобы ссылка занимала всю ширину блока */
+  cursor: pointer;
+
+}
+
+.option_uslugi:hover {
+  background-color: rgb(192, 192, 192);
+}
+
+.option_uslugi a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  /* Наследовать цвет текста от родительского элемента */
+}
+
+.mt10 {
+  margin-top: 8px;
+}
+
+.option_uslugi {
+
+  border-bottom: 1px solid rgb(226, 230, 232, 0.5);
+  /* Граница между элементами */
+}
+
+.option_uslugi:last-child {
+  border-bottom: none;
+  /* Убрать границу после последнего элемента */
+}
+
+.text-uslugi887 {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+/* Скрываем кнопку с лупой, если поле поиска в фокусе */
+.textUsl:focus + .lupa-btn {
+  display: none;
+}
+
+.cha-podvinu{
+  margin-top: -2px;
+}

@@ -1,0 +1,187 @@
+@media screen and (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 710px !important;
+    margin: 0 auto !important;
+  }
+
+  .text_vse-novosty {
+    margin-left: 259px !important;
+  }
+
+  .card-novostnaya-news333 {
+    display: none !important;
+  }
+
+  .text_news {
+    padding-bottom: 0 !important;
+  }
+
+  .card-novostnaya-news {
+    width: 355px !important;
+  }
+
+  .card-novostnaya-news1 {
+    width: 355px !important;
+  }
+
+  .img_nostnyay-news {
+    width: 330px !important;
+  }
+}
+
+
+@media screen and (min-width: 769px) {}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++BURGER++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+@media screen and (max-width: 414px) {
+  body, html {
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 380px !important;
+    margin: 0 auto !important;
+  }
+
+  
+  .card_ryadovoy-novosty {
+    display: block !important;
+    padding-top: 0 !important;
+}
+.vmeste_silniy-news{
+  margin-bottom: 20px !important;
+}
+
+.card-novostnaya-news1 {
+  padding-bottom: 0 !important;
+}
+.text_news{
+  margin-bottom: 50px !important;
+}
+.prooooooobbbellll{
+  margin-bottom: 100px;
+}
+.css-modal-checkbox-container-activationnnnn {
+  margin-top: 0 !important;
+}
+
+
+
+
+
+
+}
+
+@media screen and (min-width: 415px) {
+
+
+
+  .number_telefona {
+    display: none;
+  }
+
+  .number_telefona-adaptyiv {
+    display: block !important;
+  }
+}
+
+
+body {
+  background: rgb(248, 245, 242);
+}
+
+.news {}
+
+.text_news {
+  color: rgb(49, 55, 61);
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: uppercase;
+  padding-top: 60px;
+  padding-bottom: 33px;
+}
+
+.card_ryadovoy-novosty {
+  display: flex;
+  gap: 20px;
+  padding-top: 60px;
+}
+
+.card-novostnaya-news1 {
+  padding-bottom: 60px;
+}
+
+.img_nostnyay-news {}
+
+.text_data-news {
+  color: rgb(119, 126, 133);
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: left;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.text_zagolovok-news {
+  color: rgb(48, 55, 61);
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0%;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.vmeste_silniy-news {
+  display: flex;
+  cursor: pointer;
+  transition: .4s;
+  width: 149px;
+}
+
+
+.text_chitat-novosty-news {
+  padding-top: 3.5px;
+  color: rgb(119, 126, 133);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.vmeste_silniy-news:hover .text_chitat-novosty-news {
+  color: red;
+  transition: .4s;
+}
+
+.vmeste_silniy-news:hover .strelka_na-yslygi img {
+
+  filter: brightness(0) saturate(100%) invert(19%) sepia(100%) saturate(5171%) hue-rotate(354deg) brightness(101%) contrast(122%);
+}
+
+.strelka_na-yslygi {}

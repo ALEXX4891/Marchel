@@ -1,0 +1,154 @@
+@media screen and (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+  }
+  .css-modal-target{
+    margin-left: 228px !important;
+  }
+  .css-modal-target .cmt {
+    
+    left: 36% !important; 
+}
+}
+@media screen and (max-width: 414px) {
+  body, html {
+    overflow-x: hidden;
+  }
+  .css-modal-target{
+    margin-left: 228px !important;
+  }
+  .css-modal-target .cmt {
+    
+    left: 39% !important; 
+}
+}
+
+
+
+
+
+
+.no-scroll {
+overflow: hidden;
+}
+
+.css-modal-target-container {
+    margin-top: 10px;
+  }
+  
+  /* Кнопка для открытия */
+  .css-modal-open {
+    display: inline-flex;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 12px 30px;
+    color: #ada5a5;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 10;
+  }
+  
+  .css-modal-open:before {
+    z-index: 10;
+    content: '';
+    position: absolute;
+    top: 200px;
+    right: -50px;
+    bottom: 0;
+    left: 0;
+    border-right: 50px solid transparent;
+    border-top: 50px solid #2D6B9F;
+    transition: transform 0.5s;
+    z-index: -1;
+  }
+  
+  /* Контейнер, который затемняет страницу */
+  .css-modal-target {
+    z-index: 10;
+    display: none;
+    position: fixed;
+    top: -240px;
+    left: -435px;
+    width: 150%;
+    height: 150%;
+    background: rgba(105, 112, 117, 0.2);
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    backdrop-filter: blur(3px);
+    /* Добавление размытия фона */
+  }
+  
+  /* Показ модального окна при нажатии на ссылку */
+  .css-modal-target:target {
+    z-index: 10;
+    display: flex;
+    animation: bg 0.5s ease;
+  }
+  
+  /* Модальное окно */
+  .css-modal-target .cmt {
+    z-index: 10;
+    z-index: 5;
+    border-radius: 20px;
+    width: 346px;
+    height: 240px;
+    background: white;
+    transition: 0.5s;
+    padding: 22px;
+    overflow: auto;
+    animation: scale 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 41%;
+    left: 42%;
+  }
+  .css-modal-checkbox{
+    z-index: 10;
+  }
+
+  .text_modal-thx {
+    z-index: 10;
+    color: rgb(48, 55, 61);
+    font-family: Raleway;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase; }
+
+    .text_modal-v-blij {
+      z-index: 10;
+      color: rgb(48, 55, 61);
+font-family: Raleway;
+font-size: 16px;
+font-weight: 400;
+line-height: 19px;
+letter-spacing: 0%;
+text-align: center;
+margin-bottom: 20px;
+    }
+
+    .img2 {
+      z-index: 10;
+      margin-left: 125px;
+    }
+  
+  /* Кнопка с крестиком закрывающая окно */
+  .css-modal-details1b {
+    z-index: 10;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }

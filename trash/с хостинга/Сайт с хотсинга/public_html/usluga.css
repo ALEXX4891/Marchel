@@ -1,0 +1,250 @@
+@media screen and (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 710px !important;
+    margin: 0 auto !important;
+  }
+
+  .left-u-right-usluga {
+    display: block !important;
+    padding-top: 0 !important;
+  }
+
+  .kucheryshka {
+    display: none !important;
+  }
+
+  .fotka_ipad {
+    background-image: url('/img-icons/ushlepok-ipad.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 703px;
+    height: 569px;
+    margin-top: 40px;
+  }
+
+  .threee_card-usluga {
+    display: block !important;
+  }
+
+  .cardan_usluga {
+    margin-bottom: 15px !important;
+    width: 703px !important;
+    height: 175px !important;
+  }
+
+  .phone_dlya-hover {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    top: 0 !important;
+    width: 295px !important;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: height 0.3s, bottom 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .img_card-uslug {
+    height: 270px !important;
+  }
+
+  .slider-wrapper {
+    height: 300px !important;
+  }
+}
+
+
+@media screen and (min-width: 769px) {}
+
+@media screen and (max-width: 414px) {
+  body, html {
+    overflow-x: hidden;
+    background: rgb(248, 245, 242) !important;
+
+  }
+
+
+  .container {
+    max-width: 380px !important;
+    margin: 0 auto !important;
+  }
+
+  .fotka_ipad {
+    background-image: url('/img-icons/perekup_xr.png') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 384px !important;
+    height: 240px !important;
+    margin-top: 40px;
+  }
+  .cardan_usluga {
+    margin-bottom: 15px !important;
+    width: 384px !important;
+    height: 232px !important;
+}
+.text_opisanie-usulugi {
+  margin-bottom: -120px !important;
+}
+
+
+
+
+
+
+
+}
+
+@media screen and (min-width: 415px) {}
+
+
+
+
+
+body {
+  background: rgb(248, 245, 242);
+}
+
+.left-u-right-usluga {
+  display: flex;
+  padding-top: 60px;
+  gap: 80px;
+  padding-bottom: 120px;
+}
+
+.left_usluga {
+  padding-top: 94px;
+}
+
+.btn_modal-kakal444 {
+  padding: 10px 12px 10px 12px;
+  width: 218px;
+  height: 48px;
+  background: rgb(202, 32, 32);
+}
+
+.text_nazvanie-usulugi {
+  color: rgb(48, 55, 61);
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.text_opisanie-usulugi {
+  color: rgb(48, 55, 61);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.btn_vizov-pomosh-usluga {
+  width: 218px;
+  height: 48px;
+  background: rgb(202, 32, 32);
+  padding: 10px 12px 10px 12px;
+}
+
+.text_vizov-pomosh-usluga {
+  color: rgb(255, 255, 255);
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.card_usluga {}
+
+
+.text_zagalovok-usluga {
+  color: rgb(48, 55, 61);
+  font-family: Raleway;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.threee_card-usluga {
+  display: flex;
+  gap: 30px;
+}
+
+.cardan_usluga {
+  box-sizing: border-box;
+  width: 379px;
+  height: 234px;
+  border: 1px solid rgb(226, 230, 232);
+  backdrop-filter: blur(80px);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+}
+
+.text_cardan-usluga {
+  color: rgb(48, 55, 61);
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.under-text_cardan-usluga {
+  color: rgb(119, 126, 133);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.zagolovok-2 {
+  margin-top: 120px;
+}
+
+.text_zagalovyk-2 {
+  color: rgb(48, 55, 61);
+  font-family: Raleway;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.text_pod-zagolovok-2 {
+  color: rgb(119, 126, 133);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}

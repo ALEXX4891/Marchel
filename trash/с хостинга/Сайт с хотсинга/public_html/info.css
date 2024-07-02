@@ -1,0 +1,99 @@
+@media screen and (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+    background: rgb(248, 245, 242) !important;
+
+  }
+
+  .container {
+    max-width: 710px !important;
+    margin: 0 auto !important;
+  }
+
+  .FormUslug {
+      display: block !important;
+      margin-bottom: -55px !important;
+      padding-top: 100px !important;
+  
+  }
+  .uslugiYes {
+    display: block !important;
+    margin-left: 2px !important;
+    margin-top: -10px !important;
+  
+  }
+  
+
+}  
+
+@media screen and (min-width: 769px) {}
+
+
+
+@media screen and (max-width: 414px) {
+  body, html {
+    overflow-x: hidden;
+    background: rgb(248, 245, 242) !important;
+
+  }
+
+  .FormUslug {
+      display: block !important;
+      margin-bottom: -55px !important;
+      padding-top: 100px !important;
+  
+  }
+
+  .container {
+    max-width: 380px !important;
+    margin: 0 auto !important;
+  }
+
+
+
+  .uslugiYes {
+    display: block !important;
+    margin-left: 2px !important;
+    margin-top: -10px !important;
+
+}
+
+
+
+}
+
+@media screen and (min-width: 415px) {}
+
+
+
+
+.uslugiYes {
+    display: flex;
+    margin-left: 22px;
+    margin-top: -61px;
+    color: rgb(48, 55, 61);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: left;
+    
+}
+
+.imageUS {
+    width: 182px !important;
+    height: 169px !important;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    
+}
+.FormUslug {
+    margin-bottom: 55px !important;
+}
+
+.suggestion-item {
+    padding: 15px;
+}
+
+

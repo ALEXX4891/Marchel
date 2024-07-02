@@ -1,0 +1,132 @@
+/* Стили для бургер-кнопки */
+.header__burger-btn-burgerenook {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    z-index: 20000;
+}
+
+.header__burger-btn-burgerenook span {
+    position: absolute;
+    width: 27px;
+    height: 3px;
+    background-color: black;
+    left: 5px;
+    transition: transform .5s, opacity .5s, background-color .5s;
+}
+
+.span-burger {
+    position: absolute;
+    width: 16px !important;
+    height: 3px;
+    background-color: black;
+    left: 5px;
+    transition: transform .5s, opacity .5s, background-color .5s;
+}
+
+.header__burger-btn-burgerenook span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.header__burger-btn-burgerenook span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+.header-burgerenook.open-burgerenook .header__burger-btn-burgerenook span {
+    background-color: rgb(202, 32, 32);
+}
+
+.header-burgerenook.open-burgerenook .header__burger-btn-burgerenook span:nth-child(1) {}
+
+.header-burgerenook.open-burgerenook .header__burger-btn-burgerenook span:nth-child(2) {}
+
+.header-burgerenook.open-burgerenook .header__burger-btn-burgerenook span:nth-child(3) {}
+
+/* Стили для меню */
+.menu__item-burgerenook {
+    box-sizing: border-box;
+    width: 414px;
+    height: 39px;
+    border-bottom: 1px solid rgb(226, 230, 232);
+    background-color: #fff;
+}
+
+.menu-burgerenook {
+    position: absolute;
+    left: -437px;
+    top: 87px;
+    width: 353px;
+    z-index: 10000;
+    padding: 75px 20px 20px 20px;
+    transition: transform .5s;
+}
+
+.menu__list-burgerenook {
+    display: block;
+}
+
+.menu__link-burgerenook {
+    color: rgb(48, 55, 61);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: center;
+    display: block;
+}
+
+.header-burgerenook.open-burgerenook .menu-burgerenook {
+    transform: translateX(118%);
+}
+
+/* Стили для dropdown */
+.dropdown-content {
+    display: none;
+    width: 414px;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: center;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid rgb(226, 230, 232);
+}
+
+.dropdown-link {
+    color: rgb(119, 126, 133);
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0%;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+/* Стили для изображений стрелок */
+.no-active-strel,
+.active-strel {
+    width: 8px;
+    height: 8px;
+    margin-top: 6.5px;
+    margin-left: 8px;
+}
+.flex-jostkyi{
+    display: flex;
+    margin-left: 174.5px;
+}

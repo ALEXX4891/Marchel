@@ -1,0 +1,104 @@
+@media screen and (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 710px !important;
+    margin: 0 auto !important;
+  }
+
+
+
+  .valera-dovolen {
+    background-image: url('/img-icons/valera-dovolen.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 710px;
+    height: 437px;
+    margin-top: 40px;
+  }
+
+  .valera-dovolen {
+    display: block !important;
+    ;
+  }
+
+  .img_ylibchik {
+    display: none !important;
+  }
+
+
+}
+
+
+@media screen and (min-width: 769px) {
+  .valera-dovolen {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  background: rgb(248, 245, 242);
+}
+
+
+
+.img_ylibchik {
+  width: 1200px;
+  height: 437px;
+}
+
+.text_data-newsSolo {
+  color: rgb(119, 126, 133);
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.text_zagalovkyu {
+  color: rgb(48, 55, 61);
+  font-family: Raleway;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.text_dlinniy {
+  color: rgb(119, 126, 133);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+  width: 789px;
+  height: 172px;
+  padding-bottom: 110px;
+}
+
+.otstup {
+  padding-bottom: 120px;
+}
