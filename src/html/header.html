@@ -1,189 +1,139 @@
-<header class="header lock-padding">
-  <div class="container header__container">
-    <div class="header__top-block">
-      <div class="header__logo logo">
-        <a href="index.html" class="logo__link">
-          <img class="logo__ecoteh" width="241" height="45" src="@img/ecoteh.png" alt="Логотип Экотех">
-        </a>
-        <a href="#" class="logo__link">
-          <img class="logo__sk" width="241" height="45" src="@img/sk.png" alt="Логотип Экотех">
-        </a>
-      </div>
-      <div class="header__search-form-wrap">
-        <form id="search-form" action="" method="get" class="header__search-form search-form"
-          enctype="multipart/form-data">
-          <input id="searchInput" type="text" class="search-form__input" placeholder="Поиск" name="search" value="">
-          <button id="searchBtn" type="submit" class="search-form__submit-btn" name="submit" value="submit"
-            name="submit">
-            <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M16.25 16.25L12.8855 12.8795M14.75 8.375C14.75 10.0658 14.0784 11.6873 12.8828 12.8828C11.6873 14.0784 10.0658 14.75 8.375 14.75C6.68424 14.75 5.06274 14.0784 3.86719 12.8828C2.67165 11.6873 2 10.0658 2 8.375C2 6.68424 2.67165 5.06274 3.86719 3.86719C5.06274 2.67165 6.68424 2 8.375 2C10.0658 2 11.6873 2.67165 12.8828 3.86719C14.0784 5.06274 14.75 6.68424 14.75 8.375Z"
-                stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </button>
-          <div class="search-form__close-btn">
-            <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M3.23802 1.19466C3.53684 0.918286 4.00114 0.938655 4.27506 1.24015L9.90196 7.43348L15.5289 1.24015C15.8028 0.938655 16.2671 0.918286 16.5659 1.19466C16.8647 1.47102 16.8849 1.93947 16.611 2.24097L10.8977 8.52942L16.611 14.8179C16.8849 15.1193 16.8647 15.5878 16.5659 15.8642C16.2671 16.1405 15.8028 16.1202 15.5289 15.8187L9.90196 9.62536L4.27507 15.8187C4.00115 16.1202 3.53685 16.1405 3.23803 15.8642C2.93921 15.5878 2.91902 15.1193 3.19294 14.8179L8.90626 8.52942L3.19293 2.24097C2.91901 1.93947 2.9392 1.47102 3.23802 1.19466Z"
-                fill="#555A5E" />
-            </svg>
-          </div>
-        </form>
-      </div>
-
-      <div class="header__top-right-block">
-        <div class="header__contacts contacts">
-          <a href="tel:+7 (3452) 55-11-30" class="contacts__item contacts__item_phone">+7 (3452) 55-11-30</a>
-          <a href="mailto:ecoteh.72@gmail.com" class="contacts__item contacts__item_email">ecoteh.72@gmail.com</a>
-        </div>
-        <button class="btn btn_white btn_reset popup-link" href="#popup-form">
-          Отправить заявку
-        </button>
-        <button class="btn btn_reset btn__cart">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M3.87388 5H17.0842C17.3518 5.00001 17.6165 5.05857 17.8612 5.17191C18.1059 5.28524 18.3251 5.45083 18.5047 5.65801C18.6843 5.86519 18.8203 6.10936 18.904 6.37478C18.9877 6.64019 19.0171 6.92097 18.9905 7.199L18.4157 13.199C18.3684 13.6925 18.1472 14.1501 17.7949 14.4829C17.4427 14.8157 16.9845 15 16.5094 15H7.36085C6.91777 15.0002 6.48832 14.84 6.14563 14.5469C5.80293 14.2537 5.56818 13.8456 5.48134 13.392L3.87388 5ZM3.87388 5L3.09793 1.757C3.04604 1.54075 2.92641 1.34881 2.75806 1.21166C2.5897 1.0745 2.38227 1.00001 2.16871 1H1M6.74776 19H8.66368M14.4114 19H16.3274"
-              stroke="#555A5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          <span class="btn__cart-text">
-            Корзина
-          </span>
-          <span class="goods__quantity">
-            1
-          </span>
-        </button>
-      </div>
-    </div>
-    <div class="header__bot-block">
-      <div class="container header__container">
-
-        <nav class="nav header__nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="index.html" class="nav__link">
-                <p class="nav__text">
-                  Главная
-                </p>
+<header class="header_color-bg">
+  <div class="container">
+    <div class="header_top">
+      <nav class="nav_header">
+        <div class="logo_alfa">
+          <a href="index.html">
+            <img src="@img/logo.svg" alt="LOGO" />
+          </a>
+          <div class="left-ne-pravo">
+            <div class="elf">
+              <a href="index.html">
+                <img src="@img/logo.svg" alt="LOGO" />
               </a>
-            </li>
-            <li class="nav__item">
-              <div class="nav__dot"></div>
-            </li>
-            <li class="nav__item nav__item_arrow">
-              <a href="catalog.html" class="nav__link">
-                <p class="nav__text">
-                  Каталог
-                </p>
-                <div class="nav__arrow">
-                  <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 0.5L6 5.5L1 10.5" stroke="#555A5E" />
-                  </svg>
+            </div>
+            <div class="elf-right">
+              <ul class="ul_header">
+                <!-- <li class="li_header"><a href="o-nas.html">О нас</a></li>
+                <li class="li_header"><a href="uslugi.html">Услуги</a></li>
+                <li class="li_header"><a href="novosti.html">Новости</a></li>
+                <li class="li_header"><a href="kontakty.html">Контакты</a></li> -->
+
+                <li class="li_header"><a href="o-nas.html">О нас</a></li>
+                <li class="li_header"><a href="uslugi.html">Услуги</a></li>
+                <li class="li_header"><a href="novosti.html">Новости</a></li>
+                <li class="li_header"><a href="kontakty.html">Контакты</a></li>
+              </ul>
+              <div class="header-burgerenook">
+                <div class="container-burgerenook header__container-burgerenook">
+                  <button class="header__burger-btn-burgerenook" id="burger-burgerenook">
+                    <span></span><span></span><span class="span-burger"></span>
+                  </button>
+                  <nav class="menu-burgerenook">
+                    <ul class="menu__list-burgerenook">
+                      <li class="menu__item-burgerenook1">
+                        <button class="menu__item-burgerenook"><a href="o-nas.html" class="menu__link-burgerenook">О
+                            нас</a></button>
+                      </li>
+                      <li class="menu__item-burgerenook1">
+                        <button class="menu__item-burgerenook"><a href="uslugi.html"
+                            class="menu__link-burgerenook">Услуги</a></button>
+                      </li>
+                      <li class="menu__item-burgerenook1">
+                        <button class="menu__item-burgerenook"><a href="novosti.html"
+                            class="menu__link-burgerenook">Новости</a></button>
+                      </li>
+                      <li class="menu__item-burgerenook1">
+                        <button class="menu__item-burgerenook"><a href="kontakty.html"
+                            class="menu__link-burgerenook">Контакты</a></button>
+                      </li>
+                      <li class="menu__item-burgerenook1 dropdown">
+                        <button class="menu__item-burgerenook" id="dropdown-btn-burgerenook">
+                          <div class="flex-jostkyi">
+                            <a href="#" id="dropdown-title-burgerenook" class="menu__link-burgerenook">Тюмень</a>
+                            <img src="@img/no-active-strel.png" alt="no-active-strel" class="no-active-strel">
+                            <img src="@img/active-strel.png" alt="active-strel" class="active-strel"
+                              style="display: none;">
+                          </div>
+                        </button>
+                        <ul class="dropdown-content" id="dropdown-content-burgerenook">
+                          <li><a href="#" class="dropdown-link" data-city="Курган">Курган</a></li>
+                          <li><a href="#" class="dropdown-link" data-city="Омск">Омск</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
+              </div>
 
-              </a>
-            </li>
-            <li class="nav__item">
-              <div class="nav__dot"></div>
-            </li>
-            <li class="nav__item">
-              <a href="utelizaciya-shin.html" class="nav__link">
-                <p class="nav__text">
-                  Утилизация шин
-                </p>
-              </a>
-            </li>
-            <li class="nav__item">
-              <div class="nav__dot"></div>
-            </li>
-            <li class="nav__item">
-              <a href="o-companii.html" class="nav__link">
-                <p class="nav__text">
-                  О компании
-                </p>
-              </a>
-            </li>
-            <li class="nav__item">
-              <div class="nav__dot"></div>
-            </li>
-            <li class="nav__item">
-              <a href="novosti.html" class="nav__link">
-                <p class="nav__text">
-                  Новости
-                </p>
-              </a>
-            </li>
-            <li class="nav__item">
-              <div class="nav__dot"></div>
-            </li>
-            <li class="nav__item">
-              <a href="portfolio.html" class="nav__link">
-                <p class="nav__text">
-                  Портфолио
-                </p>
-              </a>
-            </li>
-            <li class="nav__item">
-              <div class="nav__dot"></div>
-            </li>
-            <li class="nav__item">
-              <a href="kontakty.html" class="nav__link">
-                <p class="nav__text">
-                  Контакты
-                </p>
-              </a>
-            </li>
-          </ul>
-        </nav>
 
-        <button class="header__burger burger">
-          <div class="burger__open-btn">
-            <svg width="37" height="11" viewBox="0 0 37 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1H36" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-              <path d="M1 7H36" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-            </svg>
+
+            </div>
           </div>
-
-          <div class="burger__close-btn">
-            <svg width="37" height="11" viewBox="0 0 37 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1H36" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-              <path d="M1 9.0957L18.1193 5.4654L36 9.26562" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </div>
-
-        </button>
-
-        <div class="header__contacts contacts">
-          <a href="tel:+7 (3452) 55-11-30" class="contacts__item contacts__item_phone">
-            <span class="contacts__text">
-              +7 (3452) 55-11-30
-            </span>
-            <span class="contacts__icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M6.34404 1H3.85612C1.91853 1 0.529257 2.83418 1.14943 4.67221C2.389 8.34581 4.0559 11.6003 6.2278 13.7722C8.3997 15.9441 11.6542 17.611 15.3278 18.8505C17.1658 19.4708 19 18.0815 19 16.1439V13.6555C19 12.9433 18.614 12.2871 17.9915 11.9409L15.824 10.7359L15.6668 10.6575C15.1341 10.4209 14.52 10.4324 13.9933 10.6959L12.0106 11.6861L11.9635 11.6714C11.8852 11.6459 11.7972 11.6152 11.7009 11.5788C11.208 11.3926 10.7142 11.1326 10.2569 10.7897C10.0585 10.641 9.87092 10.4793 9.6958 10.3042C9.51851 10.1269 9.35484 9.93672 9.20431 9.73532C8.86264 9.27817 8.60281 8.78441 8.41608 8.29148L8.3231 8.02871L8.30767 7.98022L9.29857 6.00051C9.58809 5.42155 9.57332 4.73697 9.25912 4.17097L8.05927 2.00961C7.7133 1.38649 7.05669 1 6.34404 1Z"
-                  stroke="#555A5E" stroke-width="2" />
-              </svg>
-            </span>
-          </a>
-          <a href="mailto:ecoteh.72@gmail.com" class="contacts__item contacts__item_email">
-            <span class="contacts__text">
-              ecoteh.72@gmail.com
-            </span>
-            <span class="contacts__icon">
-              <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M5.5 5L13 8.875L20.5 5M22.6 1H3.4C2.08 1 1.012 2.0125 1.012 3.25L1 16.75C1 17.9875 2.08 19 3.4 19H22.6C23.92 19 25 17.9875 25 16.75V3.25C25 2.0125 23.92 1 22.6 1Z"
-                  stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-              </svg>
-            </span>
-          </a>
         </div>
+        <ul class="ul_header1">
+          <li class="li_header"><a href="o-nas.html">О нас</a></li>
+          <li class="li_header"><a href="uslugi.html">Услуги</a></li>
+          <li class="li_header"><a href="novosti.html">Новости</a></li>
+          <li class="li_header"><a href="kontakty.html">Контакты</a></li>
+        </ul>
+        <ul class="three_icons000">
+          <li>
+            <a href="https://t.me/+79994589482" target="_blank">
+              <img src="@img/telegram.svg" alt="Telegram" />
+            </a>
+          </li>
+          <li>
+            <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank">
+              <img src="@img/WhatsApp.svg" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="viber://chat?number=%2B79994589482" target="_blank">
+              <img src="@img/viber-footer.svg" alt="Viber" />
+            </a>
+          </li>
+        </ul>
+        <div class="number_and-zakaz-zvon">
+          <p class="number_telefona-adaptyiv">
+            <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
+          </p>
+          <div class="css-modal-checkbox-container-activationnnnn12345">
+            <label for="css-modal-checkbox" class="css-modal-checkbox">
+              <a class="style_knopza-zvonilka text_modal-zakazanky" href="#modal-zvonok">
+                Заказать звонок
+              </a>
+            </label>
+          </div>
+          <div class="wrap-zvonok" id="modal-zvonok">
+            <div class="window-zvonok">
+              <a href="#close-zvonok" class="close-zvonok"><img src="@img/kresst.svg" alt=""></a>
+              <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
+              <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
+              <div class="from-form">
+                <input class="input-field" type="text" id="form_footer-name1" name="name" placeholder="Имя"
+                  minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+                <input class="input-field" type="text" id="form_footer-phone1" name="phone" placeholder="Телефон"
+                  inputmode="numeric" title="Используйте только цифры" required value="+7 " required maxlength="18">
+                <input class="input-field-sit" type="text" id="form_footer-situation1" name="situation"
+                  placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2"
+                  title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+                <div>
+                  <button id="submit_button1" class="btn_on-modal-zakaz1" disabled><a
+                      class="text_on-modal-zakaz">Отправить</a></button>
+                </div>
+                <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных
+                  данных</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
 
 
-      </div>
     </div>
-
+    <p class="number_telefona">
+      <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
+    </p>
   </div>
-
-
 </header>
