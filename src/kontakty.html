@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,272 +10,297 @@
   <link rel="stylesheet" href="reset.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
-  <link rel="icon" href="/img-icons/favicon.png" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/img-icons/favicon.png">
-<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=luBX-4CfXVBACA90V9dhmj3RUz97F8Nuw-2eV5FjPGLy6GtH0mUP4bBz0wJy3_3gRIcQ9ZmoqlCe5_RI2-eyIA" charset="UTF-8"></script></head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" href="@img/favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="@img/favicon.png">
+  <script type="text/javascript"
+    src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=luBX-4CfXVBACA90V9dhmj3RUz97F8Nuw-2eV5FjPGLy6GtH0mUP4bBz0wJy3_3gRIcQ9ZmoqlCe5_RI2-eyIA"
+    charset="UTF-8"></script>
+</head>
 
 <body class="body">
   <link rel="stylesheet" href="/index.css" />
-<link rel="stylesheet" href="/reset.css" />
-<link rel="stylesheet" href="/ModalZakazZvonka.css" />
-<link rel="stylesheet" href="/style887.css">
-<style>
-  .btn_on-modal-zakaz1 {
-    width: 345px;
-    height: 48px;
-    background: rgb(119, 126, 133);
-    margin-bottom: 10px;
-    margin-right: 40px;
-    color: rgb(255, 255, 255);
-    font-family: Roboto;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 48px;
-    /* Выравнивание по вертикали */
-    letter-spacing: 0%;
-    text-align: center;
-    /* Центрирование текста */
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    padding: 10px 12px 10px 12px;
-  }
-
-  .btn_on-modal-zakaz1 a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .btn_on-modal-zakaz1.active {
-    background: rgb(202, 32, 32);
-  }
-
-  .btn_on-modal-zakaz1:disabled {
-    pointer-events: none;
-    /* Отключить все события мыши */
-  }
-</style>
-
-<header class="header_color-bg">
-  <div class="container">
-    <div class="header_top">
-      <nav class="nav_header">
-        <div class="logo_alfa">
-          <a href="index.php">
-            <img  src="/img-icons/logo.svg" alt="LOGO" />
-          </a>
-          <div class="left-ne-pravo">
-            <div class="elf">
-              <a href="index.php">
-                <img src="/img-icons/logo.svg" alt="LOGO" />
-              </a>
-            </div>
-            <div class="elf-right">
-              <ul class="ul_header">
-                <li class="li_header"><a href="/Onas.php">О нас</a></li>
-                <li class="li_header"><a href="/uslugi.php">Услуги</a></li>
-                <li class="li_header"><a href="/news.php">Новости</a></li>
-                <li class="li_header"><a href="/contacts.php">Контакты</a></li>
-              </ul>
-              <header class="header-burgerenook">
-                <div class="container-burgerenook header__container-burgerenook">
-                  <button class="header__burger-btn-burgerenook" id="burger-burgerenook">
-                    <span></span><span></span><span class="span-burger"></span>
-                  </button>
-                  <nav class="menu-burgerenook">
-                    <ul class="menu__list-burgerenook">
-                      <li class="menu__item-burgerenook1">
-                        <button class="menu__item-burgerenook"><a href="/Onas.php" class="menu__link-burgerenook">О нас</a></button>
-                      </li>
-                      <li class="menu__item-burgerenook1">
-                        <button class="menu__item-burgerenook"><a href="/uslugi.php" class="menu__link-burgerenook">Услуги</a></button>
-                      </li>
-                      <li class="menu__item-burgerenook1">
-                        <button class="menu__item-burgerenook"><a href="/news.php" class="menu__link-burgerenook">Новости</a></button>
-                      </li>
-                      <li class="menu__item-burgerenook1">
-                        <button class="menu__item-burgerenook"><a href="/contacts.php" class="menu__link-burgerenook">Контакты</a></button>
-                      </li>
-                      <li class="menu__item-burgerenook1 dropdown">
-                        <button class="menu__item-burgerenook" id="dropdown-btn-burgerenook">
-                          <div class="flex-jostkyi">
-                            <a href="#" id="dropdown-title-burgerenook" class="menu__link-burgerenook">Тюмень</a>
-                            <img src="/img-icons/no-active-strel.png" alt="no-active-strel" class="no-active-strel">
-                            <img src="/img-icons/active-strel.png" alt="active-strel" class="active-strel" style="display: none;">
-                          </div>
-                        </button>
-                        <ul class="dropdown-content" id="dropdown-content-burgerenook">
-                          <li><a href="#" class="dropdown-link" data-city="Курган">Курган</a></li>
-                          <li><a href="#" class="dropdown-link" data-city="Омск">Омск</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </header>
-              <script defer src="/testBurger.js"></script>
-              
-              
-            </div>
-          </div>
-        </div>
-        <ul class="ul_header1">
-          <li class="li_header"><a href="/Onas.php">О нас</a></li>
-          <li class="li_header"><a href="/uslugi.php">Услуги</a></li>
-          <li class="li_header"><a href="/news.php">Новости</a></li>
-          <li class="li_header"><a href="/contacts.php">Контакты</a></li>
-        </ul>
-    <ul class="three_icons000">
-        <li>
-            <a href="https://t.me/+79994589482" target="_blank">
-                <img src="/img-icons/telegram.svg" alt="Telegram" />
-            </a>
-        </li>
-        <li>
-            <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank">
-                <img src="/img-icons/WhatsApp.svg" alt="" />
-            </a>
-        </li>
-        <li>
-            <a href="viber://chat?number=%2B79994589482" target="_blank">
-                <img src="/img-icons/viber-footer.svg" alt="Viber" />
-            </a>
-        </li>
-    </ul>
-    <div class="number_and-zakaz-zvon">
-        <p class="number_telefona-adaptyiv">
-            <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
-        </p>
-        <div class="css-modal-checkbox-container-activationnnnn12345">
-            <label for="css-modal-checkbox" class="css-modal-checkbox"><a class="style_knopza-zvonilka text_modal-zakazanky" href="#modal-zvonok">Заказать звонок</a></label>
-        </div>
-        <div class="wrap-zvonok" id="modal-zvonok">
-            <div class="window-zvonok">
-                <a href="#close-zvonok" class="close-zvonok"><img src="/img-icons/kresst.svg" alt=""></a>
-                <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
-                <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
-                <div class="from-form">
-                    <input class="input-field" type="text" id="form_footer-name1" name="name" placeholder="Имя" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-                    <input class="input-field" type="text" id="form_footer-phone1" name="phone" placeholder="Телефон" inputmode="numeric" title="Используйте только цифры" required value="+7 " required maxlength="18">
-                    <input class="input-field-sit" type="text" id="form_footer-situation1" name="situation" placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-                    <div>
-                        <button id="submit_button1" class="btn_on-modal-zakaz1" disabled><a class="text_on-modal-zakaz">Отправить</a></button>
-                    </div>
-                    <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных данных</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    </nav>
-    
-      
-    </div>
-    <p class="number_telefona">
-            <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
-        </p>
-  </div>
-</header>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-  $('.btn_on-modal-zakaz1').click(function() {
-    var name = $('#form_footer-name1').val();
-    var phone = $('#form_footer-phone1').val();
-    var sita = $('#form_footer-situation1').val();
-    $.ajax({ 
-        url: 'zakazZvonM.php',
-        type: 'POST',
-        cache: false,
-        data: {'form_footer-name1': name, 'form_footer-phone1': phone, 'form_footer-situation1': sita},
-        dataType: 'html',
-        success: function(data) { 
-            if (data == 'Готово') {
-        $('.wrap-zvonok').hide();
-        $('#phone-errors').hide();
-        $('#form_footer-phone1').val("");
-        $('#form_footer-name1').val("");
-        $('#form_footer-situation1').val("");
-        $('#form_footer-phone1').removeClass('.error');
-        $('.css-modal-target').show(); // Показываем модальное окно
-        $('html').addClass('no-scroll'); 
+  <link rel="stylesheet" href="/reset.css" />
+  <link rel="stylesheet" href="/ModalZakazZvonka.css" />
+  <link rel="stylesheet" href="/style887.css">
+  <style>
+    .btn_on-modal-zakaz1 {
+      width: 345px;
+      height: 48px;
+      background: rgb(119, 126, 133);
+      margin-bottom: 10px;
+      margin-right: 40px;
+      color: rgb(255, 255, 255);
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 48px;
+      /* Выравнивание по вертикали */
+      letter-spacing: 0%;
+      text-align: center;
+      /* Центрирование текста */
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      padding: 10px 12px 10px 12px;
     }
-}
-    });
-});
-    </script> <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
-  <link rel="stylesheet" href="/reset.css">
-    <title>Document</title>
-</head>
-<body>
-    
 
-<div class="css-modal-target" id="css-modal-target">
-          <div class="cmt">
-            <div class="rigth_card-contacts22">
-              <button class="css-modal-details1b close_krest1"><a href="/index.php"><img src="/img-icons/kresst.svg" alt=""></a></button>
-              <p class="text_modal-thx">ЗАЯВКА ОТПРАВЛЕНА</p>
-              <p class="text_modal-v-blij">Спасибо за доверие, мы скоро свяжемся с вами</p>
-              <div class="btn2_Horosho">
-                <a href="/index.php" class="btn_Horosho">
-                  <img src="/img-icons/like.svg" class = "img2" alt="">
+    .btn_on-modal-zakaz1 a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn_on-modal-zakaz1.active {
+      background: rgb(202, 32, 32);
+    }
+
+    .btn_on-modal-zakaz1:disabled {
+      pointer-events: none;
+      /* Отключить все события мыши */
+    }
+  </style>
+
+  <header class="header_color-bg">
+    <div class="container">
+      <div class="header_top">
+        <nav class="nav_header">
+          <div class="logo_alfa">
+            <a href="index.php">
+              <img src="@img/logo.svg" alt="LOGO" />
+            </a>
+            <div class="left-ne-pravo">
+              <div class="elf">
+                <a href="index.php">
+                  <img src="@img/logo.svg" alt="LOGO" />
                 </a>
+              </div>
+              <div class="elf-right">
+                <ul class="ul_header">
+                  <li class="li_header"><a href="/Onas.php">О нас</a></li>
+                  <li class="li_header"><a href="/uslugi.php">Услуги</a></li>
+                  <li class="li_header"><a href="/news.php">Новости</a></li>
+                  <li class="li_header"><a href="/contacts.php">Контакты</a></li>
+                </ul>
+                <header class="header-burgerenook">
+                  <div class="container-burgerenook header__container-burgerenook">
+                    <button class="header__burger-btn-burgerenook" id="burger-burgerenook">
+                      <span></span><span></span><span class="span-burger"></span>
+                    </button>
+                    <nav class="menu-burgerenook">
+                      <ul class="menu__list-burgerenook">
+                        <li class="menu__item-burgerenook1">
+                          <button class="menu__item-burgerenook"><a href="/Onas.php" class="menu__link-burgerenook">О
+                              нас</a></button>
+                        </li>
+                        <li class="menu__item-burgerenook1">
+                          <button class="menu__item-burgerenook"><a href="/uslugi.php"
+                              class="menu__link-burgerenook">Услуги</a></button>
+                        </li>
+                        <li class="menu__item-burgerenook1">
+                          <button class="menu__item-burgerenook"><a href="/news.php"
+                              class="menu__link-burgerenook">Новости</a></button>
+                        </li>
+                        <li class="menu__item-burgerenook1">
+                          <button class="menu__item-burgerenook"><a href="/contacts.php"
+                              class="menu__link-burgerenook">Контакты</a></button>
+                        </li>
+                        <li class="menu__item-burgerenook1 dropdown">
+                          <button class="menu__item-burgerenook" id="dropdown-btn-burgerenook">
+                            <div class="flex-jostkyi">
+                              <a href="#" id="dropdown-title-burgerenook" class="menu__link-burgerenook">Тюмень</a>
+                              <img src="@img/no-active-strel.png" alt="no-active-strel" class="no-active-strel">
+                              <img src="@img/active-strel.png" alt="active-strel" class="active-strel"
+                                style="display: none;">
+                            </div>
+                          </button>
+                          <ul class="dropdown-content" id="dropdown-content-burgerenook">
+                            <li><a href="#" class="dropdown-link" data-city="Курган">Курган</a></li>
+                            <li><a href="#" class="dropdown-link" data-city="Омск">Омск</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </header>
+                <script defer src="/testBurger.js"></script>
+
+
               </div>
             </div>
           </div>
-          <a href="#close" class="css-modal-close"></a>
-        </div>
+          <ul class="ul_header1">
+            <li class="li_header"><a href="/Onas.php">О нас</a></li>
+            <li class="li_header"><a href="/uslugi.php">Услуги</a></li>
+            <li class="li_header"><a href="/news.php">Новости</a></li>
+            <li class="li_header"><a href="/contacts.php">Контакты</a></li>
+          </ul>
+          <ul class="three_icons000">
+            <li>
+              <a href="https://t.me/+79994589482" target="_blank">
+                <img src="@img/telegram.svg" alt="Telegram" />
+              </a>
+            </li>
+            <li>
+              <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank">
+                <img src="@img/WhatsApp.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="viber://chat?number=%2B79994589482" target="_blank">
+                <img src="@img/viber-footer.svg" alt="Viber" />
+              </a>
+            </li>
+          </ul>
+          <div class="number_and-zakaz-zvon">
+            <p class="number_telefona-adaptyiv">
+              <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
+            </p>
+            <div class="css-modal-checkbox-container-activationnnnn12345">
+              <label for="css-modal-checkbox" class="css-modal-checkbox"><a
+                  class="style_knopza-zvonilka text_modal-zakazanky" href="#modal-zvonok">Заказать звонок</a></label>
+            </div>
+            <div class="wrap-zvonok" id="modal-zvonok">
+              <div class="window-zvonok">
+                <a href="#close-zvonok" class="close-zvonok"><img src="@img/kresst.svg" alt=""></a>
+                <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
+                <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
+                <div class="from-form">
+                  <input class="input-field" type="text" id="form_footer-name1" name="name" placeholder="Имя"
+                    minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+                  <input class="input-field" type="text" id="form_footer-phone1" name="phone" placeholder="Телефон"
+                    inputmode="numeric" title="Используйте только цифры" required value="+7 " required maxlength="18">
+                  <input class="input-field-sit" type="text" id="form_footer-situation1" name="situation"
+                    placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2"
+                    title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+                  <div>
+                    <button id="submit_button1" class="btn_on-modal-zakaz1" disabled><a
+                        class="text_on-modal-zakaz">Отправить</a></button>
+                  </div>
+                  <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных
+                    данных</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
 
 
-        </body>
-</html><script>
-document.addEventListener('DOMContentLoaded', function() {
-    const phoneInput = document.getElementById('form_footer-phone1');
-    const submitButton = document.getElementById('submit_button1');
-
-    function formatPhoneNumber(value) {
-    if (!value.startsWith('+7')) {
-        value = '+7 ' + value;
-    }
-
-    const cleaned = value.replace(/\D/g, '');
-    const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
-
-    if (match) {
-        return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
-    }
-
-    return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function(_, g1, g2, g3, g4, g5) {
-        return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+      </div>
+      <p class="number_telefona">
+        <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
+      </p>
+    </div>
+  </header>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $('.btn_on-modal-zakaz1').click(function () {
+      var name = $('#form_footer-name1').val();
+      var phone = $('#form_footer-phone1').val();
+      var sita = $('#form_footer-situation1').val();
+      $.ajax({
+        url: 'zakazZvonM.php',
+        type: 'POST',
+        cache: false,
+        data: { 'form_footer-name1': name, 'form_footer-phone1': phone, 'form_footer-situation1': sita },
+        dataType: 'html',
+        success: function (data) {
+          if (data == 'Готово') {
+            $('.wrap-zvonok').hide();
+            $('#phone-errors').hide();
+            $('#form_footer-phone1').val("");
+            $('#form_footer-name1').val("");
+            $('#form_footer-situation1').val("");
+            $('#form_footer-phone1').removeClass('.error');
+            $('.css-modal-target').show(); // Показываем модальное окно
+            $('html').addClass('no-scroll');
+          }
+        }
+      });
     });
-}
+  </script>
+  <!DOCTYPE html>
+  <html lang="en">
 
-    phoneInput.addEventListener('input', function() {
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="/reset.css">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+
+    <div class="css-modal-target" id="css-modal-target">
+      <div class="cmt">
+        <div class="rigth_card-contacts22">
+          <button class="css-modal-details1b close_krest1"><a href="/index.php"><img src="@img/kresst.svg"
+                alt=""></a></button>
+          <p class="text_modal-thx">ЗАЯВКА ОТПРАВЛЕНА</p>
+          <p class="text_modal-v-blij">Спасибо за доверие, мы скоро свяжемся с вами</p>
+          <div class="btn2_Horosho">
+            <a href="/index.php" class="btn_Horosho">
+              <img src="@img/like.svg" class="img2" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#close" class="css-modal-close"></a>
+    </div>
+
+
+  </body>
+
+  </html>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const phoneInput = document.getElementById('form_footer-phone1');
+      const submitButton = document.getElementById('submit_button1');
+
+      function formatPhoneNumber(value) {
+        if (!value.startsWith('+7')) {
+          value = '+7 ' + value;
+        }
+
+        const cleaned = value.replace(/\D/g, '');
+        const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+
+        if (match) {
+          return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
+        }
+
+        return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function (_, g1, g2, g3, g4, g5) {
+          return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+        });
+      }
+
+      phoneInput.addEventListener('input', function () {
         phoneInput.value = formatPhoneNumber(phoneInput.value);
 
         const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
         if (phonePattern.test(phoneInput.value)) {
-            submitButton.classList.add('active');
-            submitButton.disabled = false;
-            phoneInput.classList.remove('input-error');
+          submitButton.classList.add('active');
+          submitButton.disabled = false;
+          phoneInput.classList.remove('input-error');
         } else {
-            submitButton.classList.remove('active');
-            submitButton.disabled = true;
+          submitButton.classList.remove('active');
+          submitButton.disabled = true;
         }
+      });
     });
-});
-</script><script src="/UnProkrutka.js"></script>
-<script src="/header.js"></script>
+  </script>
+  <script src="/UnProkrutka.js"></script>
+  <script src="/header.js"></script>
 
   <section class="contactsss">
     <div class="container">
@@ -287,10 +311,13 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="telefon-contacts"><a href="tel:+7 999 458 94 82">+7 999 458 94 82</a></div>
           <div class="zvonok-contacts">
             <div class="css-modal-checkbox-container-activationnnnn">
-              <label for="css-modal-checkbox" class="css-modal-checkbox"><a class="style_knopza-zvonilka text_modal-zakazanky-cont" href="#modal-zvonok">Заказать звонок</a></label>
+              <label for="css-modal-checkbox" class="css-modal-checkbox"><a
+                  class="style_knopza-zvonilka text_modal-zakazanky-cont" href="#modal-zvonok">Заказать
+                  звонок</a></label>
             </div>
             <div class="pochta-contacts">E-mail:</div>
-            <div class="email-contacts"><a href="mailto:direktor-info.alfa@yandex.ru">direktor-info.alfa@yandex.ru</a></div>
+            <div class="email-contacts"><a href="mailto:direktor-info.alfa@yandex.ru">direktor-info.alfa@yandex.ru</a>
+            </div>
             <div class="rejim_contacts">Режим работы:</div>
             <div class="kruglosytka">Круглосуточно</div>
           </div>
@@ -301,15 +328,16 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="three_icon-contacts">
             <div><a href="https://t.me/+79994589482" target="_blank">
-                <img src="/img-icons/contacts_tg.png" alt="Telegram" />
+                <img src="@img/contacts_tg.png" alt="Telegram" />
               </a></div>
-            <div><a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank"><img src="/img-icons/contacts_wa.png" alt="" /></a></div>
+            <div><a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank"><img src="@img/contacts_wa.png"
+                  alt="" /></a></div>
             <div><a href="viber://chat?number=%2B79994589482" target="_blank">
-                <img src="/img-icons/contacts_viber.png" alt="Viber" />
+                <img src="@img/contacts_viber.png" alt="Viber" />
               </a></div>
           </div>
           <div class="img_bg-contacts-contacts">
-            <img src="/img-icons/bg_contacts.png" alt="">
+            <img src="@img/bg_contacts.png" alt="">
           </div>
         </div>
       </div>
@@ -317,86 +345,93 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
 
   <link rel="stylesheet" href="/index.css" />
-<link rel="stylesheet" href="/reset.css" />
-<link rel="stylesheet" href="/ModalZakazZvonka.css" />
+  <link rel="stylesheet" href="/reset.css" />
+  <link rel="stylesheet" href="/ModalZakazZvonka.css" />
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer_bottom">
-      <div class="left_logo">
-        <div class="logo_footer">
-          <a href="Index.php"><img src="/img-icons/logo_footer.png" alt="" /></a>
-        </div>
-        <div class="css-modal-checkbox-container-invise">
-          <label for="css-modal-checkbox" class="css-modal-checkbox ">
-            <button class="btn_modal-kakal-footer"><a class="style_knopza-zvonilka text_modal-kakal-footer" href="#modal-zvonok">Вызвать помощь</a></button></label>
-        </div>
-        <div class="wrap-zvonok" id="modal-zvonok">
-          <div class="window-zvonok">
-            <a href="#close-zvonok" class="close-zvonok"><img src="/img-icons/kresst.svg" alt=""></a>
-            <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
-            <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
-            <div class="from-form">
-              <input class="input-field" type="text" id="form_footer-name2" name="name" placeholder="Имя" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-              <input class="input-field" type="text" id="form_footer-phone2" name="phone" placeholder="Телефон" inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7">
-              <input class="input-field-sit" type="text" id="form_footer-situation2" name="situation" placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-              <div>
-                <button class="btn_on-modal-zakaz2"><a class="text_on-modal-zakaz">Отправить</a></button>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer_bottom">
+        <div class="left_logo">
+          <div class="logo_footer">
+            <a href="Index.php"><img src="@img/logo_footer.png" alt="" /></a>
+          </div>
+          <div class="css-modal-checkbox-container-invise">
+            <label for="css-modal-checkbox" class="css-modal-checkbox ">
+              <button class="btn-footer"><a class="style_knopza-zvonilka text_modal-kakal-footer"
+                  href="#modal-zvonok">Вызвать помощь</a></button></label>
+          </div>
+          <div class="wrap-zvonok" id="modal-zvonok">
+            <div class="window-zvonok">
+              <a href="#close-zvonok" class="close-zvonok"><img src="@img/kresst.svg" alt=""></a>
+              <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
+              <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
+              <div class="from-form">
+                <input class="input-field" type="text" id="form_footer-name2" name="name" placeholder="Имя"
+                  minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+                <input class="input-field" type="text" id="form_footer-phone2" name="phone" placeholder="Телефон"
+                  inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7">
+                <input class="input-field-sit" type="text" id="form_footer-situation2" name="situation"
+                  placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2"
+                  title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+                <div>
+                  <button class="btn_on-modal-zakaz2"><a class="text_on-modal-zakaz">Отправить</a></button>
+                </div>
+                <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных
+                  данных</p>
               </div>
-              <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных данных</p>
+            </div>
+          </div>
+          <div class="text_vse_prava">
+            © «Выездной сервис Альфа», 2018
+            <p></p>
+            Все права защищены
+          </div>
+        </div>
+        <div class="nav_vertical">
+          <ul class="ul_footer">
+            <li class="li_footer"><a href="/Onas.php">О нас</a></li>
+            <li class="li_footer"><a href="/uslugi.php">Услуги</a></li>
+            <li class="li_footer"><a href="/news.php">Новости</a></li>
+            <li class="li_footer"><a href="/contacts.php">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="number_and-pochtka">
+          <p class="number_telefona-footer">
+            <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
+          </p>
+          <div class="poshta_direktor">
+            <a href="mailto:direktor-info.alfa@yandex.ru">direktor-info.alfa@yandex.ru</a>
+          </div>
+          <div class="three_icons-footer">
+            <div>
+              <a href="https://t.me/+79994589482" target="_blank">
+                <img src="@img/telegram-footer.svg" alt="Telegram" />
+              </a>
+            </div>
+            <div>
+              <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank"><img src="@img/wa-footer.svg"
+                  alt="" /></a>
+            </div>
+            <div>
+              <a href="viber://chat?number=%2B79994589482" target="_blank">
+                <img src="@img/viber-footer.svg" alt="Viber" />
+              </a>
             </div>
           </div>
         </div>
-        <div class="text_vse_prava">
-          © «Выездной сервис Альфа», 2018
-          <p></p>
-          Все права защищены
-        </div>
-      </div>
-      <div class="nav_vertical">
-        <ul class="ul_footer">
-          <li class="li_footer"><a href="/Onas.php">О нас</a></li>
-          <li class="li_footer"><a href="/uslugi.php">Услуги</a></li>
-          <li class="li_footer"><a href="/news.php">Новости</a></li>
-          <li class="li_footer"><a href="/contacts.php">Контакты</a></li>
-        </ul>
-      </div>
-      <div class="number_and-pochtka">
-        <p class="number_telefona-footer">
-          <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
-        </p>
-        <div class="poshta_direktor">
-          <a href="mailto:direktor-info.alfa@yandex.ru">direktor-info.alfa@yandex.ru</a>
-        </div>
-        <div class="three_icons-footer">
-          <div>
-            <a href="https://t.me/+79994589482" target="_blank">
-              <img src="/img-icons/telegram-footer.svg" alt="Telegram" />
-            </a>
+        <div class="btn-and-polit">
+          <div class="css-modal-checkbox-container css-modal-checkbox-container-activationnnnn">
+            <label for="css-modal-checkbox" class="css-modal-checkbox ">
+              <a class="style_knopza-zvonilka text_modal-kakal-footer" href="#modal-zvonok">
+                <button class="btn-footer">
+                  <p class="style_knopza-zvonilka text_modal-kakal-footer">Вызвать помощь</p>
+                </button></a></label>
           </div>
-          <div>
-            <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank"><img src="/img-icons/wa-footer.svg" alt="" /></a>
-          </div>
-          <div>
-            <a href="viber://chat?number=%2B79994589482" target="_blank">
-              <img src="/img-icons/viber-footer.svg" alt="Viber" />
-            </a>
-          </div>
+          <div class="text_polit">Политика конфиденциальности</div>
         </div>
-      </div>
-      <div class="btn-and-polit">
-        <div class="css-modal-checkbox-container css-modal-checkbox-container-activationnnnn">
-          <label for="css-modal-checkbox" class="css-modal-checkbox ">
-            <a class="style_knopza-zvonilka text_modal-kakal-footer" href="#modal-zvonok">
-              <button class="btn_modal-kakal-footer">
-                <p class="style_knopza-zvonilka text_modal-kakal-footer">Вызвать помощь</p>
-              </button></a></label>
-        </div>
-        <div class="text_polit">Политика конфиденциальности</div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </body>
 
 </html>

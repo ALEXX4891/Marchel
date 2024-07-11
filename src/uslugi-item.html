@@ -1,519 +1,544 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Услуга</title>
-    <link rel="stylesheet" href="usluga.css" />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="/img-icons/favicon.png" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/img-icons/favicon.png">
-  <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=y8Jryu-OgDtRbel8ktuzJ7d86mrd_daWX8C_zEm0-bx4Yq6gsA3V7ZQ-uov0e-hPZO6vrWfMnialsdLRCq3DMQ" charset="UTF-8"></script></head>
-  <body>
-    <link rel="stylesheet" href="/index.css" />
-<link rel="stylesheet" href="/reset.css" />
-<link rel="stylesheet" href="/ModalZakazZvonka.css" />
-<link rel="stylesheet" href="/style887.css">
-<style>
-  .btn_on-modal-zakaz1 {
-    width: 345px;
-    height: 48px;
-    background: rgb(119, 126, 133);
-    margin-bottom: 10px;
-    margin-right: 40px;
-    color: rgb(255, 255, 255);
-    font-family: Roboto;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 48px;
-    /* Выравнивание по вертикали */
-    letter-spacing: 0%;
-    text-align: center;
-    /* Центрирование текста */
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    padding: 10px 12px 10px 12px;
-  }
 
-  .btn_on-modal-zakaz1 a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .btn_on-modal-zakaz1.active {
-    background: rgb(202, 32, 32);
-  }
-
-  .btn_on-modal-zakaz1:disabled {
-    pointer-events: none;
-    /* Отключить все события мыши */
-  }
-</style>
-
-<header class="header_color-bg">
-  <div class="container">
-    <div class="header_top">
-      <nav class="nav_header">
-        <div class="logo_alfa">
-          <a href="index.php">
-            <img  src="/img-icons/logo.svg" alt="LOGO" />
-          </a>
-          <div class="left-ne-pravo">
-            <div class="elf">
-              <a href="index.php">
-                <img src="/img-icons/logo.svg" alt="LOGO" />
-              </a>
-            </div>
-            <div class="elf-right">
-              <ul class="ul_header">
-                <li class="li_header"><a href="/Onas.php">О нас</a></li>
-                <li class="li_header"><a href="/uslugi.php">Услуги</a></li>
-                <li class="li_header"><a href="/news.php">Новости</a></li>
-                <li class="li_header"><a href="/contacts.php">Контакты</a></li>
-              </ul>
-              <header class="header-burgerenook">
-                <div class="container-burgerenook header__container-burgerenook">
-                  <button class="header__burger-btn-burgerenook" id="burger-burgerenook">
-                    <span></span><span></span><span class="span-burger"></span>
-                  </button>
-                  <nav class="menu-burgerenook">
-                    <ul class="menu__list-burgerenook">
-                      <li class="menu__item-burgerenook1">
-                        <button class="menu__item-burgerenook"><a href="/Onas.php" class="menu__link-burgerenook">О нас</a></button>
-                      </li>
-                      <li class="menu__item-burgerenook1">
-                        <button class="menu__item-burgerenook"><a href="/uslugi.php" class="menu__link-burgerenook">Услуги</a></button>
-                      </li>
-                      <li class="menu__item-burgerenook1">
-                        <button class="menu__item-burgerenook"><a href="/news.php" class="menu__link-burgerenook">Новости</a></button>
-                      </li>
-                      <li class="menu__item-burgerenook1">
-                        <button class="menu__item-burgerenook"><a href="/contacts.php" class="menu__link-burgerenook">Контакты</a></button>
-                      </li>
-                      <li class="menu__item-burgerenook1 dropdown">
-                        <button class="menu__item-burgerenook" id="dropdown-btn-burgerenook">
-                          <div class="flex-jostkyi">
-                            <a href="#" id="dropdown-title-burgerenook" class="menu__link-burgerenook">Тюмень</a>
-                            <img src="/img-icons/no-active-strel.png" alt="no-active-strel" class="no-active-strel">
-                            <img src="/img-icons/active-strel.png" alt="active-strel" class="active-strel" style="display: none;">
-                          </div>
-                        </button>
-                        <ul class="dropdown-content" id="dropdown-content-burgerenook">
-                          <li><a href="#" class="dropdown-link" data-city="Курган">Курган</a></li>
-                          <li><a href="#" class="dropdown-link" data-city="Омск">Омск</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </header>
-              <script defer src="/testBurger.js"></script>
-              
-              
-            </div>
-          </div>
-        </div>
-        <ul class="ul_header1">
-          <li class="li_header"><a href="/Onas.php">О нас</a></li>
-          <li class="li_header"><a href="/uslugi.php">Услуги</a></li>
-          <li class="li_header"><a href="/news.php">Новости</a></li>
-          <li class="li_header"><a href="/contacts.php">Контакты</a></li>
-        </ul>
-    <ul class="three_icons000">
-        <li>
-            <a href="https://t.me/+79994589482" target="_blank">
-                <img src="/img-icons/telegram.svg" alt="Telegram" />
-            </a>
-        </li>
-        <li>
-            <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank">
-                <img src="/img-icons/WhatsApp.svg" alt="" />
-            </a>
-        </li>
-        <li>
-            <a href="viber://chat?number=%2B79994589482" target="_blank">
-                <img src="/img-icons/viber-footer.svg" alt="Viber" />
-            </a>
-        </li>
-    </ul>
-    <div class="number_and-zakaz-zvon">
-        <p class="number_telefona-adaptyiv">
-            <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
-        </p>
-        <div class="css-modal-checkbox-container-activationnnnn12345">
-            <label for="css-modal-checkbox" class="css-modal-checkbox"><a class="style_knopza-zvonilka text_modal-zakazanky" href="#modal-zvonok">Заказать звонок</a></label>
-        </div>
-        <div class="wrap-zvonok" id="modal-zvonok">
-            <div class="window-zvonok">
-                <a href="#close-zvonok" class="close-zvonok"><img src="/img-icons/kresst.svg" alt=""></a>
-                <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
-                <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
-                <div class="from-form">
-                    <input class="input-field" type="text" id="form_footer-name1" name="name" placeholder="Имя" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-                    <input class="input-field" type="text" id="form_footer-phone1" name="phone" placeholder="Телефон" inputmode="numeric" title="Используйте только цифры" required value="+7 " required maxlength="18">
-                    <input class="input-field-sit" type="text" id="form_footer-situation1" name="situation" placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-                    <div>
-                        <button id="submit_button1" class="btn_on-modal-zakaz1" disabled><a class="text_on-modal-zakaz">Отправить</a></button>
-                    </div>
-                    <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных данных</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    </nav>
-    
-      
-    </div>
-    <p class="number_telefona">
-            <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
-        </p>
-  </div>
-</header>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-  $('.btn_on-modal-zakaz1').click(function() {
-    var name = $('#form_footer-name1').val();
-    var phone = $('#form_footer-phone1').val();
-    var sita = $('#form_footer-situation1').val();
-    $.ajax({ 
-        url: 'zakazZvonM.php',
-        type: 'POST',
-        cache: false,
-        data: {'form_footer-name1': name, 'form_footer-phone1': phone, 'form_footer-situation1': sita},
-        dataType: 'html',
-        success: function(data) { 
-            if (data == 'Готово') {
-        $('.wrap-zvonok').hide();
-        $('#phone-errors').hide();
-        $('#form_footer-phone1').val("");
-        $('#form_footer-name1').val("");
-        $('#form_footer-situation1').val("");
-        $('#form_footer-phone1').removeClass('.error');
-        $('.css-modal-target').show(); // Показываем модальное окно
-        $('html').addClass('no-scroll'); 
-    }
-}
-    });
-});
-    </script> <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
-  <link rel="stylesheet" href="/reset.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Услуга</title>
+  <link rel="stylesheet" href="usluga.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" href="@img/favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="@img/favicon.png">
+  <script type="text/javascript"
+    src="http://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=y8Jryu-OgDtRbel8ktuzJ7d86mrd_daWX8C_zEm0-bx4Yq6gsA3V7ZQ-uov0e-hPZO6vrWfMnialsdLRCq3DMQ"
+    charset="UTF-8"></script>
 </head>
-<body>
-    
 
-<div class="css-modal-target" id="css-modal-target">
-          <div class="cmt">
-            <div class="rigth_card-contacts22">
-              <button class="css-modal-details1b close_krest1"><a href="/index.php"><img src="/img-icons/kresst.svg" alt=""></a></button>
-              <p class="text_modal-thx">ЗАЯВКА ОТПРАВЛЕНА</p>
-              <p class="text_modal-v-blij">Спасибо за доверие, мы скоро свяжемся с вами</p>
-              <div class="btn2_Horosho">
-                <a href="/index.php" class="btn_Horosho">
-                  <img src="/img-icons/like.svg" class = "img2" alt="">
+<body>
+  <link rel="stylesheet" href="/index.css" />
+  <link rel="stylesheet" href="/reset.css" />
+  <link rel="stylesheet" href="/ModalZakazZvonka.css" />
+  <link rel="stylesheet" href="/style887.css">
+  <style>
+    .btn_on-modal-zakaz1 {
+      width: 345px;
+      height: 48px;
+      background: rgb(119, 126, 133);
+      margin-bottom: 10px;
+      margin-right: 40px;
+      color: rgb(255, 255, 255);
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 48px;
+      /* Выравнивание по вертикали */
+      letter-spacing: 0%;
+      text-align: center;
+      /* Центрирование текста */
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      padding: 10px 12px 10px 12px;
+    }
+
+    .btn_on-modal-zakaz1 a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn_on-modal-zakaz1.active {
+      background: rgb(202, 32, 32);
+    }
+
+    .btn_on-modal-zakaz1:disabled {
+      pointer-events: none;
+      /* Отключить все события мыши */
+    }
+  </style>
+
+  <header class="header_color-bg">
+    <div class="container">
+      <div class="header_top">
+        <nav class="nav_header">
+          <div class="logo_alfa">
+            <a href="index.php">
+              <img src="@img/logo.svg" alt="LOGO" />
+            </a>
+            <div class="left-ne-pravo">
+              <div class="elf">
+                <a href="index.php">
+                  <img src="@img/logo.svg" alt="LOGO" />
                 </a>
+              </div>
+              <div class="elf-right">
+                <ul class="ul_header">
+                  <li class="li_header"><a href="/Onas.php">О нас</a></li>
+                  <li class="li_header"><a href="/uslugi.php">Услуги</a></li>
+                  <li class="li_header"><a href="/news.php">Новости</a></li>
+                  <li class="li_header"><a href="/contacts.php">Контакты</a></li>
+                </ul>
+                <header class="header-burgerenook">
+                  <div class="container-burgerenook header__container-burgerenook">
+                    <button class="header__burger-btn-burgerenook" id="burger-burgerenook">
+                      <span></span><span></span><span class="span-burger"></span>
+                    </button>
+                    <nav class="menu-burgerenook">
+                      <ul class="menu__list-burgerenook">
+                        <li class="menu__item-burgerenook1">
+                          <button class="menu__item-burgerenook"><a href="/Onas.php" class="menu__link-burgerenook">О
+                              нас</a></button>
+                        </li>
+                        <li class="menu__item-burgerenook1">
+                          <button class="menu__item-burgerenook"><a href="/uslugi.php"
+                              class="menu__link-burgerenook">Услуги</a></button>
+                        </li>
+                        <li class="menu__item-burgerenook1">
+                          <button class="menu__item-burgerenook"><a href="/news.php"
+                              class="menu__link-burgerenook">Новости</a></button>
+                        </li>
+                        <li class="menu__item-burgerenook1">
+                          <button class="menu__item-burgerenook"><a href="/contacts.php"
+                              class="menu__link-burgerenook">Контакты</a></button>
+                        </li>
+                        <li class="menu__item-burgerenook1 dropdown">
+                          <button class="menu__item-burgerenook" id="dropdown-btn-burgerenook">
+                            <div class="flex-jostkyi">
+                              <a href="#" id="dropdown-title-burgerenook" class="menu__link-burgerenook">Тюмень</a>
+                              <img src="@img/no-active-strel.png" alt="no-active-strel" class="no-active-strel">
+                              <img src="@img/active-strel.png" alt="active-strel" class="active-strel"
+                                style="display: none;">
+                            </div>
+                          </button>
+                          <ul class="dropdown-content" id="dropdown-content-burgerenook">
+                            <li><a href="#" class="dropdown-link" data-city="Курган">Курган</a></li>
+                            <li><a href="#" class="dropdown-link" data-city="Омск">Омск</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </header>
+                <script defer src="/testBurger.js"></script>
+
+
               </div>
             </div>
           </div>
-          <a href="#close" class="css-modal-close"></a>
-        </div>
+          <ul class="ul_header1">
+            <li class="li_header"><a href="/Onas.php">О нас</a></li>
+            <li class="li_header"><a href="/uslugi.php">Услуги</a></li>
+            <li class="li_header"><a href="/news.php">Новости</a></li>
+            <li class="li_header"><a href="/contacts.php">Контакты</a></li>
+          </ul>
+          <ul class="three_icons000">
+            <li>
+              <a href="https://t.me/+79994589482" target="_blank">
+                <img src="@img/telegram.svg" alt="Telegram" />
+              </a>
+            </li>
+            <li>
+              <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank">
+                <img src="@img/WhatsApp.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="viber://chat?number=%2B79994589482" target="_blank">
+                <img src="@img/viber-footer.svg" alt="Viber" />
+              </a>
+            </li>
+          </ul>
+          <div class="number_and-zakaz-zvon">
+            <p class="number_telefona-adaptyiv">
+              <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
+            </p>
+            <div class="css-modal-checkbox-container-activationnnnn12345">
+              <label for="css-modal-checkbox" class="css-modal-checkbox"><a
+                  class="style_knopza-zvonilka text_modal-zakazanky" href="#modal-zvonok">Заказать звонок</a></label>
+            </div>
+            <div class="wrap-zvonok" id="modal-zvonok">
+              <div class="window-zvonok">
+                <a href="#close-zvonok" class="close-zvonok"><img src="@img/kresst.svg" alt=""></a>
+                <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
+                <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
+                <div class="from-form">
+                  <input class="input-field" type="text" id="form_footer-name1" name="name" placeholder="Имя"
+                    minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+                  <input class="input-field" type="text" id="form_footer-phone1" name="phone" placeholder="Телефон"
+                    inputmode="numeric" title="Используйте только цифры" required value="+7 " required maxlength="18">
+                  <input class="input-field-sit" type="text" id="form_footer-situation1" name="situation"
+                    placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2"
+                    title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+                  <div>
+                    <button id="submit_button1" class="btn_on-modal-zakaz1" disabled><a
+                        class="text_on-modal-zakaz">Отправить</a></button>
+                  </div>
+                  <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных
+                    данных</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
 
 
-        </body>
-</html><script>
-document.addEventListener('DOMContentLoaded', function() {
-    const phoneInput = document.getElementById('form_footer-phone1');
-    const submitButton = document.getElementById('submit_button1');
-
-    function formatPhoneNumber(value) {
-    if (!value.startsWith('+7')) {
-        value = '+7 ' + value;
-    }
-
-    const cleaned = value.replace(/\D/g, '');
-    const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
-
-    if (match) {
-        return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
-    }
-
-    return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function(_, g1, g2, g3, g4, g5) {
-        return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+      </div>
+      <p class="number_telefona">
+        <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
+      </p>
+    </div>
+  </header>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $('.btn_on-modal-zakaz1').click(function () {
+      var name = $('#form_footer-name1').val();
+      var phone = $('#form_footer-phone1').val();
+      var sita = $('#form_footer-situation1').val();
+      $.ajax({
+        url: 'zakazZvonM.php',
+        type: 'POST',
+        cache: false,
+        data: { 'form_footer-name1': name, 'form_footer-phone1': phone, 'form_footer-situation1': sita },
+        dataType: 'html',
+        success: function (data) {
+          if (data == 'Готово') {
+            $('.wrap-zvonok').hide();
+            $('#phone-errors').hide();
+            $('#form_footer-phone1').val("");
+            $('#form_footer-name1').val("");
+            $('#form_footer-situation1').val("");
+            $('#form_footer-phone1').removeClass('.error');
+            $('.css-modal-target').show(); // Показываем модальное окно
+            $('html').addClass('no-scroll');
+          }
+        }
+      });
     });
-}
+  </script>
+  <!DOCTYPE html>
+  <html lang="en">
 
-    phoneInput.addEventListener('input', function() {
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="/reset.css">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+
+    <div class="css-modal-target" id="css-modal-target">
+      <div class="cmt">
+        <div class="rigth_card-contacts22">
+          <button class="css-modal-details1b close_krest1"><a href="/index.php"><img src="@img/kresst.svg"
+                alt=""></a></button>
+          <p class="text_modal-thx">ЗАЯВКА ОТПРАВЛЕНА</p>
+          <p class="text_modal-v-blij">Спасибо за доверие, мы скоро свяжемся с вами</p>
+          <div class="btn2_Horosho">
+            <a href="/index.php" class="btn_Horosho">
+              <img src="@img/like.svg" class="img2" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#close" class="css-modal-close"></a>
+    </div>
+
+
+  </body>
+
+  </html>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const phoneInput = document.getElementById('form_footer-phone1');
+      const submitButton = document.getElementById('submit_button1');
+
+      function formatPhoneNumber(value) {
+        if (!value.startsWith('+7')) {
+          value = '+7 ' + value;
+        }
+
+        const cleaned = value.replace(/\D/g, '');
+        const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+
+        if (match) {
+          return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
+        }
+
+        return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function (_, g1, g2, g3, g4, g5) {
+          return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+        });
+      }
+
+      phoneInput.addEventListener('input', function () {
         phoneInput.value = formatPhoneNumber(phoneInput.value);
 
         const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
         if (phonePattern.test(phoneInput.value)) {
-            submitButton.classList.add('active');
-            submitButton.disabled = false;
-            phoneInput.classList.remove('input-error');
+          submitButton.classList.add('active');
+          submitButton.disabled = false;
+          phoneInput.classList.remove('input-error');
         } else {
-            submitButton.classList.remove('active');
-            submitButton.disabled = true;
+          submitButton.classList.remove('active');
+          submitButton.disabled = true;
         }
+      });
     });
-});
-</script><script src="/UnProkrutka.js"></script>
-<script src="/header.js"></script>
+  </script>
+  <script src="/UnProkrutka.js"></script>
+  <script src="/header.js"></script>
 
-    <section>
-      <div class="container">
-        <div class="fotka_ipad"></div>
-        <div class="left-u-right-usluga">
-          <div class="left_usluga">
-            <div class="text_nazvanie-usulugi">Название услуги</div>
-            <div class="text_opisanie-usulugi">
-              Мы специализируемся на качественном обслуживании автомобилей прямо
-              на месте: будь то на дороге, у дома или на работе. Просто
-              позвоните нам или оставьте заявку на сайте, и наши опытные мастера
-              приедут к вам в кратчайшие сроки.
-            </div>
-            <div class="css-modal-checkbox-container-activationnnnn">
-            <label
-              for="css-modal-checkbox"
-              class="css-modal-checkbox ">
+  <section>
+    <div class="container">
+      <div class="fotka_ipad"></div>
+      <div class="left-u-right-usluga">
+        <div class="left_usluga">
+          <div class="text_nazvanie-usulugi">Название услуги</div>
+          <div class="text_opisanie-usulugi">
+            Мы специализируемся на качественном обслуживании автомобилей прямо
+            на месте: будь то на дороге, у дома или на работе. Просто
+            позвоните нам или оставьте заявку на сайте, и наши опытные мастера
+            приедут к вам в кратчайшие сроки.
+          </div>
+          <div class="css-modal-checkbox-container-activationnnnn">
+            <label for="css-modal-checkbox" class="css-modal-checkbox ">
               <a class="style_knopza-zvonilka text_modal-kakal-footer" href="#modal-zvonok">
-              <button class="btn_modal-kakal444"><p class="style_knopza-zvonilka text_modal-kakal" >Вызвать помощь</p></button></a></label
-            >
+                <button class="btn444">
+                  <p class="style_knopza-zvonilka text_modal-kakal">Вызвать помощь</p>
+                </button></a></label>
           </div>
-          </div>
-          <div class="right_usluga">
-            <div class="kucheryshka">
-              <img src="/img-icons/kucheryaviy.png" alt="" />
-            </div>
+        </div>
+        <div class="right_usluga">
+          <div class="kucheryshka">
+            <img src="@img/kucheryaviy.png" alt="" />
           </div>
         </div>
       </div>
-    </section>
-    <section class="card_usluga">
-      <div class="container">
-        <div class="text_zagalovok-usluga">Заголовок 1</div>
-        <div class="threee_card-usluga">
-          <div class="cardan_usluga">
-            <div class="text_cardan-usluga">Круглосуточно</div>
-            <div class="under-text_cardan-usluga">
-              Наша команда специалистов готова помочь в любое время суток, без
-              перерывов и выходных. Благодаря этому вы можете получить
-              необходимую помощь и поддержку в любое удобное для вас время. Мы
-              обеспечиваем надежность и доступность сервиса
-            </div>
+    </div>
+  </section>
+  <section class="card_usluga">
+    <div class="container">
+      <div class="text_zagalovok-usluga">Заголовок 1</div>
+      <div class="threee_card-usluga">
+        <div class="cardan_usluga">
+          <div class="text_cardan-usluga">Круглосуточно</div>
+          <div class="under-text_cardan-usluga">
+            Наша команда специалистов готова помочь в любое время суток, без
+            перерывов и выходных. Благодаря этому вы можете получить
+            необходимую помощь и поддержку в любое удобное для вас время. Мы
+            обеспечиваем надежность и доступность сервиса
           </div>
-          <div class="cardan_usluga">
-            <div class="text_cardan-usluga">Быстро</div>
-            <div class="under-text_cardan-usluga">
-              Мы прибудем на место в течение 15-30 минут после вашего звонка.
-              Это гарантия быстрого реагирования и быстрого решения вашей
-              проблемы. Не стоит терять время - доверьте нам заботу о вашей
-              безопасности и комфорте
-            </div>
+        </div>
+        <div class="cardan_usluga">
+          <div class="text_cardan-usluga">Быстро</div>
+          <div class="under-text_cardan-usluga">
+            Мы прибудем на место в течение 15-30 минут после вашего звонка.
+            Это гарантия быстрого реагирования и быстрого решения вашей
+            проблемы. Не стоит терять время - доверьте нам заботу о вашей
+            безопасности и комфорте
           </div>
-          <div class="cardan_usluga">
-            <div class="text_cardan-usluga">Качественно</div>
-            <div class="under-text_cardan-usluga">
-              Мы учитываем все ваши пожелания и требования, чтобы обеспечить
-              отличный результат. Независимо от сложности задачи, мы найдем
-              оптимальное решение для вас. Доверьтесь нам и ощутите настоящий
-              комфорт работы с профессионалами
-            </div>
+        </div>
+        <div class="cardan_usluga">
+          <div class="text_cardan-usluga">Качественно</div>
+          <div class="under-text_cardan-usluga">
+            Мы учитываем все ваши пожелания и требования, чтобы обеспечить
+            отличный результат. Независимо от сложности задачи, мы найдем
+            оптимальное решение для вас. Доверьтесь нам и ощутите настоящий
+            комфорт работы с профессионалами
           </div>
         </div>
       </div>
-    </section>
-    <section class="zagolovok-2">
-      <div class="container">
-        <div class="text_zagalovyk-2">Заголовок 2</div>
-        <div class="text_pod-zagolovok-2">
-          С другой стороны, укрепление и развитие внутренней структуры
-          однозначно определяет каждого участника как способного принимать
-          собственные решения касаемо кластеризации усилий. Внезапно, акционеры
-          крупнейших компаний представлены в исключительно положительном свете.
-          Безусловно, начало повседневной работы по формированию позиции создаёт
-          предпосылки для направлений прогрессивного развития. <br /><br />
-          С другой стороны, укрепление и развитие внутренней структуры
-          однозначно определяет каждого участника как способного принимать
-          собственные решения касаемо кластеризации усилий. Внезапно, акционеры
-          крупнейших компаний представлены в исключительно положительном свете.
-          Безусловно, начало повседневной работы по формированию позиции создаёт
-          предпосылки для направлений прогрессивного развития. <br /><br />
-          С другой стороны, укрепление и развитие внутренней структуры
-          однозначно определяет каждого участника как способного принимать
-          собственные решения касаемо кластеризации усилий. Внезапно, акционеры
-          крупнейших компаний представлены в исключительно положительном свете.
-          Безусловно, начало повседневной работы по формированию позиции создаёт
-          предпосылки для направлений прогрессивного развития.
-        </div>
+    </div>
+  </section>
+  <section class="zagolovok-2">
+    <div class="container">
+      <div class="text_zagalovyk-2">Заголовок 2</div>
+      <div class="text_pod-zagolovok-2">
+        С другой стороны, укрепление и развитие внутренней структуры
+        однозначно определяет каждого участника как способного принимать
+        собственные решения касаемо кластеризации усилий. Внезапно, акционеры
+        крупнейших компаний представлены в исключительно положительном свете.
+        Безусловно, начало повседневной работы по формированию позиции создаёт
+        предпосылки для направлений прогрессивного развития. <br /><br />
+        С другой стороны, укрепление и развитие внутренней структуры
+        однозначно определяет каждого участника как способного принимать
+        собственные решения касаемо кластеризации усилий. Внезапно, акционеры
+        крупнейших компаний представлены в исключительно положительном свете.
+        Безусловно, начало повседневной работы по формированию позиции создаёт
+        предпосылки для направлений прогрессивного развития. <br /><br />
+        С другой стороны, укрепление и развитие внутренней структуры
+        однозначно определяет каждого участника как способного принимать
+        собственные решения касаемо кластеризации усилий. Внезапно, акционеры
+        крупнейших компаний представлены в исключительно положительном свете.
+        Безусловно, начало повседневной работы по формированию позиции создаёт
+        предпосылки для направлений прогрессивного развития.
       </div>
-    </section>
+    </div>
+  </section>
 
-    <link rel="stylesheet" href="/index.css" />
-<link rel="stylesheet" href="/reset.css" />
+  <link rel="stylesheet" href="/index.css" />
+  <link rel="stylesheet" href="/reset.css" />
 
-<section class="form_under-footer">
-  <div class="container">
-    <div class="form_border">
-      <div class="text_srochno-zayvka">
-        Отправьте срочную заявку
-      </div>
-      <div class="napishi_nam">
-        Напишите нам и наши специалисты свяжутся с вами
-      </div>
-      <form id="urgentRequestForm">
-        <div class="flex_nax">
-          <div class="">
-            <input class="input-field" type="text" id="form_footer-name" name="name" placeholder="Имя" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-          </div>
-          <div class="">
-            <input class="input-field" type="text" id="form_footer-phone" name="phone" placeholder="99999999" inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7" required maxlength="18">
-          </div>
+  <section class="form_under-footer">
+    <div class="container">
+      <div class="form_border">
+        <div class="text_srochno-zayvka">
+          Отправьте срочную заявку
         </div>
-        <div class="form_footer-situation">
-          <input class="" type="text" id="form_footer-situation" name="situation" placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+        <div class="napishi_nam">
+          Напишите нам и наши специалисты свяжутся с вами
         </div>
-        <div class="left_and-right-situtka">
-          <div class="left_situtka">
-            <button class="btn_zayvka-otprav" id="submit_button" type="button" disabled>
-              <span class="text_zayvka-otprav">Отправить</span>
-            </button>
-            <div class="text_soglasihka">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки<p></p> персональных данных</div>
+        <form id="urgentRequestForm">
+          <div class="flex_nax">
+            <div class="">
+              <input class="input-field" type="text" id="form_footer-name" name="name" placeholder="Имя" minlength="2"
+                title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+            </div>
+            <div class="">
+              <input class="input-field" type="text" id="form_footer-phone" name="phone" placeholder="99999999"
+                inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7" required
+                maxlength="18">
+            </div>
           </div>
-          <div class="right_situtka">
-            <div class="iso_flexas">
-              <div class="text_geodannie_soc">Или отправьте свои геоданные через один из мессенджеров</div>
-              <div class="three_icons-soc">
-                <div class="soc">
-                  <a href="https://t.me/+79994589482" target="_blank">
-                    <img src="/img-icons/tg-form.svg" alt="Telegram" />
-                  </a>
-                </div>
-                <div class="soc">
-                  <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank">
-                    <img src="/img-icons/wa-form.svg" alt="" />
-                  </a>
-                </div>
-                <div class="soc">
-                  <a href="viber://chat?number=%2B79994589482" target="_blank">
-                    <img src="/img-icons/viber-form.svg" alt="Viber" />
-                  </a>
+          <div class="form_footer-situation">
+            <input class="" type="text" id="form_footer-situation" name="situation"
+              placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2" title="Используйте только буквы"
+              pattern="[А-Яа-яЁё ]+" required>
+          </div>
+          <div class="left_and-right-situtka">
+            <div class="left_situtka">
+              <button class="btn_zayvka-otprav" id="submit_button" type="button" disabled>
+                <span class="text_zayvka-otprav">Отправить</span>
+              </button>
+              <div class="text_soglasihka">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки<p></p>
+                персональных данных</div>
+            </div>
+            <div class="right_situtka">
+              <div class="iso_flexas">
+                <div class="text_geodannie_soc">Или отправьте свои геоданные через один из мессенджеров</div>
+                <div class="three_icons-soc">
+                  <div class="soc">
+                    <a href="https://t.me/+79994589482" target="_blank">
+                      <img src="@img/tg-form.svg" alt="Telegram" />
+                    </a>
+                  </div>
+                  <div class="soc">
+                    <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank">
+                      <img src="@img/wa-form.svg" alt="" />
+                    </a>
+                  </div>
+                  <div class="soc">
+                    <a href="viber://chat?number=%2B79994589482" target="_blank">
+                      <img src="@img/viber-form.svg" alt="Viber" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-  $('.btn_zayvka-otprav').click(function() {
-    var name = $('#form_footer-name').val();
-    var phone = $('#form_footer-phone').val();
-    var sita = $('#form_footer-situation').val();
-    $.ajax({ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $('.btn_zayvka-otprav').click(function () {
+      var name = $('#form_footer-name').val();
+      var phone = $('#form_footer-phone').val();
+      var sita = $('#form_footer-situation').val();
+      $.ajax({
         url: 'otprZayvkaM.php',
         type: 'POST',
         cache: false,
-        data: {'form_footer-name': name, 'form_footer-phone': phone, 'form_footer-situation': sita},
+        data: { 'form_footer-name': name, 'form_footer-phone': phone, 'form_footer-situation': sita },
         dataType: 'html',
-        success: function(data) { 
-            if (data == 'Готово') {
-        $('#phone-errors').hide();
-        $('#form_footer-phone').val("");
-        $('#form_footer-name').val("");
-        $('#form_footer-situation').val("");
-        $('#form_footer-phone').removeClass('.error');
-        $('.css-modal-target').show(); // Показываем модальное окно
-        $('html').addClass('no-scroll'); 
-        } 
-        
-}
+        success: function (data) {
+          if (data == 'Готово') {
+            $('#phone-errors').hide();
+            $('#form_footer-phone').val("");
+            $('#form_footer-name').val("");
+            $('#form_footer-situation').val("");
+            $('#form_footer-phone').removeClass('.error');
+            $('.css-modal-target').show(); // Показываем модальное окно
+            $('html').addClass('no-scroll');
+          }
+
+        }
+      });
     });
-});
-    </script> <!DOCTYPE html>
-<html lang="en">
-<head>
+  </script>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style1.css">
-  <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/reset.css">
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
 
-<div class="css-modal-target" id="css-modal-target">
-          <div class="cmt">
-            <div class="rigth_card-contacts22">
-              <button class="css-modal-details1b close_krest1"><a href="/index.php"><img src="/img-icons/kresst.svg" alt=""></a></button>
-              <p class="text_modal-thx">ЗАЯВКА ОТПРАВЛЕНА</p>
-              <p class="text_modal-v-blij">Спасибо за доверие, мы скоро свяжемся с вами</p>
-              <div class="btn2_Horosho">
-                <a href="/index.php" class="btn_Horosho">
-                  <img src="/img-icons/like.svg" class = "img2" alt="">
-                </a>
-              </div>
-            </div>
+  <body>
+
+
+    <div class="css-modal-target" id="css-modal-target">
+      <div class="cmt">
+        <div class="rigth_card-contacts22">
+          <button class="css-modal-details1b close_krest1"><a href="/index.php"><img src="@img/kresst.svg"
+                alt=""></a></button>
+          <p class="text_modal-thx">ЗАЯВКА ОТПРАВЛЕНА</p>
+          <p class="text_modal-v-blij">Спасибо за доверие, мы скоро свяжемся с вами</p>
+          <div class="btn2_Horosho">
+            <a href="/index.php" class="btn_Horosho">
+              <img src="@img/like.svg" class="img2" alt="">
+            </a>
           </div>
-          <a href="#close" class="css-modal-close"></a>
         </div>
+      </div>
+      <a href="#close" class="css-modal-close"></a>
+    </div>
 
 
-        </body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/modalUPS.css" />
-<link rel="stylesheet" href="/reset.css" />
+  </body>
+
+  </html>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/modalUPS.css" />
+    <link rel="stylesheet" href="/reset.css" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
 
 </body>
+
 </html>
 
 
@@ -522,288 +547,287 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- <a href="#modal-zakaz" class="open_modal-zakaz"></a>
   <div class="wrap-zakaz" id="modal-zakaz">
     <div class="window-zakaz">
-      <a href="#close-zakaz" class="close-zakaz"><img src="/img-icons/kresst.svg" alt=""></a>
+      <a href="#close-zakaz" class="close-zakaz"><img src="@img/kresst.svg" alt=""></a>
       <p class="zayvla-otpravlena-zakaz">ошибка отправки</p>
       <p class="text-zayvla-otpravlena-zakaz">Что-то пошло не так, повторите попытку или свяжитесь с нами</p>
       <div>
         <button class="btn_on-modal-404"><a class="text_on-modal-404" href="/index.php">ОК</a></button>
     </div> -->
-    <div class="wrap-zvonok" id="modal-zvonok">
-            <div class="window-zvonok">
-                <a href="#close-zvonok" class="close-zvonok"><img src="/img-icons/kresst.svg" alt=""></a>
-                <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
-                <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
-                <div class="from-form">
-                    <input class="input-field" type="text" id="form_footer-name1" name="name" placeholder="Имя" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-                    <input class="input-field" type="text" id="form_footer-phone1" name="phone" placeholder="Телефон" inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7">
-                    <input class="input-field-sit" type="text" id="form_footer-situation1" name="situation" placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-                    <div>
-                        <button id="submit_button1" class="btn_on-modal-zakaz1" disabled><a class="text_on-modal-zakaz">Отправить</a></button>
-                    </div>
-                    <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных данных</p>
-                </div>
-            </div>
+  <div class="wrap-zvonok" id="modal-zvonok">
+    <div class="window-zvonok">
+      <a href="#close-zvonok" class="close-zvonok"><img src="@img/kresst.svg" alt=""></a>
+      <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
+      <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
+      <div class="from-form">
+        <input class="input-field" type="text" id="form_footer-name1" name="name" placeholder="Имя" minlength="2"
+          title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+        <input class="input-field" type="text" id="form_footer-phone1" name="phone" placeholder="Телефон"
+          inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7">
+        <input class="input-field-sit" type="text" id="form_footer-situation1" name="situation"
+          placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2" title="Используйте только буквы"
+          pattern="[А-Яа-яЁё ]+" required>
+        <div>
+          <button id="submit_button1" class="btn_on-modal-zakaz1" disabled><a
+              class="text_on-modal-zakaz">Отправить</a></button>
         </div>
-    
-    
-    <!-- </div>
+        <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных данных</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- </div>
   </div> -->
 </section>
 <script>
 
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const phoneInput = document.getElementById('form_footer-phone');
     const submitButton = document.getElementById('submit_button');
 
     function formatPhoneNumber(value) {
-    if (!value.startsWith('+7')) {
+      if (!value.startsWith('+7')) {
         value = '+7 ' + value;
-    }
+      }
 
-    const cleaned = value.replace(/\D/g, '');
-    const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+      const cleaned = value.replace(/\D/g, '');
+      const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
 
-    if (match) {
+      if (match) {
         return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
+      }
+
+      return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function (_, g1, g2, g3, g4, g5) {
+        return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+      });
     }
 
-    return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function(_, g1, g2, g3, g4, g5) {
-        return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+    phoneInput.addEventListener('input', function () {
+      phoneInput.value = formatPhoneNumber(phoneInput.value);
+
+      const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+      if (phonePattern.test(phoneInput.value)) {
+        submitButton.classList.add('active');
+        submitButton.disabled = false;
+        phoneInput.classList.remove('input-error');
+      } else {
+        submitButton.classList.remove('active');
+        submitButton.disabled = true;
+      }
     });
-}
-
-    phoneInput.addEventListener('input', function() {
-        phoneInput.value = formatPhoneNumber(phoneInput.value);
-
-        const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
-        if (phonePattern.test(phoneInput.value)) {
-            submitButton.classList.add('active');
-            submitButton.disabled = false;
-            phoneInput.classList.remove('input-error');
-        } else {
-            submitButton.classList.remove('active');
-            submitButton.disabled = true;
-        }
-    });
-});
-</script>    <section class="pohoj_usluga">
-      <div class="container">
-        <div class="text_pojojjjjjjieeee">Похожие услуги</div>
-        <link rel="stylesheet" href="/sliderUsluga.css">
-<link rel="stylesheet" href="/reset.css">
-
-<head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-</head>
-
-<body>
-  
+  });
+</script>
+<section class="pohoj_usluga">
   <div class="container">
-        <div class='title-gallery'>
-  <h1></h1>
-  </div>
-  <div class='desc'>
-    <p></p>
-  </div>
-    <div class="slider-wrapper">
-      <button id="prev-slide" class="slide-button material-symbols-rounded">
-        chevron_left
-      </button>
-      <ul class="image-list">
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-        <div class="card_s-uslygami image-item">
-          <div class="img_card-uslug">
-            <img class="img_card-uslug" src="/img-icons/perekup_GOOD.jpg" alt="" />
-          </div>
-          <div class="phone_dlya-hover">
-            <div class="text_card-uslug">
-              <a
-                >Автоэлектрик
-                <p></p>
-                с выездом</a
-              >
-            </div>
-            <div class="close-icon">
-            <img src="/img-icons/Arrow 1.svg" alt="Close" />
-          </div>
-          </div>
-        </div>
-      </ul>
-      <button id="next-slide" class="slide-button material-symbols-rounded">
-        chevron_right
-      </button>
-    </div>
-    <div class="slider-scrollbar">
-      <div class="scrollbar-track">
-        <div class="scrollbar-thumb"></div>
-      </div>
-    </div>
-  </div>
-      <div class='desc-2'>
-    <p></p>
-  </div>
-  <div class="probelchik"></div>
-  <script src="/sliderUsluga.js"></script>
-</body>
-</html>
+    <div class="text_pojojjjjjjieeee">Похожие услуги</div>
+    <link rel="stylesheet" href="/sliderUsluga.css">
+    <link rel="stylesheet" href="/reset.css">
 
-<script src="/perepuk.js"></script>      </div>
-    </section>
-    <link rel="stylesheet" href="/index.css" />
+    <head>
+      <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    </head>
+
+    <body>
+
+      <div class="container">
+        <div class='title-gallery'>
+          <h1></h1>
+        </div>
+        <div class='desc'>
+          <p></p>
+        </div>
+        <div class="slider-wrapper">
+          <button id="prev-slide" class="slide-button material-symbols-rounded">
+            chevron_left
+          </button>
+          <ul class="image-list">
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+            <div class="card_s-uslygami image-item">
+              <div class="img_card-uslug">
+                <img class="img_card-uslug" src="@img/perekup_GOOD.jpg" alt="" />
+              </div>
+              <div class="phone_dlya-hover">
+                <div class="text_card-uslug">
+                  <a>Автоэлектрик
+                    <p></p>
+                    с выездом
+                  </a>
+                </div>
+                <div class="close-icon">
+                  <img src="@img/Arrow 1.svg" alt="Close" />
+                </div>
+              </div>
+            </div>
+          </ul>
+          <button id="next-slide" class="slide-button material-symbols-rounded">
+            chevron_right
+          </button>
+        </div>
+        <div class="slider-scrollbar">
+          <div class="scrollbar-track">
+            <div class="scrollbar-thumb"></div>
+          </div>
+        </div>
+      </div>
+      <div class='desc-2'>
+        <p></p>
+      </div>
+      <div class="probelchik"></div>
+      <script src="/sliderUsluga.js"></script>
+    </body>
+
+    </html>
+
+    <script src="/perepuk.js"></script>
+  </div>
+</section>
+<link rel="stylesheet" href="/index.css" />
 <link rel="stylesheet" href="/reset.css" />
 <link rel="stylesheet" href="/ModalZakazZvonka.css" />
 
@@ -812,25 +836,31 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer_bottom">
       <div class="left_logo">
         <div class="logo_footer">
-          <a href="Index.php"><img src="/img-icons/logo_footer.png" alt="" /></a>
+          <a href="Index.php"><img src="@img/logo_footer.png" alt="" /></a>
         </div>
         <div class="css-modal-checkbox-container-invise">
           <label for="css-modal-checkbox" class="css-modal-checkbox ">
-            <button class="btn_modal-kakal-footer"><a class="style_knopza-zvonilka text_modal-kakal-footer" href="#modal-zvonok">Вызвать помощь</a></button></label>
+            <button class="btn-footer"><a class="style_knopza-zvonilka text_modal-kakal-footer"
+                href="#modal-zvonok">Вызвать помощь</a></button></label>
         </div>
         <div class="wrap-zvonok" id="modal-zvonok">
           <div class="window-zvonok">
-            <a href="#close-zvonok" class="close-zvonok"><img src="/img-icons/kresst.svg" alt=""></a>
+            <a href="#close-zvonok" class="close-zvonok"><img src="@img/kresst.svg" alt=""></a>
             <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
             <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
             <div class="from-form">
-              <input class="input-field" type="text" id="form_footer-name2" name="name" placeholder="Имя" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-              <input class="input-field" type="text" id="form_footer-phone2" name="phone" placeholder="Телефон" inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7">
-              <input class="input-field-sit" type="text" id="form_footer-situation2" name="situation" placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+              <input class="input-field" type="text" id="form_footer-name2" name="name" placeholder="Имя" minlength="2"
+                title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+              <input class="input-field" type="text" id="form_footer-phone2" name="phone" placeholder="Телефон"
+                inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7">
+              <input class="input-field-sit" type="text" id="form_footer-situation2" name="situation"
+                placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2"
+                title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
               <div>
                 <button class="btn_on-modal-zakaz2"><a class="text_on-modal-zakaz">Отправить</a></button>
               </div>
-              <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных данных</p>
+              <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных
+                данных</p>
             </div>
           </div>
         </div>
@@ -858,15 +888,15 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="three_icons-footer">
           <div>
             <a href="https://t.me/+79994589482" target="_blank">
-              <img src="/img-icons/telegram-footer.svg" alt="Telegram" />
+              <img src="@img/telegram-footer.svg" alt="Telegram" />
             </a>
           </div>
           <div>
-            <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank"><img src="/img-icons/wa-footer.svg" alt="" /></a>
+            <a href="whatsapp://send?phone=+7 999 458 94 82" target="_blank"><img src="@img/wa-footer.svg" alt="" /></a>
           </div>
           <div>
             <a href="viber://chat?number=%2B79994589482" target="_blank">
-              <img src="/img-icons/viber-footer.svg" alt="Viber" />
+              <img src="@img/viber-footer.svg" alt="Viber" />
             </a>
           </div>
         </div>
@@ -875,7 +905,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="css-modal-checkbox-container css-modal-checkbox-container-activationnnnn">
           <label for="css-modal-checkbox" class="css-modal-checkbox ">
             <a class="style_knopza-zvonilka text_modal-kakal-footer" href="#modal-zvonok">
-              <button class="btn_modal-kakal-footer">
+              <button class="btn-footer">
                 <p class="style_knopza-zvonilka text_modal-kakal-footer">Вызвать помощь</p>
               </button></a></label>
         </div>
@@ -884,5 +914,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </footer>
-  </body>
+</body>
+
 </html>

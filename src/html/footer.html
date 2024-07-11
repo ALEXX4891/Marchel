@@ -7,7 +7,8 @@
         </div>
         <div class="css-modal-checkbox-container-invise">
           <label for="css-modal-checkbox" class="css-modal-checkbox ">
-            <button class="btn_modal-kakal-footer"><a class="style_knopza-zvonilka text_modal-kakal-footer" href="#modal-zvonok">Вызвать помощь</a></button></label>
+            <button class="btn-footer"><a class="style_knopza-zvonilka text_modal-kakal-footer"
+                href="#modal-zvonok">Вызвать помощь</a></button></label>
         </div>
         <div class="wrap-zvonok" id="modal-zvonok">
           <div class="window-zvonok">
@@ -15,13 +16,18 @@
             <p class="zayvla-otpravlena-zvonok">Отправьте заявку</p>
             <p class="text-zayvla-otpravlena-zvonok">Опишите проблему и мы свяжемся с вами в ближайшее время</p>
             <div class="from-form">
-              <input class="input-field" type="text" id="form_footer-name2" name="name" placeholder="Имя" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
-              <input class="input-field" type="text" id="form_footer-phone2" name="phone" placeholder="Телефон" inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7">
-              <input class="input-field-sit" type="text" id="form_footer-situation2" name="situation" placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2" title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+              <input class="input-field" type="text" id="form_footer-name2" name="name" placeholder="Имя" minlength="2"
+                title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
+              <input class="input-field" type="text" id="form_footer-phone2" name="phone" placeholder="Телефон"
+                inputmode="numeric" title="Используйте только цифры" pattern="\+7\d{10}" required value="+7">
+              <input class="input-field-sit" type="text" id="form_footer-situation2" name="situation"
+                placeholder="Опишите ситуацию, например: “Спустило колесо”" minlength="2"
+                title="Используйте только буквы" pattern="[А-Яа-яЁё ]+" required>
               <div>
                 <button class="btn_on-modal-zakaz2"><a class="text_on-modal-zakaz">Отправить</a></button>
               </div>
-              <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных данных</p>
+              <p class="soglasno-zakazy">Нажимая на кнопку Вы соглашаетесь с нашей политикой обработки персональных
+                данных</p>
             </div>
           </div>
         </div>
@@ -71,7 +77,7 @@
         <div class="css-modal-checkbox-container css-modal-checkbox-container-activationnnnn">
           <label for="css-modal-checkbox" class="css-modal-checkbox ">
             <a class="style_knopza-zvonilka text_modal-kakal-footer" href="#modal-zvonok">
-              <button class="btn_modal-kakal-footer">
+              <button class="btn-footer">
                 <p class="style_knopza-zvonilka text_modal-kakal-footer">Вызвать помощь</p>
               </button></a></label>
         </div>
@@ -82,3 +88,135 @@
 </footer>
 
 <script defer src="/testBurger.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  $('.btn_on-modal-zakaz1').click(function () {
+    var name = $('#form_footer-name1').val();
+    var phone = $('#form_footer-phone1').val();
+    var sita = $('#form_footer-situation1').val();
+    $.ajax({
+      url: 'zakazZvonM.php',
+      type: 'POST',
+      cache: false,
+      data: { 'form_footer-name1': name, 'form_footer-phone1': phone, 'form_footer-situation1': sita },
+      dataType: 'html',
+      success: function (data) {
+        if (data == 'Готово') {
+          $('.wrap-zvonok').hide();
+          $('#phone-errors').hide();
+          $('#form_footer-phone1').val("");
+          $('#form_footer-name1').val("");
+          $('#form_footer-situation1').val("");
+          $('#form_footer-phone1').removeClass('.error');
+          $('.css-modal-target').show(); // Показываем модальное окно
+          $('html').addClass('no-scroll');
+        }
+      }
+    });
+  });
+</script>
+<!DOCTYPE html>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const phoneInput = document.getElementById('form_footer-phone1');
+    const submitButton = document.getElementById('submit_button1');
+
+    function formatPhoneNumber(value) {
+      if (!value.startsWith('+7')) {
+        value = '+7 ' + value;
+      }
+
+      const cleaned = value.replace(/\D/g, '');
+      const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+
+      if (match) {
+        return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
+      }
+
+      return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function (_, g1, g2, g3, g4, g5) {
+        return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+      });
+    }
+
+    phoneInput.addEventListener('input', function () {
+      phoneInput.value = formatPhoneNumber(phoneInput.value);
+
+      const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+      if (phonePattern.test(phoneInput.value)) {
+        submitButton.classList.add('active');
+        submitButton.disabled = false;
+        phoneInput.classList.remove('input-error');
+      } else {
+        submitButton.classList.remove('active');
+        submitButton.disabled = true;
+      }
+    });
+  });
+</script>
+<script src="/UnProkrutka.js"></script>
+<script src="/header.js"></script>
+<script src="/perepuk.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  $('.btn_zayvka-otprav').click(function () {
+    var name = $('#form_footer-name').val();
+    var phone = $('#form_footer-phone').val();
+    var sita = $('#form_footer-situation').val();
+    $.ajax({
+      url: 'otprZayvkaM.php',
+      type: 'POST',
+      cache: false,
+      data: { 'form_footer-name': name, 'form_footer-phone': phone, 'form_footer-situation': sita },
+      dataType: 'html',
+      success: function (data) {
+        if (data == 'Готово') {
+          $('#phone-errors').hide();
+          $('#form_footer-phone').val("");
+          $('#form_footer-name').val("");
+          $('#form_footer-situation').val("");
+          $('#form_footer-phone').removeClass('.error');
+          $('.css-modal-target').show(); // Показываем модальное окно
+          $('html').addClass('no-scroll');
+        }
+
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const phoneInput = document.getElementById('form_footer-phone');
+    const submitButton = document.getElementById('submit_button');
+
+    function formatPhoneNumber(value) {
+      if (!value.startsWith('+7')) {
+        value = '+7 ' + value;
+      }
+
+      const cleaned = value.replace(/\D/g, '');
+      const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+
+      if (match) {
+        return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
+      }
+
+      return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function (_, g1, g2, g3, g4, g5) {
+        return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+      });
+    }
+
+    phoneInput.addEventListener('input', function () {
+      phoneInput.value = formatPhoneNumber(phoneInput.value);
+
+      const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+      if (phonePattern.test(phoneInput.value)) {
+        submitButton.classList.add('active');
+        submitButton.disabled = false;
+        phoneInput.classList.remove('input-error');
+      } else {
+        submitButton.classList.remove('active');
+        submitButton.disabled = true;
+      }
+    });
+  });
+</script>
