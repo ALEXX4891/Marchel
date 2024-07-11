@@ -4286,7 +4286,7 @@ body {
 
 @media screen and (min-width: 415px) {
   body, html {
-    overflow-y: hidden !important;
+    /* overflow-y: hidden !important; */
   }
 }
 
@@ -5087,10 +5087,7 @@ body {
   display: none;
 }
 
-.header_color-bg {
-  box-sizing: border-box;
-  border-bottom: 1px solid rgb(226, 230, 232);
-}
+
 
 .header_top {
   padding-top: 21px;

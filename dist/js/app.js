@@ -2,7 +2,6 @@ Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
 
-
 //подсветка активного пункта меню:---------------------------------------------------------
 const body = document.querySelector("body");
 const page = body.getAttribute("data-page");
@@ -91,9 +90,10 @@ function popupClose(popupActive, doUnlock = true) {
 
 // добавляем боди padding-right при открытии попапа, на ширину скролл-бара
 function bodyLock() {
+  // console.log(window.innerWidth);
+  // console.log(document.querySelector(".header").offsetWidth);
   const lockPaddingValue =
     window.innerWidth - document.querySelector(".header").offsetWidth + "px";
-  // console.log(lockPaddingValue);
   for (let index = 0; index < lockPadding.length; index++) {
     const el = lockPadding[index];
     el.style.marginRight = lockPaddingValue;
@@ -156,111 +156,111 @@ if (previews) {
 
 // -------------------------------------------- start корзина: ---------------------------------------------
 
-const headerCartBtn = document.querySelector(".btn__cart");
-function setCartActive() {
-  headerCartBtn.classList.add("btn__cart_active");
-}
-function setCartEmpty() {
-  headerCartBtn.classList.remove("btn__cart_active");
-}
-headerCartBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  window.location.href = "cart.html";
-});
+// const headerCartBtn = document.querySelector(".btn__cart");
+// function setCartActive() {
+//   headerCartBtn.classList.add("btn__cart_active");
+// }
+// function setCartEmpty() {
+//   headerCartBtn.classList.remove("btn__cart_active");
+// }
+// headerCartBtn.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   window.location.href = "cart.html";
+// });
 
-const cartItemDelBtns = document.querySelectorAll(".card__del-btn");
-if (cartItemDelBtns) {
-  cartItemDelBtns.forEach((item) => {
-    const el = item.closest(".cart__card");
-    item.addEventListener("click", function (e) {
-      e.preventDefault();
-      el.remove();
-      getTotalCost();
-    });
-  });
-}
+// const cartItemDelBtns = document.querySelectorAll(".card__del-btn");
+// if (cartItemDelBtns) {
+//   cartItemDelBtns.forEach((item) => {
+//     const el = item.closest(".cart__card");
+//     item.addEventListener("click", function (e) {
+//       e.preventDefault();
+//       el.remove();
+//       getTotalCost();
+//     });
+//   });
+// }
 
-const cartCards = document.querySelectorAll(".cart__card");
+// const cartCards = document.querySelectorAll(".cart__card");
 
-if (cartCards.length) {
-  // console.log(cartCards);
-  const btnMontage = document.querySelectorAll(".btn_montage");
-  if (btnMontage) {
-    btnMontage.forEach((item) => {
-      // изменение вида кнопки при клике:
-      item.addEventListener("click", function () {
-        item.classList.toggle("btn_montage_active");
-        // const cost = item.closest(".cart__card").querySelector(".card__cost");
-        // let quontity = item
-        //   .closest(".cart__card")
-        //   .querySelector(".card__counter-value").value;
-        // console.log(quontity);
-        getTotalCost();
-      });
-    });
-  }
+// if (cartCards.length) {
+//   // console.log(cartCards);
+//   const btnMontage = document.querySelectorAll(".btn_montage");
+//   if (btnMontage) {
+//     btnMontage.forEach((item) => {
+//       // изменение вида кнопки при клике:
+//       item.addEventListener("click", function () {
+//         item.classList.toggle("btn_montage_active");
+//         // const cost = item.closest(".cart__card").querySelector(".card__cost");
+//         // let quontity = item
+//         //   .closest(".cart__card")
+//         //   .querySelector(".card__counter-value").value;
+//         // console.log(quontity);
+//         getTotalCost();
+//       });
+//     });
+//   }
 
-  cartCards.forEach((item) => {
-    // счетчик количества карточек в корзине:
-    const plus = item.querySelector(".card__counter-btn_plus");
-    const minus = item.querySelector(".card__counter-btn_minus");
-    const counterValue = item.querySelector(".card__counter-value");
-    let quontity = 0;
+//   cartCards.forEach((item) => {
+//     // счетчик количества карточек в корзине:
+//     const plus = item.querySelector(".card__counter-btn_plus");
+//     const minus = item.querySelector(".card__counter-btn_minus");
+//     const counterValue = item.querySelector(".card__counter-value");
+//     let quontity = 0;
 
-    counterValue.addEventListener("input", function (e) {
-      if (Number(counterValue.value) <= 0) {
-        quontity = 0;
-        counterValue.value = 0;
-      } else {
-        quontity = counterValue.value;
-      }
-      getCost(item, quontity);
-      getTotalCost();
-    });
+//     counterValue.addEventListener("input", function (e) {
+//       if (Number(counterValue.value) <= 0) {
+//         quontity = 0;
+//         counterValue.value = 0;
+//       } else {
+//         quontity = counterValue.value;
+//       }
+//       getCost(item, quontity);
+//       getTotalCost();
+//     });
 
-    plus.addEventListener("click", function () {
-      quontity++;
-      counterValue.value = quontity;
-      getCost(item, quontity);
-      getTotalCost();
-      setCartActive();
-    });
-    minus.addEventListener("click", function () {
-      if (counterValue.value > 0) {
-        quontity--;
-        counterValue.value = quontity;
-        getCost(item, quontity);
-        getTotalCost();
-      }
-    });
-  });
-}
+//     plus.addEventListener("click", function () {
+//       quontity++;
+//       counterValue.value = quontity;
+//       getCost(item, quontity);
+//       getTotalCost();
+//       setCartActive();
+//     });
+//     minus.addEventListener("click", function () {
+//       if (counterValue.value > 0) {
+//         quontity--;
+//         counterValue.value = quontity;
+//         getCost(item, quontity);
+//         getTotalCost();
+//       }
+//     });
+//   });
+// }
 
-// вычисление стоимости товара в корзине, в зависимости от количества:
-function getCost(item, quontity) {
-  console.log("getCost");
-  const cost = item.querySelector(".card__cost");
-  const priceText = item.querySelector(".card__price").innerHTML;
-  const price = parseInt(priceText.replace(/\s/g, ""));
-  cost.innerHTML = (price * quontity).toLocaleString();
-}
+// // вычисление стоимости товара в корзине, в зависимости от количества:
+// function getCost(item, quontity) {
+//   console.log("getCost");
+//   const cost = item.querySelector(".card__cost");
+//   const priceText = item.querySelector(".card__price").innerHTML;
+//   const price = parseInt(priceText.replace(/\s/g, ""));
+//   cost.innerHTML = (price * quontity).toLocaleString();
+// }
 
-// вычисление общей стоимости товаров в корзине:
-function getTotalCost() {
-  // console.log(55);
-  let total = 0;
-  const totalCost = document.querySelector(".form__cost-value");
-  let allCosts = document.querySelectorAll(".card__cost");
+// // вычисление общей стоимости товаров в корзине:
+// function getTotalCost() {
+//   // console.log(55);
+//   let total = 0;
+//   const totalCost = document.querySelector(".form__cost-value");
+//   let allCosts = document.querySelectorAll(".card__cost");
 
-  allCosts.forEach((item) => {
-    total += parseInt(item.innerHTML.replace("&nbsp;", ""));
-    totalCost.innerHTML = total.toLocaleString();
-  });
-  if (total === 0) {
-    setCartEmpty();
-    totalCost.innerHTML = "0";
-  }
-}
+//   allCosts.forEach((item) => {
+//     total += parseInt(item.innerHTML.replace("&nbsp;", ""));
+//     totalCost.innerHTML = total.toLocaleString();
+//   });
+//   if (total === 0) {
+//     setCartEmpty();
+//     totalCost.innerHTML = "0";
+//   }
+// }
 
 // -------------------------------------------- end корзина ---------------------------------------------
 
@@ -628,7 +628,6 @@ jQuery(($) => {
 
 jQuery(($) => {
   if ($(window).width() > 0) {
-
     $(".owl-carousel-index").owlCarousel({
       loop: true,
       margin: 16,
@@ -670,8 +669,7 @@ jQuery(($) => {
         0: {
           nav: false,
           margin: 5,
-          items: 1
-
+          items: 1,
 
           // items: window.screen.width / 360,
         },
@@ -679,7 +677,7 @@ jQuery(($) => {
           nav: false,
           margin: 5,
 
-          items: 1.3
+          items: 1.3,
 
           // items: window.screen.width / 360,
         },
@@ -687,32 +685,32 @@ jQuery(($) => {
           nav: false,
           margin: 5,
 
-          items: 1.7
+          items: 1.7,
 
           // items: window.screen.width / 360,
         },
         650: {
           nav: false,
-          items: 2.2
+          items: 2.2,
 
           // items: window.screen.width / 360,
         },
         800: {
           nav: false,
-          items: 2.5
+          items: 2.5,
           // items: window.screen.width / 420,
         },
         900: {
           nav: false,
-          items: 3
+          items: 3,
           // items: window.screen.width / 420,
         },
         1200: {
           nav: false,
-          items: 4
+          items: 4,
         },
         1350: {
-          items: 4
+          items: 4,
         },
       },
     });
@@ -737,12 +735,12 @@ jQuery(($) => {
           margin: 13,
         },
         600: {
-        nav: false,
-        items: 4,
-        margin: 15,
+          nav: false,
+          items: 4,
+          margin: 15,
         },
         1050: {
-          items: 4
+          items: 4,
         },
       },
     });
@@ -764,7 +762,7 @@ jQuery(($) => {
           nav: false,
           // margin: 5,
           items: 1,
-      autoWidth:true,
+          autoWidth: true,
 
           // margin: 13,
         },
@@ -802,21 +800,19 @@ jQuery(($) => {
           nav: false,
           items: 2.4,
           // margin: 15,
-          },
+        },
         1050: {
-        nav: false,
-        items: 2.7,
-        // margin: 15,
+          nav: false,
+          items: 2.7,
+          // margin: 15,
         },
         1180: {
-          items: 3
+          items: 3,
         },
       },
     });
-
   }
 });
-
 
 // -------------------------------------------- end OWL ---------------------------------------------
 
@@ -896,76 +892,447 @@ if (goodsCartBtn) {
 }
 
 // -------------------------------------------- end товар ---------------------------------------------
-// -------------------------------------------- start сертификаты: ---------------------------------------------
-// const sertificates = document.querySelectorAll(".card_sert");
+// -------------------------------------------- start меню: ---------------------------------------------
 
-// if (sertificates) {
-//   sertificates.forEach((item) => {
-//     item.addEventListener("click", function (e) {
-//       const img = item.innerHTML;
-//       // const img = item.querySelector("img").getAttribute("src");
-//       console.log(img);
-//       // item.querySelector("img").setAttribute("src", img);
+const menuTowns = document.querySelectorAll(".nav__item_town");
 
-//       e.preventDefault();
-//     });
-//   });
-// }
+if (menuTowns) {
+  let key = false;
+  menuTowns.forEach((town) => {
+    town.addEventListener("click", function (e) {
+  // town.classList.add("nav__item_town_active");
 
-// -------------------------------------------- start сертификаты: ---------------------------------------------
-// -------------------------------------------- end корзина ---------------------------------------------
+      key = !key;
+      console.log(key);
+      if (key) {
+        menuTowns.forEach((town) => {
+          town.classList.add("nav__item_town_show");
+        });
+      } else {
+        menuTowns.forEach((town) => {
+          town.classList.remove("nav__item_town_show");
+        });
+      }
+      setTownSelected(town, key);
+    });
+  });
+}
 
+function setTownSelected(town, key) {
+  menuTowns.forEach((item) => {
+    item.classList.remove("nav__item_town_selected");
+    item.classList.remove("nav__item_town_active");
+  });
+  town.classList.add("nav__item_town_selected");
+
+  if (key) {
+    town.classList.add("nav__item_town_active");
+  }
+}
+
+// -------------------------------------------- end меню ---------------------------------------------
 
 $("#phone_1").mask("+7(999) 999 99 99");
 $("#phone_2").mask("+7(999) 999 99 99");
 
-
 // -------------------------------------------- start Куки: ---------------------------------------------
-function setCookie(name, value, lifetimeDays=30, path="/") {
+function setCookie(name, value, lifetimeDays = 30, path = "/") {
   var expires = "";
   if (lifetimeDays) {
-      var date = new Date();
-      date.setTime(date.getTime() + (lifetimeDays*24*60*60*1000));
-      expires = "; expires=" + date.toUTCString();
+    var date = new Date();
+    date.setTime(date.getTime() + lifetimeDays * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
   }
-  document.cookie = name + "=" + (value || "")  + expires + "; path=" + path;
+  document.cookie = name + "=" + (value || "") + expires + "; path=" + path;
 }
 
 function getCookie(name) {
   var nameEQ = name + "=";
   var cookies = document.cookie.split(";");
-  for(var i=0; i < cookies.length; i++) {
-      var c = cookies[i];
-      while (c.charAt(0) == " ")
-          c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0)
-          return c.substring(nameEQ.length, c.length);
+  for (var i = 0; i < cookies.length; i++) {
+    var c = cookies[i];
+    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
   }
   return null;
 }
 
 if (!getCookie("CookiePolicyAccepted")) {
-  $('.cookie').show();
+  $(".cookie").show();
 } else {
-  $('.cookie').hide();
+  $(".cookie").hide();
 }
 
 function acceptCookiePolicy() {
   console.log("acceptCookiePolicy");
   setCookie("CookiePolicyAccepted", true);
-  $('.cookie').fadeTo(500, 0);
+  $(".cookie").fadeTo(500, 0);
   setTimeout(() => {
-    $('.cookie').hide();
+    $(".cookie").hide();
   }, 500);
 }
 function closeCookiePolicyNotification() {
   console.log("closeCookiePolicyNotification");
-  $('.cookie').fadeOut(300);
+  $(".cookie").fadeOut(300);
 }
 // -------------------------------------------- end Куки ---------------------------------------------
 // -------------------------------------------- start Отзывы: ---------------------------------------------
 
 // -------------------------------------------- end Отзывы ---------------------------------------------
-// -------------------------------------------- start Отзывы: ---------------------------------------------
+// -------------------------------------------- start старье: ---------------------------------------------
 
-// -------------------------------------------- end Отзывы ---------------------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  const burgerButton = document.getElementById("burger-burgerenook");
+  const header = document.querySelector(".header-burgerenook");
+  const body = document.body;
+
+  burgerButton.addEventListener("click", function () {
+    header.classList.toggle("open-burgerenook");
+    if (header.classList.contains("open-burgerenook")) {
+      body.classList.add("no-scroll");
+    } else {
+      body.classList.remove("no-scroll");
+    }
+  });
+
+  const dropdownButton = document.querySelector(
+    ".dropdown .menu__item-burgerenook"
+  );
+  const dropdownLinks = document.querySelectorAll(".dropdown-link");
+  const dropdownTitle = document.getElementById("dropdown-title-burgerenook");
+  const dropdownContent = document.getElementById(
+    "dropdown-content-burgerenook"
+  );
+  const noActiveStrel = document.querySelector(".no-active-strel");
+  const activeStrel = document.querySelector(".active-strel");
+
+  dropdownButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    this.parentElement.classList.toggle("show");
+    if (this.parentElement.classList.contains("show")) {
+      noActiveStrel.style.display = "none";
+      activeStrel.style.display = "inline";
+    } else {
+      noActiveStrel.style.display = "inline";
+      activeStrel.style.display = "none";
+    }
+  });
+
+  dropdownLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const selectedCity = this.getAttribute("data-city");
+      const currentCity = dropdownTitle.textContent;
+
+      dropdownTitle.textContent = selectedCity;
+      this.setAttribute("data-city", currentCity);
+      this.textContent = currentCity;
+
+      dropdownButton.parentElement.classList.remove("show");
+      noActiveStrel.style.display = "inline";
+      activeStrel.style.display = "none";
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    const isClickInsideDropdown = dropdownButton.contains(event.target);
+    if (!isClickInsideDropdown) {
+      const dropdowns = document.querySelectorAll(".dropdown");
+      dropdowns.forEach((dropdown) => dropdown.classList.remove("show"));
+      noActiveStrel.style.display = "inline";
+      activeStrel.style.display = "none";
+    }
+  });
+});
+
+//-----------------------------
+
+const initSlider = () => {
+  const sliderScrollbar = document.querySelector(
+    ".container .slider-scrollbar"
+  );
+  if (!sliderScrollbar) {
+    return;
+  }
+  const imageList = document.querySelector(".slider-wrapper .image-list");
+  const slideButtons = document.querySelectorAll(
+    ".slider-wrapper .slide-button"
+  );
+  const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+  const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+
+  scrollbarThumb.addEventListener("mousedown", (e) => {
+    const startX = e.clientX;
+    const thumbPosition = scrollbarThumb.offsetLeft;
+    const maxThumbPosition =
+      sliderScrollbar.getBoundingClientRect().width -
+      scrollbarThumb.offsetWidth;
+
+    const handleMouseMove = (e) => {
+      const deltaX = e.clientX - startX;
+      const newThumbPosition = thumbPosition + deltaX;
+
+      const boundedPosition = Math.max(
+        0,
+        Math.min(maxThumbPosition, newThumbPosition)
+      );
+      const scrollPosition =
+        (boundedPosition / maxThumbPosition) * maxScrollLeft;
+
+      scrollbarThumb.style.left = `${boundedPosition}px`;
+      imageList.scrollLeft = scrollPosition;
+    };
+
+    const handleMouseUp = () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  });
+
+  slideButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = button.id === "prev-slide" ? -1 : 1;
+      const scrollAmount = imageList.clientWidth * direction;
+      imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+  });
+
+  const handleSlideButtons = () => {
+    slideButtons[0].style.display =
+      imageList.scrollLeft <= 0 ? "none" : "block";
+    slideButtons[1].style.display =
+      imageList.scrollLeft >= maxScrollLeft ? "none" : "block";
+  };
+
+  const updateScrollThumbPosition = () => {
+    const scrollPosition = imageList.scrollLeft;
+    const thumbPosition =
+      (scrollPosition / maxScrollLeft) *
+      (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+    scrollbarThumb.style.left = `${thumbPosition}px`;
+  };
+
+  imageList.addEventListener("scroll", () => {
+    updateScrollThumbPosition();
+    handleSlideButtons();
+  });
+};
+
+window.addEventListener("resize", initSlider);
+window.addEventListener("load", initSlider);
+
+//------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card_s-uslygami");
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      window.location.href = "usluga.php";
+    });
+  });
+});
+
+//------------------------------
+
+// Получаем текущий URL
+const currentPage = window.location.pathname.split("/").pop();
+
+// Находим все ссылки в меню, включая ссылки с классом .ul_header1 и .ul_header
+const navLinkss = document.querySelectorAll(
+  ".nav_header .ul_header1 a, .nav_header .ul_header a"
+);
+
+// Проходим по каждой ссылке
+navLinkss.forEach((link) => {
+  // Проверяем, если href ссылки совпадает с текущей страницей
+  if (link.getAttribute("href").includes(currentPage)) {
+    // Добавляем класс 'active' к ссылке
+    link.classList.add("active");
+  }
+});
+
+//------------------------------
+
+document.querySelectorAll(".select_uslugi").forEach((el) => {
+  el.addEventListener("click", function (e) {
+    if (!e.target.classList.contains("option_uslugi")) {
+      this.classList.toggle("collapsed_uslugi");
+
+      const shownUslugi = this.querySelector(".shown_uslugi");
+      shownUslugi.classList.toggle(
+        "red-text",
+        !shownUslugi.classList.contains("red-text")
+      );
+    }
+  });
+
+  el.querySelectorAll(".option_uslugi").forEach((option) => {
+    option.addEventListener("click", function (e) {
+      e.stopPropagation();
+
+      el.querySelector(".shown_uslugi").innerHTML = this.innerHTML;
+
+      el.classList.add("collapsed_uslugi");
+
+      document.querySelectorAll(".shown_uslugi").forEach((shown) => {
+        shown.classList.remove("red-text");
+      });
+    });
+  });
+});
+
+//------------------------------
+
+$(".btn_on-modal-zakaz1").click(function () {
+  var name = $("#form_footer-name1").val();
+  var phone = $("#form_footer-phone1").val();
+  var sita = $("#form_footer-situation1").val();
+  $.ajax({
+    url: "zakazZvonM.php",
+    type: "POST",
+    cache: false,
+    data: {
+      "form_footer-name1": name,
+      "form_footer-phone1": phone,
+      "form_footer-situation1": sita,
+    },
+    dataType: "html",
+    success: function (data) {
+      if (data == "Готово") {
+        $(".wrap-zvonok").hide();
+        $("#phone-errors").hide();
+        $("#form_footer-phone1").val("");
+        $("#form_footer-name1").val("");
+        $("#form_footer-situation1").val("");
+        $("#form_footer-phone1").removeClass(".error");
+        $(".css-modal-target").show(); // Показываем модальное окно
+        $("html").addClass("no-scroll");
+      }
+    },
+  });
+});
+
+//------------------------------
+
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneInput = document.getElementById("form_footer-phone1");
+
+  if (!phoneInput) {
+    return;
+  }
+  const submitButton = document.getElementById("submit_button1");
+
+  function formatPhoneNumber(value) {
+    if (!value.startsWith("+7")) {
+      value = "+7 " + value;
+    }
+
+    const cleaned = value.replace(/\D/g, "");
+    const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+
+    if (match) {
+      return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
+    }
+
+    return cleaned.replace(
+      /^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/,
+      function (_, g1, g2, g3, g4, g5) {
+        return `+${g1 || ""}${g2 ? " (" + g2 : ""}${g3 ? ") " + g3 : ""}${
+          g4 ? "-" + g4 : ""
+        }${g5 ? "-" + g5 : ""}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+      }
+    );
+  }
+
+  phoneInput.addEventListener("input", function () {
+    phoneInput.value = formatPhoneNumber(phoneInput.value);
+
+    const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+    if (phonePattern.test(phoneInput.value)) {
+      submitButton.classList.add("active");
+      submitButton.disabled = false;
+      phoneInput.classList.remove("input-error");
+    } else {
+      submitButton.classList.remove("active");
+      submitButton.disabled = true;
+    }
+  });
+});
+
+//------------------------------
+
+$(".btn_zayvka-otprav").click(function () {
+  var name = $("#form_footer-name").val();
+  var phone = $("#form_footer-phone").val();
+  var sita = $("#form_footer-situation").val();
+  $.ajax({
+    url: "otprZayvkaM.php",
+    type: "POST",
+    cache: false,
+    data: {
+      "form_footer-name": name,
+      "form_footer-phone": phone,
+      "form_footer-situation": sita,
+    },
+    dataType: "html",
+    success: function (data) {
+      if (data == "Готово") {
+        $("#phone-errors").hide();
+        $("#form_footer-phone").val("");
+        $("#form_footer-name").val("");
+        $("#form_footer-situation").val("");
+        $("#form_footer-phone").removeClass(".error");
+        $(".css-modal-target").show(); // Показываем модальное окно
+        $("html").addClass("no-scroll");
+      }
+    },
+  });
+});
+
+//------------------------------
+
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneInput = document.getElementById("form_footer-phone");
+  const submitButton = document.getElementById("submit_button");
+
+  function formatPhoneNumber(value) {
+    if (!value.startsWith("+7")) {
+      value = "+7 " + value;
+    }
+
+    const cleaned = value.replace(/\D/g, "");
+    const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+
+    if (match) {
+      return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
+    }
+
+    return cleaned.replace(
+      /^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/,
+      function (_, g1, g2, g3, g4, g5) {
+        return `+${g1 || ""}${g2 ? " (" + g2 : ""}${g3 ? ") " + g3 : ""}${
+          g4 ? "-" + g4 : ""
+        }${g5 ? "-" + g5 : ""}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+      }
+    );
+  }
+
+  phoneInput.addEventListener("input", function () {
+    phoneInput.value = formatPhoneNumber(phoneInput.value);
+
+    const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+    if (phonePattern.test(phoneInput.value)) {
+      submitButton.classList.add("active");
+      submitButton.disabled = false;
+      phoneInput.classList.remove("input-error");
+    } else {
+      submitButton.classList.remove("active");
+      submitButton.disabled = true;
+    }
+  });
+});
+
+// -------------------------------------------- end старье ---------------------------------------------
