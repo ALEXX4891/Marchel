@@ -576,7 +576,7 @@
       <div class="popup-success__img-wrap">
         <img class="popup-success__img" src="img/like.svg" alt="success">
       </div>
-      <button class="popup-close">
+      <button class="popup__close popup-close">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M11.2779 11.2237C11.6514 10.8783 12.2318 10.9037 12.5742 11.2806L19.6078 19.0222L26.6415 11.2806C26.9839 10.9037 27.5642 10.8783 27.9378 11.2237C28.3113 11.5692 28.3365 12.1547 27.9941 12.5316L20.8525 20.3922L27.9941 28.2527C28.3365 28.6296 28.3113 29.2151 27.9378 29.5606C27.5642 29.9061 26.9839 29.8806 26.6415 29.5037L19.6078 21.7621L12.5742 29.5037C12.2318 29.8806 11.6515 29.9061 11.2779 29.5606C10.9044 29.2151 10.8792 28.6296 11.2216 28.2527L18.3632 20.3922L11.2216 12.5316C10.8792 12.1547 10.9044 11.5692 11.2779 11.2237Z"
@@ -596,7 +596,7 @@
       <p class="popup__subtitle">
         Что-то пошло не так, повторите попытку или свяжитесь с нами
       </p>
-      <button class="popup-error__btn popup-close">
+      <button class="popup-error__btn btn popup-close">
         OK
       </button>
       <button class="popup__close popup-close">
@@ -613,8 +613,6 @@
 <div class="popup" id="call">
   <div class="popup__body">
     <form class="popup__content form" action="#" enctype="multipart/form-data">
-    <!-- <form class="popup__content form" action="#" method="post" enctype="multipart/form-data"> -->
-
       <h3 class="popup__title">
         Отправьте заявку
       </h3>
@@ -630,9 +628,8 @@
 
       </div>
 
-      <button class="btn btn_green btn_reset form__btn">
-      <!-- <button type="submit" class="btn btn_green btn_reset form__btn"> -->
-
+      <!-- <button type="submit" class="btn btn_green btn_reset form__btn popup-link" href="#success"> -->
+      <button type="submit" class="btn btn_green btn_reset form__btn popup-link" href="#error">
         Отправить
       </button>
 
