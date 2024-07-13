@@ -229,28 +229,6 @@ a {
   width: 100%;
   margin: 0 auto;
 }
-@media (max-width: 900px) {
-  .container {
-    padding: 40px 32px;
-  }
-}
-@media (max-width: 600px) {
-  .container {
-    padding: 40px 15px;
-  }
-}
-@media (max-width: 1340px) {
-  .container {
-    padding: 0 30px;
-    max-width: 100%;
-  }
-}
-@media (max-width: 660px) {
-  .container {
-    padding: 0 15px;
-  }
-}
-
 .btn {
   padding: 10px;
   max-width: 218px;
@@ -644,9 +622,9 @@ a {
 @media (max-width: 960px) {
   .title.title_big {
     font-family: Raleway;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
-    line-height: 25.83px;
+    line-height: 21.13px;
     text-align: left;
   }
 }
@@ -2268,14 +2246,12 @@ a {
   color: #E2E6E8;
 }
 
-.glavnaya .glavnaya__main .glavnaya__section {
-  margin-bottom: 120px;
-}
 .glavnaya .glavnaya__main .banner {
   background: url("../img/banner.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  margin-bottom: 20px;
 }
 @media (max-width: 960px) {
   .glavnaya .glavnaya__main .banner {
@@ -2283,6 +2259,7 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin-bottom: 0;
   }
 }
 @media (max-width: 660px) {
@@ -2380,6 +2357,257 @@ a {
 @media (max-width: 660px) {
   .glavnaya .glavnaya__main .banner .banner__container .banner__btn {
     max-width: 100%;
+  }
+}
+.glavnaya .glavnaya__main .advantages .advantages__container {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  max-width: 1042px;
+  gap: 27px;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main .advantages .advantages__container {
+    gap: 0;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main .advantages .advantages__container {
+    grid-auto-flow: row;
+    padding: 50px 32px 45px;
+    gap: 30px;
+  }
+}
+.glavnaya .glavnaya__main .advantages .advantages__card {
+  display: grid;
+  grid-template-columns: 47px 1fr;
+  grid-auto-rows: max-content;
+  gap: 10px 20px;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main .advantages .advantages__card {
+    max-width: 100%;
+    grid-template-columns: initial;
+    grid-auto-flow: row;
+    gap: 10px;
+    padding: 0 10px;
+    justify-items: center;
+  }
+}
+.glavnaya .glavnaya__main .advantages .advantages__img-wrap {
+  grid-row: 2 span;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main .advantages .advantages__img-wrap {
+    grid-row: initial;
+    margin-bottom: 10px;
+  }
+}
+.glavnaya .glavnaya__main .advantages .advantages__title {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: left;
+  color: #30373D;
+  text-transform: uppercase;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main .advantages .advantages__title {
+    text-align: center;
+  }
+}
+.glavnaya .glavnaya__main .advantages .advantages__desc {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.75px;
+  text-align: left;
+  color: #777E85;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main .advantages .advantages__desc {
+    text-align: center;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main .advantages .advantages__desc {
+    max-width: 231px;
+  }
+}
+.glavnaya .glavnaya__main .services .services__container {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 5px;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main .services .services__container {
+    padding: 23px 32px 40px;
+  }
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main .services .services__container {
+    padding: 58px 15px 40px;
+  }
+}
+.glavnaya .glavnaya__main .services .services__title {
+  text-transform: uppercase;
+}
+.glavnaya .glavnaya__main .services .services__subtitle {
+  padding-bottom: 35px;
+  font-family: Raleway;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23.48px;
+  text-align: left;
+  color: #30373D;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main .services .services__subtitle {
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.78px;
+    text-align: left;
+  }
+}
+.glavnaya .glavnaya__main .services .services__card-wrap {
+  padding-bottom: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
+}
+@media (max-width: 800px) {
+  .glavnaya .glavnaya__main .services .services__card-wrap {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    padding-bottom: 13px;
+  }
+}
+.glavnaya .glavnaya__main .services .services__card {
+  position: relative;
+  padding-bottom: 90%;
+  cursor: pointer;
+  aspect-ratio: 285/271;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main .services .services__card {
+    aspect-ratio: 221/207;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main .services .services__card {
+    aspect-ratio: 182/169;
+  }
+}
+.glavnaya .glavnaya__main .services .services__card:hover .services__card-link {
+  height: 100%;
+}
+.glavnaya .glavnaya__main .services .services__card:hover .services__card-link svg {
+  opacity: 1;
+}
+.glavnaya .glavnaya__main .services .services__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.glavnaya .glavnaya__main .services .services__card-link {
+  width: 100%;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: height 0.3s ease-in-out;
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main .services .services__card-link {
+    height: 100%;
+  }
+}
+.glavnaya .glavnaya__main .services .services__card-link .services__card-title {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.09px;
+  text-align: center;
+  max-width: 90%;
+  color: #fff;
+}
+.glavnaya .glavnaya__main .services .services__card-link svg {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main .services .services__card-link svg {
+    display: none;
+  }
+}
+.glavnaya .glavnaya__main .services .services__link-all {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  gap: 2px;
+  transition: color 0.3s ease-in-out;
+}
+.glavnaya .glavnaya__main .services .services__link-all:hover .services__link-title {
+  color: #CA2020;
+}
+.glavnaya .glavnaya__main .services .services__link-all:hover svg path {
+  stroke: #CA2020;
+}
+.glavnaya .glavnaya__main .services .services__link-all .services__link-title {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: left;
+  color: #777E85;
+  transition: color 0.3s ease-in-out;
+}
+@media (max-width: 800px) {
+  .glavnaya .glavnaya__main .services .services__link-all .services__link-title {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.09px;
+    text-align: left;
+    color: #CA2020;
+  }
+}
+@media (max-width: 800px) {
+  .glavnaya .glavnaya__main .services .services__link-all svg {
+    display: none;
+  }
+}
+.glavnaya .glavnaya__main .services .services__link-all svg path {
+  transition: stroke 0.3s ease-in-out;
+}
+@media (max-width: 800px) {
+  .glavnaya .glavnaya__main .services .services__link-all {
+    display: grid;
+    place-content: center;
+    padding: 10px 12px;
+    max-width: 100%;
+    min-height: 48px;
+    border: 1px solid #CA2020;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+  .glavnaya .glavnaya__main .services .services__link-all:hover {
+    color: white;
+    background-color: #CA2020;
+    border-color: #CA2020;
+  }
+  .glavnaya .glavnaya__main .services .services__link-all:hover .services__link-title {
+    color: white;
   }
 }
 .glavnaya .glavnaya__main .about {

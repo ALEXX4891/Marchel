@@ -9,6 +9,7 @@
   @@include('./html/header.html', {})
 
   <main class="main glavnaya__main">
+
     <section class="glavnaya__section glavnaya__banner banner">
       <div class="banner__container container">
         <h3 class="banner__subtitle">
@@ -25,311 +26,236 @@
       </div>
     </section>
 
-    <section class="card_3-icons ">
-      <div class="container">
-        <div class="all_card-three">
-          <div class="card_glavnaya">
-            <div class="card-left">
-              <div class="icon_card">
-                <img src="@img/card_under-banner1.png" alt="" />
-              </div>
-            </div>
-            <div class="card-right">
-              <div class="text_card-1">
-                Круглосуточно
+    <section class="glavnaya__section  glavnaya__advantages advantages">
+      <div class="advantages__container container">
 
-              </div>
-              <div class="text_card-2">
-                Наша поддержка
-                <p></p>
-                доступна 24/7
-              </div>
-            </div>
+        <div class="advantages__card">
+          <div class="advantages__img-wrap">
+            <img src="@img/adv-img-1.svg" alt="приемущество">
           </div>
-          <div class="card_glavnaya">
-            <div class="card-left">
-              <div class="icon_card">
-                <img src="@img/card_under-banner2.png" alt="" />
-              </div>
-            </div>
-            <div class="card-right">
-              <div class="text_card-1">
-                Быстро
-
-              </div>
-              <div class="text_card-2">
-                Время прибытия на
-                <p>
-
-                </p>
-                место от 15 минут
-              </div>
-            </div>
-          </div>
-          <div class="card_glavnaya">
-            <div class="card-left">
-              <div class="icon_card">
-                <img src="@img/card_under-banner3.png" alt="" />
-              </div>
-            </div>
-            <div class="card-right">
-              <div class="text_card-1">
-                Качественно
-
-              </div>
-              <div class="text_card-2">
-                Более 20 квалифицированных
-                <p>
-
-                </p>
-                специалистов в каждом городе
-              </div>
-            </div>
-          </div>
+          <h4 class="advantages__title">
+            Круглосуточно
+          </h4>
+          <p class="advantages__desc">
+            Наша поддержка доступна 24/7
+          </p>
         </div>
+
+        <div class="advantages__card">
+          <div class="advantages__img-wrap">
+            <img src="@img/adv-img-2.svg" alt="приемущество">
+          </div>
+          <h4 class="advantages__title">
+            Быстро
+          </h4>
+          <p class="advantages__desc">
+            Время прибытия на место от 15 минут
+          </p>
+        </div>
+
+        <div class="advantages__card">
+          <div class="advantages__img-wrap">
+            <img src="@img/adv-img-3.svg" alt="приемущество">
+          </div>
+          <h4 class="advantages__title">
+            Качественно
+          </h4>
+          <p class="advantages__desc">
+            Более 20 квалифицированных специалистов в каждом городе
+          </p>
+        </div>
+
       </div>
     </section>
 
-    <section class="Uslugi ">
-      <div class="container">
-        <div class="text_chto-sluchilos">
+    <section class="glavnaya__section glavnaya__services services">
+      <div class="services__container container">
+        <h2 class="services__title title title_big">
           Что у вас случилось?
-
-        </div>
-        <div class="viberi_uslugy">
+        </h2>
+        <p class="services__subtitle">
           Выберете подходящую услугу
+        </p>
 
-        </div>
+        <ul class="services__card-wrap">
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-        <div class="chetisrishka_flex">
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-                  </p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-                  </p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-                  </p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-                  </p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="chetisrishka_flex">
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-                  </p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-                  </p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p></p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-                  </p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="chetisrishka_flex">
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p></p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p></p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p></p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-          <div class="card_s-uslygami">
-            <div class="img_card-uslug">
-              <img class="img_card-uslug-onas" src="@img/perekup_GOOD.jpg" alt="" />
-            </div>
-            <div class="phone_dlya-hover">
-              <div class="text_card-uslug">
-                <a>Автоэлектрик
-                  <p></p>
-                  с выездом
-                </a>
-              </div>
-              <div class="close-icon">
-                <img src="@img/Arrow 1.svg" alt="Close" />
-              </div>
-            </div>
-          </div>
-        </div>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-        <div class="strelochnik_all">
-          <div class="text_vse-uslyjki">
-            <a href="/uslugi.php">Все услуги</a>
-          </div>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
 
-          <div class="strelochnik">
-            <img src="@img/strelka-uslug.svg" alt="">
-          </div>
-        </div>
-        <div class="strelochnik_all-ipad">
-          <a href="/uslugi.php">
-            <button class="btn_ipad-uslugi">
-              <p class="text_ipad-uslugi">Все услуги</p>
-            </button>
-          </a>
-        </div>
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
+
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+          <li class="services__card">
+            <img class="services__img" src="@img/serv-img.jpg" alt="услуга" />
+
+            <a class="services__card-link" href="#">
+              <p class="services__card-title">
+                Автоэлектрик с выездом
+              </p>
+              <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z"
+                  fill="white" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+        <a class="services__link-all" href="uslugi.htnl">
+          <p class="services__link-title">
+            Все услуги
+          </p>
+          <svg width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 13.5H19.5M19.5 13.5L15.5 10M19.5 13.5L15.5 17" stroke="#777E85" />
+          </svg>
+        </a>
       </div>
     </section>
 
