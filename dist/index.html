@@ -108,9 +108,6 @@
         </li>
 
         <li class="nav__item nav__item_town nav__item_town_selected">
-        <!-- <li class="nav__item nav__item_town nav__item_town_selected nav__item_town_active"> -->
-        <!-- <li class="nav__item nav__item_town"> -->
-
           <a class="nav__link" href="#">
             Тюмень
           </a>
@@ -122,8 +119,6 @@
         </li>
 
         <li class="nav__item nav__item_town">
-        <!-- <li class="nav__item nav__item_town nav__item_town_selected nav__item_town_active"> -->
-
           <a class="nav__link" href="#">
             Курган
           </a>
@@ -184,7 +179,7 @@
         <a class="contacts__item contacts__item_phone" href="tel:+7 999 458 94 82">
           +7 999 458 94 82
         </a>
-        <button class="contacts__call-btn" href="#modal-zvonok">
+        <button class="contacts__call-btn popup-link" href="#call">
           Заказать звонок
         </button>
       </div>
@@ -210,83 +205,6 @@
 
   </div>
 </header>
-
-
-    <!-- </div> -->
-    <!-- <p class="number_telefona">
-      <a href="tel:+7 999 458 94 82">+7 999 458 94 82</a>
-    </p> -->
-        <!-- <div class="header_top-block"> -->
-    <!-- <div class="logo header__logo">
-      <a href="index.html">
-        <img src="img/logo.svg" alt="LOGO" />
-      </a>
-      <div class="left-ne-pravo">
-        <div class="elf">
-          <a href="index.html">
-            <img src="img/logo.svg" alt="LOGO" />
-          </a>
-        </div>
-        <div class="elf-right">
-          <ul class="ul_header"> -->
-            <!-- <li class="li_header"><a href="o-nas.html">О нас</a></li>
-                <li class="li_header"><a href="uslugi.html">Услуги</a></li>
-                <li class="li_header"><a href="novosti.html">Новости</a></li>
-                <li class="li_header"><a href="kontakty.html">Контакты</a></li> -->
-
-            <!-- <li class="li_header"><a href="o-nas.html">О нас</a></li>
-            <li class="li_header"><a href="uslugi.html">Услуги</a></li>
-            <li class="li_header"><a href="novosti.html">Новости</a></li>
-            <li class="li_header"><a href="kontakty.html">Контакты</a></li>
-          </ul>
-          <div class="header-burgerenook">
-            <div class="container-burgerenook header__container-burgerenook">
-              <button class="header__burger-btn-burgerenook" id="burger-burgerenook">
-                <span></span><span></span><span class="span-burger"></span>
-              </button> -->
-
-              <!-- <nav class="menu-burgerenook">
-                <ul class="menu__list-burgerenook">
-                  <li class="menu__item-burgerenook1">
-                    <button class="menu__item-burgerenook"><a href="o-nas.html" class="menu__link-burgerenook">О
-                        нас</a></button>
-                  </li>
-                  <li class="menu__item-burgerenook1">
-                    <button class="menu__item-burgerenook"><a href="uslugi.html"
-                        class="menu__link-burgerenook">Услуги</a></button>
-                  </li>
-                  <li class="menu__item-burgerenook1">
-                    <button class="menu__item-burgerenook"><a href="novosti.html"
-                        class="menu__link-burgerenook">Новости</a></button>
-                  </li>
-                  <li class="menu__item-burgerenook1">
-                    <button class="menu__item-burgerenook"><a href="kontakty.html"
-                        class="menu__link-burgerenook">Контакты</a></button>
-                  </li>
-                  <li class="menu__item-burgerenook1 dropdown">
-                    <button class="menu__item-burgerenook" id="dropdown-btn-burgerenook">
-                      <div class="flex-jostkyi">
-                        <a href="#" id="dropdown-title-burgerenook" class="menu__link-burgerenook">Тюмень</a>
-                        <img src="img/no-active-strel.png" alt="no-active-strel" class="no-active-strel">
-                        <img src="img/active-strel.png" alt="active-strel" class="active-strel" style="display: none;">
-                      </div>
-                    </button>
-                    <ul class="dropdown-content" id="dropdown-content-burgerenook">
-                      <li><a href="#" class="dropdown-link" data-city="Курган">Курган</a></li>
-                      <li><a href="#" class="dropdown-link" data-city="Омск">Омск</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </nav> -->
-            <!-- </div>
-          </div>
-
-
-
-        </div>
-      </div>
-    </div> -->
-
 
   <div class="css-modal-target" id="css-modal-target">
     <div class="cmt">
@@ -1001,8 +919,8 @@
 
         <span class="form__close-btn popup-close">
           <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L21 16M21 1L1 16" stroke="#8C8C8C" stroke-width="1.5"/>
-          </svg>              
+            <path d="M1 1L21 16M21 1L1 16" stroke="#8C8C8C" stroke-width="1.5" />
+          </svg>
         </span>
 
       </form>
@@ -1027,7 +945,8 @@
               *
             </span>
 
-            <input class="request__input request__input_apartment" type="text" name="apartment" placeholder="Выберите квартиру" readonly required>
+            <input class="request__input request__input_apartment" type="text" name="apartment"
+              placeholder="Выберите квартиру" readonly required>
           </label>
           <label class="request__label">
             <span class="request__label-text">
@@ -1037,7 +956,8 @@
               *
             </span>
 
-            <input class="request__input request__input_name" type="text" name="name" placeholder="Введите имя" required>
+            <input class="request__input request__input_name" type="text" name="name" placeholder="Введите имя"
+              required>
           </label>
           <label class="request__label">
             <span class="request__label-text">
@@ -1046,7 +966,8 @@
             <span class="request__label-star">
               *
             </span>
-            <input class="request__input request__input_phone" type="tel" name="phone" placeholder="7" required value="7">
+            <input class="request__input request__input_phone" type="tel" name="phone" placeholder="7" required
+              value="7">
           </label>
           <label class="request__label">
             <span class="request__label-text">
@@ -1078,8 +999,8 @@
 
         <span class="request__close-btn popup-close">
           <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L21 16M21 1L1 16" stroke="#8C8C8C" stroke-width="1.5"/>
-          </svg>              
+            <path d="M1 1L21 16M21 1L1 16" stroke="#8C8C8C" stroke-width="1.5" />
+          </svg>
         </span>
 
       </form>
@@ -1104,7 +1025,8 @@
             <span class="notification__label-star">
               *
             </span>
-            <input class="notification__input notification__input_agency" type="text" name="agency" placeholder="Введите название агенства" required>
+            <input class="notification__input notification__input_agency" type="text" name="agency"
+              placeholder="Введите название агенства" required>
           </label>
 
           <label class="notification__label notification__agent-name">
@@ -1114,7 +1036,8 @@
             <span class="notification__label-star">
               *
             </span>
-            <input class="notification__input notification__input_agent-name" type="text" name="agent-name" placeholder="Введите имя" required>
+            <input class="notification__input notification__input_agent-name" type="text" name="agent-name"
+              placeholder="Введите имя" required>
           </label>
 
           <label class="notification__label notification__agent-phone">
@@ -1124,7 +1047,8 @@
             <span class="notification__label-star">
               *
             </span>
-            <input class="notification__input notification__input_agent-phone" type="tel" name="agent-phone" placeholder="7" required value="7">
+            <input class="notification__input notification__input_agent-phone" type="tel" name="agent-phone"
+              placeholder="7" required value="7">
           </label>
 
           <label class="notification__label notification__client-name">
@@ -1134,7 +1058,8 @@
             <span class="notification__label-star">
               *
             </span>
-            <input class="notification__input notification__input_client-name" type="text" name="client-name" placeholder="Введите имя" required>
+            <input class="notification__input notification__input_client-name" type="text" name="client-name"
+              placeholder="Введите имя" required>
           </label>
 
           <label class="notification__label notification__client-phone">
@@ -1144,14 +1069,16 @@
             <span class="notification__label-star">
               *
             </span>
-            <input class="notification__input notification__input_client-phone" type="tel" name="client-phone" placeholder="7" required value="7">
+            <input class="notification__input notification__input_client-phone" type="tel" name="client-phone"
+              placeholder="7" required value="7">
           </label>
 
           <label class="notification__label notification__label_textarea">
             <span class="notification__label-text">
               Сообщение
             </span>
-            <textarea class="notification__input notification__input_textarea" name="text" placeholder="Сообщение"></textarea>
+            <textarea class="notification__input notification__input_textarea" name="text"
+              placeholder="Сообщение"></textarea>
           </label>
         </div>
 
@@ -1169,10 +1096,10 @@
           </a>
         </div>
 
-        <span class="notification__close-btn popup-close">
+        <span class="popup__close popup-close">
           <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L21 16M21 1L1 16" stroke="#8C8C8C" stroke-width="1.5"/>
-          </svg>              
+            <path d="M1 1L21 16M21 1L1 16" stroke="#8C8C8C" stroke-width="1.5" />
+          </svg>
         </span>
 
       </form>
@@ -1183,60 +1110,90 @@
 <div class="popup" id="success">
   <div class="popup__body">
     <div class="popup__content popup-success">
-      <h3 class="popup-success__title">
+      <h3 class="popup__title">
         Заявка отправлена
       </h3>
-      <p class="popup-success__subtitle">
-        Спасибо за доверие, мы скоро свяжемся с вами      
+      <p class="popup__subtitle">
+        Спасибо за доверие, мы скоро свяжемся с вами
       </p>
 
-      <button class="popup-success__close popup-close">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.2779 11.2237C11.6514 10.8783 12.2318 10.9037 12.5742 11.2806L19.6078 19.0222L26.6415 11.2806C26.9839 10.9037 27.5642 10.8783 27.9378 11.2237C28.3113 11.5692 28.3365 12.1547 27.9941 12.5316L20.8525 20.3922L27.9941 28.2527C28.3365 28.6296 28.3113 29.2151 27.9378 29.5606C27.5642 29.9061 26.9839 29.8806 26.6415 29.5037L19.6078 21.7621L12.5742 29.5037C12.2318 29.8806 11.6515 29.9061 11.2779 29.5606C10.9044 29.2151 10.8792 28.6296 11.2216 28.2527L18.3632 20.3922L11.2216 12.5316C10.8792 12.1547 10.9044 11.5692 11.2779 11.2237Z" fill="#5D5D5D" fill-opacity="0.7"/>
-        </svg>          
-      </button>
       <div class="popup-success__img-wrap">
-        <img class="popup-success__img" src="img/success.png" alt="success">
+        <img class="popup-success__img" src="img/like.svg" alt="success">
       </div>
+      <button class="popup-close">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.2779 11.2237C11.6514 10.8783 12.2318 10.9037 12.5742 11.2806L19.6078 19.0222L26.6415 11.2806C26.9839 10.9037 27.5642 10.8783 27.9378 11.2237C28.3113 11.5692 28.3365 12.1547 27.9941 12.5316L20.8525 20.3922L27.9941 28.2527C28.3365 28.6296 28.3113 29.2151 27.9378 29.5606C27.5642 29.9061 26.9839 29.8806 26.6415 29.5037L19.6078 21.7621L12.5742 29.5037C12.2318 29.8806 11.6515 29.9061 11.2779 29.5606C10.9044 29.2151 10.8792 28.6296 11.2216 28.2527L18.3632 20.3922L11.2216 12.5316C10.8792 12.1547 10.9044 11.5692 11.2779 11.2237Z"
+            fill="#5D5D5D" fill-opacity="0.7" />
+        </svg>
+      </button>
     </div>
   </div>
 </div>
 
-<form class="footer__form form" id="call" method="post" enctype="multipart/form-data">
-<h3 class="form__title">
-  Отправьте заявку
-</h3>
-<p class="form__desc">
-  Опишите проблему и мы свяжемся с вами в ближайшее время
-</p>
-
-<div class="form__label-block">
-  <label class="form__label">
-    <input class="form__input form__input_name" type="text" name="name" placeholder="Имя" required>
-  </label>
-  <label class="form__label">
-    <input class="form__input form__input_phone" type="tel" name="phone" placeholder="Номер телефона" required>
-  </label>
-  <label class="form__label">
-    <textarea class="form__input form__input_message" name="message" rows="5" cols="30" placeholder="Опишите ситуацию, например: “Спустило колесо”"></textarea>
-  </label>
+<div class="popup" id="error">
+  <div class="popup__body">
+    <div class="popup__content popup-error">
+      <h3 class="popup__title">
+        ошибка отправки
+      </h3>
+      <p class="popup__subtitle">
+        Что-то пошло не так, повторите попытку или свяжитесь с нами
+      </p>
+      <button class="popup-error__btn popup-close">
+        OK
+      </button>
+      <button class="popup__close popup-close">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.2779 11.2237C11.6514 10.8783 12.2318 10.9037 12.5742 11.2806L19.6078 19.0222L26.6415 11.2806C26.9839 10.9037 27.5642 10.8783 27.9378 11.2237C28.3113 11.5692 28.3365 12.1547 27.9941 12.5316L20.8525 20.3922L27.9941 28.2527C28.3365 28.6296 28.3113 29.2151 27.9378 29.5606C27.5642 29.9061 26.9839 29.8806 26.6415 29.5037L19.6078 21.7621L12.5742 29.5037C12.2318 29.8806 11.6515 29.9061 11.2779 29.5606C10.9044 29.2151 10.8792 28.6296 11.2216 28.2527L18.3632 20.3922L11.2216 12.5316C10.8792 12.1547 10.9044 11.5692 11.2779 11.2237Z"
+            fill="#5D5D5D" fill-opacity="0.7" />
+        </svg>
+      </button>
+    </div>
+  </div>
 </div>
 
-<button type="submit" class="btn btn_green btn_reset form__btn">
-  Отправить
-</button>
+<div class="popup" id="call">
+  <div class="popup__body">
+    <form class="popup__content form" method="post" enctype="multipart/form-data">
+      <h3 class="popup__title">
+        Отправьте заявку
+      </h3>
+      <p class="popup__subtitle">
+        Опишите проблему и мы свяжемся с вами в ближайшее время
+      </p>
 
+      <div class="form__input-block">
+          <input class="form__input form__input_name" type="text" name="name" placeholder="Имя" required>
+          <input class="form__input form__input_phone" type="tel" name="phone" placeholder="Номер телефона" required>
+          <textarea class="form__input form__input_message" name="message" rows="5" cols="30"
+            placeholder="Опишите ситуацию, например: “Спустило колесо”"></textarea>
 
-<div class="form__agreement-wrap">
-  <span class="form__agreement-text">
-    Нажимая кнопку «Отправить», вы соглашаетесь с
-  </span>
-  <a class="form__agreement-link" href="agreement.html" target="_blank">
-    условиями обработки персональных данных
-  </a>
+      </div>
+
+      <button type="submit" class="btn btn_green btn_reset form__btn">
+        Отправить
+      </button>
+
+      <div class="form__agreement-wrap">
+        <span class="form__agreement-text">
+          Нажимая кнопку «Отправить», вы соглашаетесь с
+        </span>
+        <a class="form__agreement-link" href="agreement.html" target="_blank">
+          условиями обработки персональных данных
+        </a>
+      </div>
+      <button class="popup__close popup-close">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.2779 11.2237C11.6514 10.8783 12.2318 10.9037 12.5742 11.2806L19.6078 19.0222L26.6415 11.2806C26.9839 10.9037 27.5642 10.8783 27.9378 11.2237C28.3113 11.5692 28.3365 12.1547 27.9941 12.5316L20.8525 20.3922L27.9941 28.2527C28.3365 28.6296 28.3113 29.2151 27.9378 29.5606C27.5642 29.9061 26.9839 29.8806 26.6415 29.5037L19.6078 21.7621L12.5742 29.5037C12.2318 29.8806 11.6515 29.9061 11.2779 29.5606C10.9044 29.2151 10.8792 28.6296 11.2216 28.2527L18.3632 20.3922L11.2216 12.5316C10.8792 12.1547 10.9044 11.5692 11.2779 11.2237Z"
+            fill="#5D5D5D" fill-opacity="0.7" />
+        </svg>
+      </button>
+    </form>
+  </div>
 </div>
-
-</form>
 
 
 <script src="js/lib/jquery-3.5.1.min.js"></script>

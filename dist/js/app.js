@@ -68,7 +68,6 @@ function popupOpen(curentPopup) {
     } else {
       bodyLock();
     }
-    console.log(curentPopup);
     curentPopup.classList.add("open");
     curentPopup.addEventListener("click", function (e) {
       if (!e.target.closest(".popup__content")) {
@@ -981,69 +980,69 @@ function closeCookiePolicyNotification() {
 // -------------------------------------------- end Отзывы ---------------------------------------------
 // -------------------------------------------- start старье: ---------------------------------------------
 
-document.addEventListener("DOMContentLoaded", function () {
-  const burgerButton = document.getElementById("burger-burgerenook");
-  const header = document.querySelector(".header-burgerenook");
-  const body = document.body;
+// document.addEventListener("DOMContentLoaded", function () {
+//   const burgerButton = document.getElementById("burger-burgerenook");
+//   const header = document.querySelector(".header-burgerenook");
+//   const body = document.body;
 
-  burgerButton.addEventListener("click", function () {
-    header.classList.toggle("open-burgerenook");
-    if (header.classList.contains("open-burgerenook")) {
-      body.classList.add("no-scroll");
-    } else {
-      body.classList.remove("no-scroll");
-    }
-  });
+//   burgerButton.addEventListener("click", function () {
+//     header.classList.toggle("open-burgerenook");
+//     if (header.classList.contains("open-burgerenook")) {
+//       body.classList.add("no-scroll");
+//     } else {
+//       body.classList.remove("no-scroll");
+//     }
+//   });
 
-  const dropdownButton = document.querySelector(
-    ".dropdown .menu__item-burgerenook"
-  );
-  const dropdownLinks = document.querySelectorAll(".dropdown-link");
-  const dropdownTitle = document.getElementById("dropdown-title-burgerenook");
-  const dropdownContent = document.getElementById(
-    "dropdown-content-burgerenook"
-  );
-  const noActiveStrel = document.querySelector(".no-active-strel");
-  const activeStrel = document.querySelector(".active-strel");
+//   const dropdownButton = document.querySelector(
+//     ".dropdown .menu__item-burgerenook"
+//   );
+//   const dropdownLinks = document.querySelectorAll(".dropdown-link");
+//   const dropdownTitle = document.getElementById("dropdown-title-burgerenook");
+//   const dropdownContent = document.getElementById(
+//     "dropdown-content-burgerenook"
+//   );
+//   const noActiveStrel = document.querySelector(".no-active-strel");
+//   const activeStrel = document.querySelector(".active-strel");
 
-  dropdownButton.addEventListener("click", function (event) {
-    event.preventDefault();
-    this.parentElement.classList.toggle("show");
-    if (this.parentElement.classList.contains("show")) {
-      noActiveStrel.style.display = "none";
-      activeStrel.style.display = "inline";
-    } else {
-      noActiveStrel.style.display = "inline";
-      activeStrel.style.display = "none";
-    }
-  });
+//   dropdownButton.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     this.parentElement.classList.toggle("show");
+//     if (this.parentElement.classList.contains("show")) {
+//       noActiveStrel.style.display = "none";
+//       activeStrel.style.display = "inline";
+//     } else {
+//       noActiveStrel.style.display = "inline";
+//       activeStrel.style.display = "none";
+//     }
+//   });
 
-  dropdownLinks.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      const selectedCity = this.getAttribute("data-city");
-      const currentCity = dropdownTitle.textContent;
+//   dropdownLinks.forEach((link) => {
+//     link.addEventListener("click", function (event) {
+//       event.preventDefault();
+//       const selectedCity = this.getAttribute("data-city");
+//       const currentCity = dropdownTitle.textContent;
 
-      dropdownTitle.textContent = selectedCity;
-      this.setAttribute("data-city", currentCity);
-      this.textContent = currentCity;
+//       dropdownTitle.textContent = selectedCity;
+//       this.setAttribute("data-city", currentCity);
+//       this.textContent = currentCity;
 
-      dropdownButton.parentElement.classList.remove("show");
-      noActiveStrel.style.display = "inline";
-      activeStrel.style.display = "none";
-    });
-  });
+//       dropdownButton.parentElement.classList.remove("show");
+//       noActiveStrel.style.display = "inline";
+//       activeStrel.style.display = "none";
+//     });
+//   });
 
-  document.addEventListener("click", function (event) {
-    const isClickInsideDropdown = dropdownButton.contains(event.target);
-    if (!isClickInsideDropdown) {
-      const dropdowns = document.querySelectorAll(".dropdown");
-      dropdowns.forEach((dropdown) => dropdown.classList.remove("show"));
-      noActiveStrel.style.display = "inline";
-      activeStrel.style.display = "none";
-    }
-  });
-});
+//   document.addEventListener("click", function (event) {
+//     const isClickInsideDropdown = dropdownButton.contains(event.target);
+//     if (!isClickInsideDropdown) {
+//       const dropdowns = document.querySelectorAll(".dropdown");
+//       dropdowns.forEach((dropdown) => dropdown.classList.remove("show"));
+//       noActiveStrel.style.display = "inline";
+//       activeStrel.style.display = "none";
+//     }
+//   });
+// });
 
 //-----------------------------
 
@@ -1294,45 +1293,45 @@ $(".btn_zayvka-otprav").click(function () {
 
 //------------------------------
 
-document.addEventListener("DOMContentLoaded", function () {
-  const phoneInput = document.getElementById("form_footer-phone");
-  const submitButton = document.getElementById("submit_button");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const phoneInput = document.getElementById("form_footer-phone");
+//   const submitButton = document.getElementById("submit_button");
 
-  function formatPhoneNumber(value) {
-    if (!value.startsWith("+7")) {
-      value = "+7 " + value;
-    }
+//   function formatPhoneNumber(value) {
+//     if (!value.startsWith("+7")) {
+//       value = "+7 " + value;
+//     }
 
-    const cleaned = value.replace(/\D/g, "");
-    const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+//     const cleaned = value.replace(/\D/g, "");
+//     const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
 
-    if (match) {
-      return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
-    }
+//     if (match) {
+//       return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
+//     }
 
-    return cleaned.replace(
-      /^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/,
-      function (_, g1, g2, g3, g4, g5) {
-        return `+${g1 || ""}${g2 ? " (" + g2 : ""}${g3 ? ") " + g3 : ""}${
-          g4 ? "-" + g4 : ""
-        }${g5 ? "-" + g5 : ""}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
-      }
-    );
-  }
+//     return cleaned.replace(
+//       /^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/,
+//       function (_, g1, g2, g3, g4, g5) {
+//         return `+${g1 || ""}${g2 ? " (" + g2 : ""}${g3 ? ") " + g3 : ""}${
+//           g4 ? "-" + g4 : ""
+//         }${g5 ? "-" + g5 : ""}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
+//       }
+//     );
+//   }
 
-  phoneInput.addEventListener("input", function () {
-    phoneInput.value = formatPhoneNumber(phoneInput.value);
+//   phoneInput.addEventListener("input", function () {
+//     phoneInput.value = formatPhoneNumber(phoneInput.value);
 
-    const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
-    if (phonePattern.test(phoneInput.value)) {
-      submitButton.classList.add("active");
-      submitButton.disabled = false;
-      phoneInput.classList.remove("input-error");
-    } else {
-      submitButton.classList.remove("active");
-      submitButton.disabled = true;
-    }
-  });
-});
+//     const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
+//     if (phonePattern.test(phoneInput.value)) {
+//       submitButton.classList.add("active");
+//       submitButton.disabled = false;
+//       phoneInput.classList.remove("input-error");
+//     } else {
+//       submitButton.classList.remove("active");
+//       submitButton.disabled = true;
+//     }
+//   });
+// });
 
 // -------------------------------------------- end старье ---------------------------------------------
