@@ -963,7 +963,7 @@ if (!getCookie("CookiePolicyAccepted")) {
 }
 
 function acceptCookiePolicy() {
-  console.log("acceptCookiePolicy");
+  // console.log("acceptCookiePolicy");
   setCookie("CookiePolicyAccepted", true);
   $(".cookie").fadeTo(500, 0);
   setTimeout(() => {
@@ -971,8 +971,24 @@ function acceptCookiePolicy() {
   }, 500);
 }
 function closeCookiePolicyNotification() {
-  console.log("closeCookiePolicyNotification");
+  // console.log("closeCookiePolicyNotification");
   $(".cookie").fadeOut(300);
+}
+
+const cookieBtn = document.querySelector(".cookie__btn");
+if (cookieBtn) {
+  cookieBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    acceptCookiePolicy();
+  });
+}
+
+const cookieCloseBtn = document.querySelector(".cookie__close");
+if (cookieCloseBtn) {
+  cookieCloseBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    closeCookiePolicyNotification();
+  });
 }
 // -------------------------------------------- end Куки ---------------------------------------------
 // -------------------------------------------- start Отзывы: ---------------------------------------------
