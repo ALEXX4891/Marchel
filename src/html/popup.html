@@ -239,16 +239,56 @@
   <div class="popup__body">
     <div class="popup__content popup-success">
       <h3 class="popup-success__title">
-        Спасибо
+        Заявка отправлена
       </h3>
       <p class="popup-success__subtitle">
-        Ваша заявка успешно отправлена, в ближайшее время наш менеджер свяжется с вами для уточнения деталей
+        Спасибо за доверие, мы скоро свяжемся с вами      
       </p>
 
       <button class="popup-success__close popup-close">
-        Хорошо
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.2779 11.2237C11.6514 10.8783 12.2318 10.9037 12.5742 11.2806L19.6078 19.0222L26.6415 11.2806C26.9839 10.9037 27.5642 10.8783 27.9378 11.2237C28.3113 11.5692 28.3365 12.1547 27.9941 12.5316L20.8525 20.3922L27.9941 28.2527C28.3365 28.6296 28.3113 29.2151 27.9378 29.5606C27.5642 29.9061 26.9839 29.8806 26.6415 29.5037L19.6078 21.7621L12.5742 29.5037C12.2318 29.8806 11.6515 29.9061 11.2779 29.5606C10.9044 29.2151 10.8792 28.6296 11.2216 28.2527L18.3632 20.3922L11.2216 12.5316C10.8792 12.1547 10.9044 11.5692 11.2779 11.2237Z" fill="#5D5D5D" fill-opacity="0.7"/>
+        </svg>          
       </button>
-
+      <div class="popup-success__img-wrap">
+        <img class="popup-success__img" src="img/success.png" alt="success">
+      </div>
     </div>
   </div>
 </div>
+
+<form class="footer__form form" id="call" method="post" enctype="multipart/form-data">
+<h3 class="form__title">
+  Отправьте заявку
+</h3>
+<p class="form__desc">
+  Опишите проблему и мы свяжемся с вами в ближайшее время
+</p>
+
+<div class="form__label-block">
+  <label class="form__label">
+    <input class="form__input form__input_name" type="text" name="name" placeholder="Имя" required>
+  </label>
+  <label class="form__label">
+    <input class="form__input form__input_phone" type="tel" name="phone" placeholder="Номер телефона" required>
+  </label>
+  <label class="form__label">
+    <textarea class="form__input form__input_message" name="message" rows="5" cols="30" placeholder="Опишите ситуацию, например: “Спустило колесо”"></textarea>
+  </label>
+</div>
+
+<button type="submit" class="btn btn_green btn_reset form__btn">
+  Отправить
+</button>
+
+
+<div class="form__agreement-wrap">
+  <span class="form__agreement-text">
+    Нажимая кнопку «Отправить», вы соглашаетесь с
+  </span>
+  <a class="form__agreement-link" href="agreement.html" target="_blank">
+    условиями обработки персональных данных
+  </a>
+</div>
+
+</form>
