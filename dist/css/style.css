@@ -3053,14 +3053,14 @@ a {
   color: white;
 }
 
-.about-us-page .about-us-page__banner {
+.about-us-page .banner {
   background: url("../img/about-banner.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 @media (max-width: 960px) {
-  .about-us-page .about-us-page__banner {
+  .about-us-page .banner {
     background: url("../img/about-banner_mid.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -3068,14 +3068,14 @@ a {
   }
 }
 @media (max-width: 660px) {
-  .about-us-page .about-us-page__banner {
+  .about-us-page .banner {
     background: url("../img/about-banner_sm.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
 }
-.about-us-page .about-us-page__banner .banner__container {
+.about-us-page .banner .banner__container {
   max-width: 660px;
   display: grid;
   justify-items: center;
@@ -3084,17 +3084,17 @@ a {
   color: white;
 }
 @media (max-width: 960px) {
-  .about-us-page .about-us-page__banner .banner__container {
+  .about-us-page .banner .banner__container {
     padding: 230px 0 170px;
     gap: 10px;
   }
 }
 @media (max-width: 660px) {
-  .about-us-page .about-us-page__banner .banner__container {
+  .about-us-page .banner .banner__container {
     padding: 237px 0 195px;
   }
 }
-.about-us-page .about-us-page__banner .banner__container .banner__title {
+.about-us-page .banner .banner__container .banner__title {
   font-family: Raleway;
   font-size: 80px;
   font-weight: 700;
@@ -3104,7 +3104,7 @@ a {
   text-transform: uppercase;
 }
 @media (max-width: 660px) {
-  .about-us-page .about-us-page__banner .banner__container .banner__title {
+  .about-us-page .banner .banner__container .banner__title {
     font-family: Raleway;
     font-size: 50px;
     font-weight: 700;
@@ -3114,13 +3114,13 @@ a {
   }
 }
 @media (max-width: 400px) {
-  .about-us-page .about-us-page__banner .banner__container .banner__title {
+  .about-us-page .banner .banner__container .banner__title {
     font-size: 12vw;
     line-height: 110%;
     max-width: 95%;
   }
 }
-.about-us-page .about-us-page__banner .banner__container .banner__subtitle {
+.about-us-page .banner .banner__container .banner__subtitle {
   font-family: Raleway;
   font-size: 35px;
   font-weight: 600;
@@ -3129,7 +3129,7 @@ a {
   color: white;
 }
 @media (max-width: 660px) {
-  .about-us-page .about-us-page__banner .banner__container .banner__subtitle {
+  .about-us-page .banner .banner__container .banner__subtitle {
     font-family: Raleway;
     font-size: 20px;
     font-weight: 500;
@@ -3138,8 +3138,168 @@ a {
   }
 }
 @media (max-width: 400px) {
-  .about-us-page .about-us-page__banner .banner__container .banner__subtitle {
+  .about-us-page .banner .banner__container .banner__subtitle {
     max-width: 90%;
+  }
+}
+.about-us-page .about .about__container {
+  display: grid;
+  grid-template-columns: 1fr 438px;
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+  gap: 10px;
+  padding: 120px 45px 60px;
+}
+@media (max-width: 960px) {
+  .about-us-page .about .about__container {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: 10px;
+    padding: 100px 32px 60px;
+  }
+}
+@media (max-width: 960px) {
+  .about-us-page .about .about__container {
+    padding: 100px 15px 60px;
+  }
+}
+.about-us-page .about .about__container .about__title {
+  margin-bottom: 10px;
+}
+.about-us-page .about .about__container .about__text {
+  max-width: 670px;
+}
+@media (max-width: 960px) {
+  .about-us-page .about .about__container .about__text {
+    max-width: 100%;
+  }
+}
+.about-us-page .about .about__container .about__facts-wrap {
+  grid-row: 3 span;
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-auto-flow: row;
+  align-content: center;
+  gap: 30px;
+}
+@media (max-width: 960px) {
+  .about-us-page .about .about__container .about__facts-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    gap: 40px;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+    padding-top: 15px;
+  }
+}
+@media (max-width: 660px) {
+  .about-us-page .about .about__container .about__facts-wrap {
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+    grid-auto-flow: row;
+    align-content: center;
+    gap: 33px;
+    justify-content: start;
+  }
+}
+.about-us-page .about .about__container .about__facts-wrap .about__fact {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: end;
+  align-content: end;
+  justify-content: start;
+  gap: 10px;
+}
+@media (max-width: 960px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: 5px;
+    align-items: start;
+    align-content: start;
+  }
+}
+@media (max-width: 660px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact {
+    grid-template-columns: initial;
+    grid-auto-flow: column;
+    align-items: end;
+    align-content: end;
+    justify-content: start;
+    gap: 10px;
+  }
+}
+.about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-first-word {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.09px;
+  text-align: left;
+  color: #777E85;
+  padding-bottom: 7px;
+}
+@media (max-width: 960px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-first-word {
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 660px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-first-word {
+    padding-bottom: 7px;
+  }
+}
+@media (max-width: 350px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-first-word {
+    font-size: 4vw;
+  }
+}
+.about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-number {
+  font-family: Raleway;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 58.7px;
+  text-align: left;
+  color: #CA2020;
+}
+@media (max-width: 960px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-number {
+    line-height: 50px;
+  }
+}
+@media (max-width: 660px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-number {
+    line-height: 58.7px;
+  }
+}
+@media (max-width: 350px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-number {
+    font-size: 10vw;
+  }
+}
+.about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-last-word {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.09px;
+  text-align: left;
+  color: #30373D;
+  padding-bottom: 7px;
+  max-width: 300px;
+}
+@media (max-width: 960px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-last-word {
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 660px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-last-word {
+    padding-bottom: 7px;
+  }
+}
+@media (max-width: 350px) {
+  .about-us-page .about .about__container .about__facts-wrap .about__fact .about__fact-last-word {
+    font-size: 5vw;
   }
 }
 
