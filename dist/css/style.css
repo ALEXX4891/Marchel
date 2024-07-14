@@ -2837,6 +2837,14 @@ a {
     order: 1;
   }
 }
+@media (max-width: 410px) {
+  .glavnaya .glavnaya__main .work .work__container .work__geo-wrap .work__geo-card-wrap {
+    grid-template-columns: repeat(auto-fit, minmax(121px, 1fr));
+    grid-auto-flow: initial;
+    grid-auto-rows: 1fr;
+    padding-bottom: 13px;
+  }
+}
 .glavnaya .glavnaya__main .work .work__container .work__geo-wrap .work__geo-card-wrap .work__geo-card {
   display: grid;
   place-content: center;
@@ -2963,6 +2971,7 @@ a {
 @media (max-width: 660px) {
   .glavnaya .glavnaya__main .form-block .big-form .big-form__input {
     margin-bottom: 5px;
+    max-width: 100%;
   }
 }
 .glavnaya .glavnaya__main .form-block .big-form .big-form__input:hover {
@@ -3005,6 +3014,7 @@ a {
 @media (max-width: 960px) {
   .glavnaya .glavnaya__main .form-block .big-form .big-form__input_phone {
     grid-column: 2 span;
+    max-width: 100%;
   }
 }
 @media (max-width: 660px) {
