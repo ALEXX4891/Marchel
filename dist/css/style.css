@@ -3302,6 +3302,198 @@ a {
     font-size: 5vw;
   }
 }
+.about-us-page .services .services__container {
+  display: grid;
+  grid-template-columns: 1fr 112px;
+  grid-auto-flow: row;
+  gap: 40px 5px;
+}
+@media (max-width: 960px) {
+  .about-us-page .services .services__container {
+    padding: 45px 32px 40px;
+    gap: 20px 5px;
+  }
+}
+@media (max-width: 660px) {
+  .about-us-page .services .services__container {
+    padding: 35px 15px 40px;
+    gap: 20px 5px;
+  }
+}
+.about-us-page .services .services__title {
+  text-transform: uppercase;
+}
+@media (max-width: 960px) {
+  .about-us-page .services .services__title {
+    grid-column: 2 span;
+    margin-bottom: 20px;
+  }
+}
+.about-us-page .services .services__subtitle {
+  padding-bottom: 35px;
+  font-family: Raleway;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23.48px;
+  text-align: left;
+  color: #30373d;
+}
+@media (max-width: 960px) {
+  .about-us-page .services .services__subtitle {
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.78px;
+    text-align: left;
+  }
+}
+.about-us-page .services .services__card-wrap {
+  padding-bottom: 35px;
+  grid-column: 2 span;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
+}
+@media (max-width: 800px) {
+  .about-us-page .services .services__card-wrap {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    padding-bottom: 13px;
+  }
+}
+@media (max-width: 660px) {
+  .about-us-page .services .services__card-wrap {
+    padding-bottom: 0px;
+  }
+}
+.about-us-page .services .services__card {
+  position: relative;
+  padding-bottom: 90%;
+  cursor: pointer;
+  aspect-ratio: 285/271;
+}
+@media (max-width: 960px) {
+  .about-us-page .services .services__card {
+    aspect-ratio: 221/207;
+  }
+}
+@media (max-width: 660px) {
+  .about-us-page .services .services__card {
+    aspect-ratio: 182/169;
+  }
+}
+.about-us-page .services .services__card:hover .services__card-link {
+  height: 100%;
+}
+.about-us-page .services .services__card:hover .services__card-link svg {
+  opacity: 1;
+}
+.about-us-page .services .services__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-us-page .services .services__card-link {
+  width: 100%;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: height 0.3s ease-in-out;
+}
+@media (max-width: 660px) {
+  .about-us-page .services .services__card-link {
+    height: 100%;
+  }
+}
+.about-us-page .services .services__card-link .services__card-title {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.09px;
+  text-align: center;
+  max-width: 90%;
+  color: #fff;
+}
+.about-us-page .services .services__card-link svg {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+@media (max-width: 660px) {
+  .about-us-page .services .services__card-link svg {
+    display: none;
+  }
+}
+.about-us-page .services .services__link-all {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  gap: 2px;
+  transition: color 0.3s ease-in-out;
+}
+.about-us-page .services .services__link-all:hover .services__link-title {
+  color: #ca2020;
+}
+.about-us-page .services .services__link-all:hover svg path {
+  stroke: #ca2020;
+}
+.about-us-page .services .services__link-all .services__link-title {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: left;
+  color: #777e85;
+  transition: color 0.3s ease-in-out;
+}
+@media (max-width: 800px) {
+  .about-us-page .services .services__link-all .services__link-title {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.09px;
+    text-align: left;
+    color: #ca2020;
+  }
+}
+@media (max-width: 800px) {
+  .about-us-page .services .services__link-all svg {
+    display: none;
+  }
+}
+.about-us-page .services .services__link-all svg path {
+  transition: stroke 0.3s ease-in-out;
+}
+@media (max-width: 800px) {
+  .about-us-page .services .services__link-all {
+    display: grid;
+    order: 1;
+    grid-column: 2 span;
+    place-content: center;
+    padding: 10px 12px;
+    max-width: 100%;
+    min-height: 48px;
+    border: 1px solid #ca2020;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+  .about-us-page .services .services__link-all:hover {
+    color: white;
+    background-color: #ca2020;
+    border-color: #ca2020;
+  }
+  .about-us-page .services .services__link-all:hover .services__link-title {
+    color: white;
+  }
+}
 
 .not-found .not-found {
   background: #f3fafc;
