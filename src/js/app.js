@@ -655,11 +655,11 @@ jQuery(($) => {
 
     $(".owl-carousel-about").owlCarousel({
       loop: false,
-      margin: 16,
-      items: 4,
-      nav: true,
+      margin: 20,
+      items: 2,
+      nav: false,
       // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
-      dots: false,
+      dots: true,
       singleItem: false,
       autoplay: false,
       smartSpeed: 1000,
@@ -669,47 +669,13 @@ jQuery(($) => {
           nav: false,
           margin: 5,
           items: 1,
-
           // items: window.screen.width / 360,
         },
         400: {
           nav: false,
           margin: 5,
-
           items: 1.3,
-
           // items: window.screen.width / 360,
-        },
-        520: {
-          nav: false,
-          margin: 5,
-
-          items: 1.7,
-
-          // items: window.screen.width / 360,
-        },
-        650: {
-          nav: false,
-          items: 2.2,
-
-          // items: window.screen.width / 360,
-        },
-        800: {
-          nav: false,
-          items: 2.5,
-          // items: window.screen.width / 420,
-        },
-        900: {
-          nav: false,
-          items: 3,
-          // items: window.screen.width / 420,
-        },
-        1200: {
-          nav: false,
-          items: 4,
-        },
-        1350: {
-          items: 4,
         },
       },
     });
@@ -807,6 +773,134 @@ jQuery(($) => {
         },
         1180: {
           items: 3,
+        },
+      },
+    });
+
+    // $(".owl-carousel-about-us").owlCarousel({
+    //   // screenLeft:true,
+    //   // startPosition: 1,
+    //   loop: false,
+    //   // center: true,
+    //   margin: 20,
+    //   items: 2,
+    //   nav: true,
+    //   // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
+    //   dots: false,
+    //   singleItem: false,
+    //   autoplay: false,
+    //   smartSpeed: 1000,
+    //   // autowidth: true,
+    //   autoplayTimeout: 5000,
+    //   stagePadding: 104, // позволяет задать начальное положение первого слайда
+    //   responsive: {
+    //     0: {
+    //       items: 1,
+    //       stagePadding: 15,
+    //       margin: 5,
+    //       // nav: false,
+    //       // items: window.screen.width / 360,
+    //     },
+    //     350: {
+    //       items: 1,
+    //       stagePadding: 15,
+    //       margin: 5,
+    //       // nav: false,
+    //       // items: window.screen.width / 360,
+    //     },
+    //     570: {
+    //       items: 1,
+    //       stagePadding: 30,
+    //       margin: 10,
+    //       singleItem: true,
+    //       // nav: false,
+    //       // items: window.screen.width / 360,
+    //     },
+    //     760: {
+    //       items: 2,
+    //       stagePadding: 30,
+    //       margin: 5,
+    //       // nav: false,
+    //       // items: window.screen.width / 360,
+    //     },
+    //     1280: {
+    //       items: 2.5,
+    //       stagePadding: 30,
+    //       // nav: false,
+    //       // items: window.screen.width / 420,
+    //     },
+    //     1460: {
+    //       items: 3,
+    //       stagePadding: 116,
+    //     },
+    //     1920: {
+    //       items: 4,
+    //     },
+    //   },
+    // });
+  }
+});
+
+jQuery(($) => {
+  if ($(window).width() < 1260) {
+    $(".owl-carousel-about-us").owlCarousel({
+      // screenLeft:true,
+      // startPosition: 1,
+      loop: false,
+      // center: true,
+      margin: 20,
+      items: 2,
+      nav: false,
+      // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
+      dots: true,
+      singleItem: false,
+      autoplay: false,
+      smartSpeed: 1000,
+      // autowidth: true,
+      autoplayTimeout: 5000,
+      stagePadding: 0, // позволяет задать начальное положение первого слайда
+      responsive: {
+        0: {
+          // items: 1,
+          // stagePadding: 15,
+          // margin: 5,
+          // nav: false,
+          // items: window.screen.width / 360,
+        },
+        350: {
+          // items: 1,
+          // stagePadding: 15,
+          // margin: 5,
+          // nav: false,
+          // items: window.screen.width / 360,
+        },
+        570: {
+          // items: 1,
+          // stagePadding: 30,
+          // margin: 10,
+          // singleItem: true,
+          // nav: false,
+          // items: window.screen.width / 360,
+        },
+        760: {
+          // items: 2,
+          // stagePadding: 30,
+          // margin: 5,
+          // nav: false,
+          // items: window.screen.width / 360,
+        },
+        1280: {
+          // items: 2.5,
+          // stagePadding: 30,
+          // nav: false,
+          // items: window.screen.width / 420,
+        },
+        1460: {
+          // items: 3,
+          // stagePadding: 116,
+        },
+        1920: {
+          // items: 4,
         },
       },
     });
