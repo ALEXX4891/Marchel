@@ -220,14 +220,17 @@
           <p class="news__link-title">
             Все новости
           </p>
-          <svg width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 13.5H19.5M19.5 13.5L15.5 10M19.5 13.5L15.5 17" stroke="#777E85" />
-          </svg>
+          <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.5 4.5H10M10 4.5L6 1M10 4.5L6 8" stroke="#777E85"/>
+            </svg>
+            
+
+            
         </a>
 
-        <div class="news__slider">
-          <ul class="news__card-wrap owl-carousel owl-carousel-about-us">
-            <li class="news__card">
+        <div class="news__slider swiper">
+          <ul class="news__card-wrap swiper-wrapper">
+            <li class="news__card swiper-slide">
               <div class="news__card-img-wrap">
                 <img class="news__card-img" src="@img/news-img.jpg" alt="новость" />
               </div>
@@ -247,7 +250,7 @@
               </a>
             </li>
   
-            <li class="news__card">
+            <li class="news__card swiper-slide">
               <div class="news__card-img-wrap">
                 <img class="news__card-img" src="@img/news-img.jpg" alt="новость" />
               </div>
@@ -267,7 +270,7 @@
               </a>
             </li>
   
-            <li class="news__card">
+            <li class="news__card swiper-slide">
               <div class="news__card-img-wrap">
                 <img class="news__card-img" src="@img/news-img.jpg" alt="новость" />
               </div>
@@ -285,9 +288,14 @@
                   <path d="M10 13.5H19.5M19.5 13.5L15.5 10M19.5 13.5L15.5 17" stroke="#777E85"/>
                 </svg>                
               </a>
-            </li>
+            </li>            
           </ul>
+
+          <div class="news__slider-pagination swiper-pagination">            
+          </div>
+
         </div>
+
       </div>
     </section>
 

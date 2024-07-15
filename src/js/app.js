@@ -12,22 +12,84 @@ navLinks.forEach((item) => {
   }
 });
 
-const swiper = new Swiper(".swiper", {
+// -------------------------------------------- start swiper: ---------------------------------------------
+// const swiper = new Swiper(".swiper", {
+//   // Optional parameters
+//   direction: "horizontal",
+//   loop: true,
+//   slidesPerView: 3,
+//   spaceBetween: 30,
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+
+//   // And if we need scrollbar
+//   scrollbar: {
+//     el: ".swiper-scrollbar",
+//   },
+// });
+
+
+new Swiper(".news__slider", {
   // Optional parameters
   direction: "horizontal",
-  loop: true,
-  allowTouchMove: true,
+  // loop: true,
+  // allowTouchMove: true,
+  slidesPerView: 3, // сколько слайдов показывать, можно дробно
+  // slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
+  // slidersPerGroup: 3, // сколько слайдов в группе
+  // centeredSlides: true, //выравнивание слайдов по центру
+  // initialSlide: 1, //начальный слайд (c нуля)
+
+  spaceBetween: 19,
+  // slideToClickedSlide: true, //перелистывание слайдов по клику
+  grabCursor: true, //меняет курсор при наведении на руку
+  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+
   // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  // navigation: {
+  //   nextEl: ".swiper-button-next",
+  //   prevEl: ".swiper-button-prev",
+  // },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
+  // mousewheel: { //перелистывание слайдов по мышке
+  //   sensitivity: 1,
+  //   eventsTarget: ".news__slider",
+  // },
+  // keyboard: { //перелистывание слайдов по нажатию клавиш
+  //   enabled: true,
+  //   onlyInViewport: true,
+  //   // pageUpDown: true,
+  // },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    500: {
+      slidesPerView: 2,
+    },
+    800: {
+      slidesPerView: 3,
+    },
+  },
 });
 
+// var swiper = new Swiper(".news__slider", {
+//   slidesPerView: 3,
+//   spaceBetween: 30,
+//   centeredSlides: false,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+// });
+
+// -------------------------------------------- end swiper: ---------------------------------------------
 // -------------------------------------------- start popup: ---------------------------------------------
 const popupLinks = document.querySelectorAll(".popup-link");
 const lockPadding = document.querySelectorAll(".lock-padding");
