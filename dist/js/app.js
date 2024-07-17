@@ -79,6 +79,53 @@ new Swiper(".news__slider", {
   },
 });
 
+new Swiper(".services__slider", {
+  // Optional parameters
+  direction: "horizontal",
+  // loop: true,
+  // allowTouchMove: true,
+  slidesPerView: 4, // сколько слайдов показывать, можно дробно
+  // slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
+  // slidersPerGroup: 3, // сколько слайдов в группе
+  // centeredSlides: true, //выравнивание слайдов по центру
+  // initialSlide: 1, //начальный слайд (c нуля)
+
+  spaceBetween: 19,
+  // slideToClickedSlide: true, //перелистывание слайдов по клику
+  grabCursor: true, //меняет курсор при наведении на руку
+  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  // mousewheel: { //перелистывание слайдов по мышке
+  //   sensitivity: 1,
+  //   eventsTarget: ".news__slider",
+  // },
+  // keyboard: { //перелистывание слайдов по нажатию клавиш
+  //   enabled: true,
+  //   onlyInViewport: true,
+  //   // pageUpDown: true,
+  // },
+  breakpoints: {
+    0: {
+      slidesPerView: 2,
+    },
+    500: {
+      slidesPerView: 3,
+    },
+    960: {
+      slidesPerView: 4,
+    },
+  },
+});
+
 // var swiper = new Swiper(".news__slider", {
 //   slidesPerView: 3,
 //   spaceBetween: 30,
@@ -680,294 +727,294 @@ if (goodsItem) {
 // -------------------------------------------- start OWL: ---------------------------------------------
 // let margin = 16;
 
-jQuery(($) => {
-  if ($(window).width() <= 768) {
-    margin = 13;
-  }
-});
+// jQuery(($) => {
+//   if ($(window).width() <= 768) {
+//     margin = 13;
+//   }
+// });
 // console.log(window.screen.width / 340);
 
-jQuery(($) => {
-  if ($(window).width() > 0) {
-    $(".owl-carousel-index").owlCarousel({
-      loop: true,
-      margin: 16,
-      items: 3,
-      nav: true,
-      // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
-      dots: false,
-      singleItem: false,
-      autoplay: false,
-      smartSpeed: 1000,
-      autoplayTimeout: 5000,
-      responsive: {
-        0: {
-          nav: false,
-          items: window.screen.width / 360,
-        },
-        800: {
-          nav: false,
-          items: window.screen.width / 420,
-        },
-        1200: {
-          // items: 4
-        },
-      },
-    });
+// jQuery(($) => {
+//   if ($(window).width() > 0) {
+//     $(".owl-carousel-index").owlCarousel({
+//       loop: true,
+//       margin: 16,
+//       items: 3,
+//       nav: true,
+//       // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
+//       dots: false,
+//       singleItem: false,
+//       autoplay: false,
+//       smartSpeed: 1000,
+//       autoplayTimeout: 5000,
+//       responsive: {
+//         0: {
+//           nav: false,
+//           items: window.screen.width / 360,
+//         },
+//         800: {
+//           nav: false,
+//           items: window.screen.width / 420,
+//         },
+//         1200: {
+//           // items: 4
+//         },
+//       },
+//     });
 
-    $(".owl-carousel-about").owlCarousel({
-      loop: false,
-      margin: 20,
-      items: 2,
-      nav: false,
-      // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
-      dots: true,
-      singleItem: false,
-      autoplay: false,
-      smartSpeed: 1000,
-      autoplayTimeout: 5000,
-      responsive: {
-        0: {
-          nav: false,
-          margin: 5,
-          items: 1,
-          // items: window.screen.width / 360,
-        },
-        400: {
-          nav: false,
-          margin: 5,
-          items: 1.3,
-          // items: window.screen.width / 360,
-        },
-      },
-    });
+//     $(".owl-carousel-about").owlCarousel({
+//       loop: false,
+//       margin: 20,
+//       items: 2,
+//       nav: false,
+//       // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
+//       dots: true,
+//       singleItem: false,
+//       autoplay: false,
+//       smartSpeed: 1000,
+//       autoplayTimeout: 5000,
+//       responsive: {
+//         0: {
+//           nav: false,
+//           margin: 5,
+//           items: 1,
+//           // items: window.screen.width / 360,
+//         },
+//         400: {
+//           nav: false,
+//           margin: 5,
+//           items: 1.3,
+//           // items: window.screen.width / 360,
+//         },
+//       },
+//     });
 
-    $(".owl-carousel_porf-item").owlCarousel({
-      loop: false,
-      margin: 16,
-      // autoWidth:true,
-      items: 4,
-      nav: true,
-      // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
-      dots: false,
-      singleItem: false,
-      autoplay: false,
-      smartSpeed: 1000,
-      autoplayTimeout: 5000,
-      responsive: {
-        0: {
-          nav: false,
-          // margin: 5,
-          items: 4,
-          margin: 13,
-        },
-        600: {
-          nav: false,
-          items: 4,
-          margin: 15,
-        },
-        1050: {
-          items: 4,
-        },
-      },
-    });
+//     $(".owl-carousel_porf-item").owlCarousel({
+//       loop: false,
+//       margin: 16,
+//       // autoWidth:true,
+//       items: 4,
+//       nav: true,
+//       // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
+//       dots: false,
+//       singleItem: false,
+//       autoplay: false,
+//       smartSpeed: 1000,
+//       autoplayTimeout: 5000,
+//       responsive: {
+//         0: {
+//           nav: false,
+//           // margin: 5,
+//           items: 4,
+//           margin: 13,
+//         },
+//         600: {
+//           nav: false,
+//           items: 4,
+//           margin: 15,
+//         },
+//         1050: {
+//           items: 4,
+//         },
+//       },
+//     });
 
-    $(".owl-carousel-news-item").owlCarousel({
-      loop: false,
-      margin: 16,
-      // autoWidth:true,
-      items: 3,
-      nav: true,
-      // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
-      dots: false,
-      singleItem: false,
-      autoplay: false,
-      smartSpeed: 1000,
-      autoplayTimeout: 5000,
-      responsive: {
-        0: {
-          nav: false,
-          // margin: 5,
-          items: 1,
-          autoWidth: true,
+//     $(".owl-carousel-news-item").owlCarousel({
+//       loop: false,
+//       margin: 16,
+//       // autoWidth:true,
+//       items: 3,
+//       nav: true,
+//       // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
+//       dots: false,
+//       singleItem: false,
+//       autoplay: false,
+//       smartSpeed: 1000,
+//       autoplayTimeout: 5000,
+//       responsive: {
+//         0: {
+//           nav: false,
+//           // margin: 5,
+//           items: 1,
+//           autoWidth: true,
 
-          // margin: 13,
-        },
-        410: {
-          nav: false,
-          // margin: 5,
-          items: 1.17,
-          // margin: 13,
-        },
-        425: {
-          nav: false,
-          // margin: 5,
-          items: 1.2,
-          // margin: 13,
-        },
-        530: {
-          nav: false,
-          // margin: 5,
-          items: 1.5,
-          // margin: 13,
-        },
-        600: {
-          nav: false,
-          // margin: 5,
-          items: 1.7,
-          // margin: 13,
-        },
-        750: {
-          nav: false,
-          // margin: 5,
-          items: 2.15,
-          // margin: 13,
-        },
-        950: {
-          nav: false,
-          items: 2.4,
-          // margin: 15,
-        },
-        1050: {
-          nav: false,
-          items: 2.7,
-          // margin: 15,
-        },
-        1180: {
-          items: 3,
-        },
-      },
-    });
+//           // margin: 13,
+//         },
+//         410: {
+//           nav: false,
+//           // margin: 5,
+//           items: 1.17,
+//           // margin: 13,
+//         },
+//         425: {
+//           nav: false,
+//           // margin: 5,
+//           items: 1.2,
+//           // margin: 13,
+//         },
+//         530: {
+//           nav: false,
+//           // margin: 5,
+//           items: 1.5,
+//           // margin: 13,
+//         },
+//         600: {
+//           nav: false,
+//           // margin: 5,
+//           items: 1.7,
+//           // margin: 13,
+//         },
+//         750: {
+//           nav: false,
+//           // margin: 5,
+//           items: 2.15,
+//           // margin: 13,
+//         },
+//         950: {
+//           nav: false,
+//           items: 2.4,
+//           // margin: 15,
+//         },
+//         1050: {
+//           nav: false,
+//           items: 2.7,
+//           // margin: 15,
+//         },
+//         1180: {
+//           items: 3,
+//         },
+//       },
+//     });
 
-    // $(".owl-carousel-about-us").owlCarousel({
-    //   // screenLeft:true,
-    //   // startPosition: 1,
-    //   loop: false,
-    //   // center: true,
-    //   margin: 20,
-    //   items: 2,
-    //   nav: true,
-    //   // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
-    //   dots: false,
-    //   singleItem: false,
-    //   autoplay: false,
-    //   smartSpeed: 1000,
-    //   // autowidth: true,
-    //   autoplayTimeout: 5000,
-    //   stagePadding: 104, // позволяет задать начальное положение первого слайда
-    //   responsive: {
-    //     0: {
-    //       items: 1,
-    //       stagePadding: 15,
-    //       margin: 5,
-    //       // nav: false,
-    //       // items: window.screen.width / 360,
-    //     },
-    //     350: {
-    //       items: 1,
-    //       stagePadding: 15,
-    //       margin: 5,
-    //       // nav: false,
-    //       // items: window.screen.width / 360,
-    //     },
-    //     570: {
-    //       items: 1,
-    //       stagePadding: 30,
-    //       margin: 10,
-    //       singleItem: true,
-    //       // nav: false,
-    //       // items: window.screen.width / 360,
-    //     },
-    //     760: {
-    //       items: 2,
-    //       stagePadding: 30,
-    //       margin: 5,
-    //       // nav: false,
-    //       // items: window.screen.width / 360,
-    //     },
-    //     1280: {
-    //       items: 2.5,
-    //       stagePadding: 30,
-    //       // nav: false,
-    //       // items: window.screen.width / 420,
-    //     },
-    //     1460: {
-    //       items: 3,
-    //       stagePadding: 116,
-    //     },
-    //     1920: {
-    //       items: 4,
-    //     },
-    //   },
-    // });
-  }
-});
+//     // $(".owl-carousel-about-us").owlCarousel({
+//     //   // screenLeft:true,
+//     //   // startPosition: 1,
+//     //   loop: false,
+//     //   // center: true,
+//     //   margin: 20,
+//     //   items: 2,
+//     //   nav: true,
+//     //   // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
+//     //   dots: false,
+//     //   singleItem: false,
+//     //   autoplay: false,
+//     //   smartSpeed: 1000,
+//     //   // autowidth: true,
+//     //   autoplayTimeout: 5000,
+//     //   stagePadding: 104, // позволяет задать начальное положение первого слайда
+//     //   responsive: {
+//     //     0: {
+//     //       items: 1,
+//     //       stagePadding: 15,
+//     //       margin: 5,
+//     //       // nav: false,
+//     //       // items: window.screen.width / 360,
+//     //     },
+//     //     350: {
+//     //       items: 1,
+//     //       stagePadding: 15,
+//     //       margin: 5,
+//     //       // nav: false,
+//     //       // items: window.screen.width / 360,
+//     //     },
+//     //     570: {
+//     //       items: 1,
+//     //       stagePadding: 30,
+//     //       margin: 10,
+//     //       singleItem: true,
+//     //       // nav: false,
+//     //       // items: window.screen.width / 360,
+//     //     },
+//     //     760: {
+//     //       items: 2,
+//     //       stagePadding: 30,
+//     //       margin: 5,
+//     //       // nav: false,
+//     //       // items: window.screen.width / 360,
+//     //     },
+//     //     1280: {
+//     //       items: 2.5,
+//     //       stagePadding: 30,
+//     //       // nav: false,
+//     //       // items: window.screen.width / 420,
+//     //     },
+//     //     1460: {
+//     //       items: 3,
+//     //       stagePadding: 116,
+//     //     },
+//     //     1920: {
+//     //       items: 4,
+//     //     },
+//     //   },
+//     // });
+//   }
+// });
 
-jQuery(($) => {
-  if ($(window).width() < 1260) {
-    $(".owl-carousel-about-us").owlCarousel({
-      // screenLeft:true,
-      // startPosition: 1,
-      loop: false,
-      // center: true,
-      margin: 20,
-      items: 2,
-      nav: false,
-      // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
-      dots: true,
-      singleItem: false,
-      autoplay: false,
-      smartSpeed: 1000,
-      // autowidth: true,
-      autoplayTimeout: 5000,
-      stagePadding: 0, // позволяет задать начальное положение первого слайда
-      responsive: {
-        0: {
-          // items: 1,
-          // stagePadding: 15,
-          // margin: 5,
-          // nav: false,
-          // items: window.screen.width / 360,
-        },
-        350: {
-          // items: 1,
-          // stagePadding: 15,
-          // margin: 5,
-          // nav: false,
-          // items: window.screen.width / 360,
-        },
-        570: {
-          // items: 1,
-          // stagePadding: 30,
-          // margin: 10,
-          // singleItem: true,
-          // nav: false,
-          // items: window.screen.width / 360,
-        },
-        760: {
-          // items: 2,
-          // stagePadding: 30,
-          // margin: 5,
-          // nav: false,
-          // items: window.screen.width / 360,
-        },
-        1280: {
-          // items: 2.5,
-          // stagePadding: 30,
-          // nav: false,
-          // items: window.screen.width / 420,
-        },
-        1460: {
-          // items: 3,
-          // stagePadding: 116,
-        },
-        1920: {
-          // items: 4,
-        },
-      },
-    });
-  }
-});
+// jQuery(($) => {
+//   if ($(window).width() < 1260) {
+//     $(".owl-carousel-about-us").owlCarousel({
+//       // screenLeft:true,
+//       // startPosition: 1,
+//       loop: false,
+//       // center: true,
+//       margin: 20,
+//       items: 2,
+//       nav: false,
+//       // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
+//       dots: true,
+//       singleItem: false,
+//       autoplay: false,
+//       smartSpeed: 1000,
+//       // autowidth: true,
+//       autoplayTimeout: 5000,
+//       stagePadding: 0, // позволяет задать начальное положение первого слайда
+//       responsive: {
+//         0: {
+//           // items: 1,
+//           // stagePadding: 15,
+//           // margin: 5,
+//           // nav: false,
+//           // items: window.screen.width / 360,
+//         },
+//         350: {
+//           // items: 1,
+//           // stagePadding: 15,
+//           // margin: 5,
+//           // nav: false,
+//           // items: window.screen.width / 360,
+//         },
+//         570: {
+//           // items: 1,
+//           // stagePadding: 30,
+//           // margin: 10,
+//           // singleItem: true,
+//           // nav: false,
+//           // items: window.screen.width / 360,
+//         },
+//         760: {
+//           // items: 2,
+//           // stagePadding: 30,
+//           // margin: 5,
+//           // nav: false,
+//           // items: window.screen.width / 360,
+//         },
+//         1280: {
+//           // items: 2.5,
+//           // stagePadding: 30,
+//           // nav: false,
+//           // items: window.screen.width / 420,
+//         },
+//         1460: {
+//           // items: 3,
+//           // stagePadding: 116,
+//         },
+//         1920: {
+//           // items: 4,
+//         },
+//       },
+//     });
+//   }
+// });
 
 // -------------------------------------------- end OWL ---------------------------------------------
 
