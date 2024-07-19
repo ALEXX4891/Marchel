@@ -276,20 +276,7 @@ if (filterItems) {
   const inpetSearchBtn = document.querySelector(".filter__icon_search");
   const inputCloseBtn = document.querySelector(".filter__icon_close");
   const filterDropdownList = document.querySelector(".filter__dropdown"); 
-  const filterDropdownItem = document.querySelector(".filter__dropdown-item");
-  // const namesArr = [
-  //   "Автоэлектрик",
-  //   "Автомеханик",
-  //   "Автослесарь",
-  //   "Автокондиционер",
-  //   "Автоэлектромонтер",
-  //   "слесарь",
-  //   "Сварщик",
-  //   "Трезвый водитель",
-  //   "Доставка",
-  //   "Сервис",
-  //   "Диагностика"
-  // ];
+  const filterDropdownItems = document.querySelectorAll(".filter__dropdown-item");
 
   if (id == 0) {
     cards.forEach((item) => {
@@ -327,15 +314,29 @@ if (filterItems) {
     input.addEventListener("input", function (e) {
       filterDropdownList.classList.add("filter__dropdown_active");
       filterDropdownList.innerHTML = "";
-      namesArr.forEach((item) => {
-        if (item.toLowerCase().includes(e.target.value.toLowerCase())) {
-          filterDropdown.innerHTML += `<li class="filter__dropdown-item">${item}</li>`;
+      filterDropdownItems.forEach((item) => {
+        if (item.innerText.toLowerCase().includes(e.target.value.toLowerCase())) {
+          filterDropdownList.append(item);
         }
-      });
+
+        item.addEventListener("click", function (e) {
+          input.value = e.target.innerText.trim();
+          filterDropdownList.classList.remove("filter__dropdown_active");
+          inpetSearchBtn.style.display = "none";
+          inputCloseBtn.style.display = "block";
+        });
+      })
   
       if (e.target.value == "") {
-        filterDropdown.classList.remove("filter__dropdown_active");
+        filterDropdownList.classList.remove("filter__dropdown_active");
       }
+    });
+
+    inputCloseBtn.addEventListener("click", function (e) {
+      input.value = "";
+      filterDropdownList.classList.remove("filter__dropdown_active");
+      inpetSearchBtn.style.display = "block";
+      inputCloseBtn.style.display = "none";
     });
   }
 
