@@ -275,20 +275,21 @@ if (filterItems) {
   const input = document.querySelector(".filter__input");
   const inpetSearchBtn = document.querySelector(".filter__icon_search");
   const inputCloseBtn = document.querySelector(".filter__icon_close");
-  const filterDropdown = document.querySelector(".filter__dropdown"); 
-  const namesArr = [
-    "Автоэлектрик",
-    "Автомеханик",
-    "Автослесарь",
-    "Автокондиционер",
-    "Автоэлектромонтер",
-    "слесарь",
-    "Сварщик",
-    "Трезвый водитель",
-    "Доставка",
-    "Сервис",
-    "Диагностика"
-  ];
+  const filterDropdownList = document.querySelector(".filter__dropdown"); 
+  const filterDropdownItem = document.querySelector(".filter__dropdown-item");
+  // const namesArr = [
+  //   "Автоэлектрик",
+  //   "Автомеханик",
+  //   "Автослесарь",
+  //   "Автокондиционер",
+  //   "Автоэлектромонтер",
+  //   "слесарь",
+  //   "Сварщик",
+  //   "Трезвый водитель",
+  //   "Доставка",
+  //   "Сервис",
+  //   "Диагностика"
+  // ];
 
   if (id == 0) {
     cards.forEach((item) => {
@@ -324,8 +325,8 @@ if (filterItems) {
 
   if (input) {
     input.addEventListener("input", function (e) {
-      filterDropdown.classList.add("filter__dropdown_active");
-      filterDropdown.innerHTML = "";
+      filterDropdownList.classList.add("filter__dropdown_active");
+      filterDropdownList.innerHTML = "";
       namesArr.forEach((item) => {
         if (item.toLowerCase().includes(e.target.value.toLowerCase())) {
           filterDropdown.innerHTML += `<li class="filter__dropdown-item">${item}</li>`;
@@ -883,41 +884,41 @@ if (headerSearchWrap) {
 // -------------------------------------------- end товар ---------------------------------------------
 // -------------------------------------------- start меню: ---------------------------------------------
 
-// const menuTowns = document.querySelectorAll(".nav__item_town");
+const menuTowns = document.querySelectorAll(".nav__item_town");
 
-// if (menuTowns) {
-//   let key = false;
-//   menuTowns.forEach((town) => {
-//     town.addEventListener("click", function (e) {
-//   // town.classList.add("nav__item_town_active");
+if (menuTowns) {
+  let key = false;
+  menuTowns.forEach((town) => {
+    town.addEventListener("click", function (e) {
+  // town.classList.add("nav__item_town_active");
 
-//       key = !key;
-//       console.log(key);
-//       if (key) {
-//         menuTowns.forEach((town) => {
-//           town.classList.add("nav__item_town_show");
-//         });
-//       } else {
-//         menuTowns.forEach((town) => {
-//           town.classList.remove("nav__item_town_show");
-//         });
-//       }
-//       setTownSelected(town, key);
-//     });
-//   });
-// }
+      key = !key;
+      console.log(key);
+      if (key) {
+        menuTowns.forEach((town) => {
+          town.classList.add("nav__item_town_show");
+        });
+      } else {
+        menuTowns.forEach((town) => {
+          town.classList.remove("nav__item_town_show");
+        });
+      }
+      setTownSelected(town, key);
+    });
+  });
+}
 
-// function setTownSelected(town, key) {
-//   menuTowns.forEach((item) => {
-//     item.classList.remove("nav__item_town_selected");
-//     item.classList.remove("nav__item_town_active");
-//   });
-//   town.classList.add("nav__item_town_selected");
+function setTownSelected(town, key) {
+  menuTowns.forEach((item) => {
+    item.classList.remove("nav__item_town_selected");
+    item.classList.remove("nav__item_town_active");
+  });
+  town.classList.add("nav__item_town_selected");
 
-//   if (key) {
-//     town.classList.add("nav__item_town_active");
-//   }
-// }
+  if (key) {
+    town.classList.add("nav__item_town_active");
+  }
+}
 
 // -------------------------------------------- end меню ---------------------------------------------
 
