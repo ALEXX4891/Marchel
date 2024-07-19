@@ -2375,20 +2375,13 @@ a {
 }
 @media (max-width: 660px) {
   .glavnaya .glavnaya__main .banner .banner__container .banner__btn-wrapper {
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(2px);
+    display: none;
   }
 }
-.glavnaya .glavnaya__main .banner .banner__container .banner__btn {
+.glavnaya .glavnaya__main .banner .banner__container .banner__btn-wrapper .banner__btn {
   padding: 10px 12px;
   max-width: 218px;
   min-height: 48px;
-}
-@media (max-width: 660px) {
-  .glavnaya .glavnaya__main .banner .banner__container .banner__btn {
-    max-width: 100%;
-  }
 }
 .glavnaya .glavnaya__main .advantages .advantages__container {
   display: grid;
@@ -5896,5 +5889,34 @@ a {
 }
 .contacts-page .contacts__container .contacts__geo-card-wrap .contacts__geo-card .contacts__geo-link:hover.contacts__geo-link_viber svg path {
   fill: #b585f3;
+}
+
+.mobile-call-btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  max-width: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  display: none;
+}
+@media (max-width: 660px) {
+  .mobile-call-btn {
+    display: grid;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+  }
+}
+.mobile-call-btn .btn {
+  padding: 10px 12px;
+  max-width: 218px;
+  min-height: 48px;
+}
+@media (max-width: 660px) {
+  .mobile-call-btn .btn {
+    max-width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

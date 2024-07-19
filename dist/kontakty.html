@@ -684,6 +684,11 @@
   </div>
 </div>
 
+<div class="mobile-call-btn">
+  <button class="btn popup-link" href="#call">
+    Вызвать помощь
+  </button>
+</div>
 
 
 
@@ -694,138 +699,7 @@
 <script src="js/lib/owl.carousel.min.js"></script>
 <script src="js/app.js"></script>
 
-<!-- <script defer src="js/testBurger.js"></script> -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
-<!-- <script>
-  $('.btn_on-modal-zakaz1').click(function () {
-    var name = $('#form_footer-name1').val();
-    var phone = $('#form_footer-phone1').val();
-    var sita = $('#form_footer-situation1').val();
-    $.ajax({
-      url: 'zakazZvonM.php',
-      type: 'POST',
-      cache: false,
-      data: { 'form_footer-name1': name, 'form_footer-phone1': phone, 'form_footer-situation1': sita },
-      dataType: 'html',
-      success: function (data) {
-        if (data == 'Готово') {
-          $('.wrap-zvonok').hide();
-          $('#phone-errors').hide();
-          $('#form_footer-phone1').val("");
-          $('#form_footer-name1').val("");
-          $('#form_footer-situation1').val("");
-          $('#form_footer-phone1').removeClass('.error');
-          $('.css-modal-target').show(); // Показываем модальное окно
-          $('html').addClass('no-scroll');
-        }
-      }
-    });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const phoneInput = document.getElementById('form_footer-phone1');
-    const submitButton = document.getElementById('submit_button1');
 
-    function formatPhoneNumber(value) {
-      if (!value.startsWith('+7')) {
-        value = '+7 ' + value;
-      }
-
-      const cleaned = value.replace(/\D/g, '');
-      const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
-
-      if (match) {
-        return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
-      }
-
-      return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function (_, g1, g2, g3, g4, g5) {
-        return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
-      });
-    }
-
-    phoneInput.addEventListener('input', function () {
-      phoneInput.value = formatPhoneNumber(phoneInput.value);
-
-      const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
-      if (phonePattern.test(phoneInput.value)) {
-        submitButton.classList.add('active');
-        submitButton.disabled = false;
-        phoneInput.classList.remove('input-error');
-      } else {
-        submitButton.classList.remove('active');
-        submitButton.disabled = true;
-      }
-    });
-  });
-</script> -->
-<!-- <script src="js/UnProkrutka.js"></script> -->
-<!-- <script src="js/header.js"></script> -->
-<!-- <script src="js/perepuk.js"></script> -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
-<!-- <script>
-  $('.btn_zayvka-otprav').click(function () {
-    var name = $('#form_footer-name').val();
-    var phone = $('#form_footer-phone').val();
-    var sita = $('#form_footer-situation').val();
-    $.ajax({
-      url: 'otprZayvkaM.php',
-      type: 'POST',
-      cache: false,
-      data: { 'form_footer-name': name, 'form_footer-phone': phone, 'form_footer-situation': sita },
-      dataType: 'html',
-      success: function (data) {
-        if (data == 'Готово') {
-          $('#phone-errors').hide();
-          $('#form_footer-phone').val("");
-          $('#form_footer-name').val("");
-          $('#form_footer-situation').val("");
-          $('#form_footer-phone').removeClass('.error');
-          $('.css-modal-target').show(); // Показываем модальное окно
-          $('html').addClass('no-scroll');
-        }
-
-      }
-    });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const phoneInput = document.getElementById('form_footer-phone');
-    const submitButton = document.getElementById('submit_button');
-
-    function formatPhoneNumber(value) {
-      if (!value.startsWith('+7')) {
-        value = '+7 ' + value;
-      }
-
-      const cleaned = value.replace(/\D/g, '');
-      const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
-
-      if (match) {
-        return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
-      }
-
-      return cleaned.replace(/^(\d{1})?(\d{0,3})?(\d{0,3})?(\d{0,2})?(\d{0,2})?$/, function (_, g1, g2, g3, g4, g5) {
-        return `+${g1 || ''}${g2 ? ' (' + g2 : ''}${g3 ? ') ' + g3 : ''}${g4 ? '-' + g4 : ''}${g5 ? '-' + g5 : ''}`; // представляет собой шаблон для номера телефона в формате +7 (XXX) XXX-XX-XX.
-      });
-    }
-
-    phoneInput.addEventListener('input', function () {
-      phoneInput.value = formatPhoneNumber(phoneInput.value);
-
-      const phonePattern = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
-      if (phonePattern.test(phoneInput.value)) {
-        submitButton.classList.add('active');
-        submitButton.disabled = false;
-        phoneInput.classList.remove('input-error');
-      } else {
-        submitButton.classList.remove('active');
-        submitButton.disabled = true;
-      }
-    });
-  });
-</script> -->
 
 
 </body>

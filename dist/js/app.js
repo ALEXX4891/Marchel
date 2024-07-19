@@ -322,19 +322,22 @@ if (filterItems) {
   });
 
 
-  input.addEventListener("input", function (e) {
-    filterDropdown.classList.add("filter__dropdown_active");
-    filterDropdown.innerHTML = "";
-    namesArr.forEach((item) => {
-      if (item.toLowerCase().includes(e.target.value.toLowerCase())) {
-        filterDropdown.innerHTML += `<li class="filter__dropdown-item">${item}</li>`;
+  if (input) {
+    input.addEventListener("input", function (e) {
+      filterDropdown.classList.add("filter__dropdown_active");
+      filterDropdown.innerHTML = "";
+      namesArr.forEach((item) => {
+        if (item.toLowerCase().includes(e.target.value.toLowerCase())) {
+          filterDropdown.innerHTML += `<li class="filter__dropdown-item">${item}</li>`;
+        }
+      });
+  
+      if (e.target.value == "") {
+        filterDropdown.classList.remove("filter__dropdown_active");
       }
     });
+  }
 
-    if (e.target.value == "") {
-      filterDropdown.classList.remove("filter__dropdown_active");
-    }
-  });
 
 }
 // -------------------------------------------- end filter ---------------------------------------------

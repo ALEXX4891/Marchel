@@ -3205,18 +3205,20 @@ a {
           place-items: center;
 
           @media (max-width: 660px) {
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(2px);
+            // padding: 15px;
+            // background: rgba(255, 255, 255, 0.8);
+            // backdrop-filter: blur(2px);
+            display: none;
           }
-        }
-        .banner__btn {
-          padding: 10px 12px;
-          max-width: 218px;
-          min-height: 48px;
 
-          @media (max-width: 660px) {
-            max-width: 100%;
+          .banner__btn {
+            padding: 10px 12px;
+            max-width: 218px;
+            min-height: 48px;
+  
+            @media (max-width: 660px) {
+              // max-width: 100%;
+            }
           }
         }
       }
@@ -7471,6 +7473,34 @@ cursor: pointer; */
 
 // --------------------------------------- &&&&&& start ---------------------------------------
 
+.mobile-call-btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+// .banner__btn-wrapper {
+  max-width: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  display: none;
+
+  @media (max-width: 660px) {
+    display: grid;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+  }
+
+  .btn {
+    padding: 10px 12px;
+    max-width: 218px;
+    min-height: 48px;
+
+    @media (max-width: 660px) {
+      max-width: 100%;
+    }
+  }
+}
 // --------------------------------------- &&&&&& end ---------------------------------------
 // --------------------------------------- &&&&&& start ---------------------------------------
 
