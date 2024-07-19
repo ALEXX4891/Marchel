@@ -5226,6 +5226,9 @@ a {
   z-index: 1;
   display: none;
 }
+.services-page .services-page__container .filter .filter__container .filter__list .filter__item.filter__item_input .filter__dropdown.filter__dropdown_active {
+  display: block;
+}
 .services-page .services-page__container .filter .filter__container .filter__list .filter__item.filter__item_input .filter__dropdown .filter__dropdown-item {
   position: relative;
   cursor: pointer;

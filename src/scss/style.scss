@@ -6618,6 +6618,10 @@ cursor: pointer; */
                 z-index: 1;
                 display: none;
 
+                &.filter__dropdown_active {
+                  display: block;
+                }
+
                 .filter__dropdown-item {
                   position: relative;
                   cursor: pointer;

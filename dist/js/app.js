@@ -276,6 +276,19 @@ if (filterItems) {
   const inpetSearchBtn = document.querySelector(".filter__icon_search");
   const inputCloseBtn = document.querySelector(".filter__icon_close");
   const filterDropdown = document.querySelector(".filter__dropdown"); 
+  const namesArr = [
+    "Автоэлектрик",
+    "Автомеханик",
+    "Автослесарь",
+    "Автокондиционер",
+    "Автоэлектромонтер",
+    "слесарь",
+    "Сварщик",
+    "Трезвый водитель",
+    "Доставка",
+    "Сервис",
+    "Диагностика"
+  ];
 
   if (id == 0) {
     cards.forEach((item) => {
@@ -306,6 +319,21 @@ if (filterItems) {
         addServToShowBtn.style.display = "block";
       }
     });    
+  });
+
+
+  input.addEventListener("input", function (e) {
+    filterDropdown.classList.add("filter__dropdown_active");
+    filterDropdown.innerHTML = "";
+    namesArr.forEach((item) => {
+      if (item.toLowerCase().includes(e.target.value.toLowerCase())) {
+        filterDropdown.innerHTML += `<li class="filter__dropdown-item">${item}</li>`;
+      }
+    });
+
+    if (e.target.value == "") {
+      filterDropdown.classList.remove("filter__dropdown_active");
+    }
   });
 
 }
