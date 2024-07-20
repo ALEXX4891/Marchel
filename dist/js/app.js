@@ -338,6 +338,21 @@ if (filterItems) {
       inpetSearchBtn.style.display = "block";
       inputCloseBtn.style.display = "none";
     });
+
+    filterDropdownItems.forEach((item) => {
+        item.addEventListener("click", function (e) {
+          console.log(e.target.getAttribute("data-service"));
+          id = item.getAttribute("data-service");
+          cards.forEach((item) => {
+            if (id == item.getAttribute("data-service")) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+
+      });
+    });
   }
 
 
