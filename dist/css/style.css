@@ -1206,6 +1206,27 @@ a {
   color: #30373d;
   max-width: 80%;
 }
+.popup .popup__icon-block {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 18px;
+  justify-content: start;
+}
+.popup .popup__icon-block .popup__icon-link svg path {
+  transition: fill 0.3s ease-in-out;
+}
+.popup .popup__icon-block .popup__icon-link:hover.popup__icon-link_telegram svg path {
+  fill: #36b7ff;
+}
+.popup .popup__icon-block .popup__icon-link:hover.popup__icon-link_whatsapp svg path {
+  fill: #33d657;
+}
+.popup .popup__icon-block .popup__icon-link:hover.popup__icon-link_viber svg path {
+  fill: #b585f3;
+}
+.popup .popup__icon-block .popup__icon-link:hover.popup__icon-link_tel svg path {
+  fill: #CA2020;
+}
 .popup .popup__close {
   position: absolute;
   top: 0;
@@ -1304,6 +1325,7 @@ a {
   inset: -12px;
 }
 .popup .form .form__agreement-wrap {
+  margin-bottom: 30px;
   font-family: Roboto;
   font-size: 12px;
   font-weight: 400;
