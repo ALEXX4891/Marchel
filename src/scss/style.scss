@@ -6371,61 +6371,6 @@ a {
       width: 100%;
     }
 
-    .owl-prev {
-      position: absolute;
-      top: 53%;
-      transform: translateY(-50%);
-      left: -54px;
-      /* border: 1px solid #000; */
-      background: url("@img/owl-index-prew-btn.svg") !important;
-      width: 32px;
-      height: 29px;
-
-      background-size: cover !important;
-      background-repeat: no-repeat !important;
-      background-position: center !important;
-
-      cursor: pointer;
-
-      & span {
-        display: none;
-        /* background-image: url("../img/owl_prev.svg");
-width: 50px;
-height: 50px;
-background-size: cover;
-cursor: pointer; */
-      }
-    }
-
-    .owl-next {
-      position: absolute;
-      top: 53%;
-      transform: translateY(-50%);
-      right: -54px;
-      background: url("@img/owl-index-next-btn.svg") !important;
-      width: 32px;
-      height: 29px;
-      background-size: cover !important;
-      background-repeat: no-repeat !important;
-      background-position: center !important;
-      cursor: pointer;
-
-      & span {
-        display: none;
-
-        /* display: block; */
-
-        /* background-image: url("../img/owl_next.svg");
-width: 50px;
-height: 50px;
-background-size: cover;
-cursor: pointer; */
-      }
-    }
-
-    .owl-stage-outer {
-    }
-
     .card_sert {
       display: inline-block;
       width: 282px;

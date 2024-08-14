@@ -50,7 +50,7 @@ export const scss = () => {
       app.isBuild,
       webpcss({
         webpClass: ".webp", //добавит класс если будет поддержка webp
-        noWebpClass: ".no-webp", // добавит класс если не будет поддержки webp
+        // noWebpClass: ".no-webp", // добавит класс если не будет поддержки webp
       })
     ))
     .pipe(app.gulp.dest(app.path.build.css)) // выгружаем НЕминифицированный css
