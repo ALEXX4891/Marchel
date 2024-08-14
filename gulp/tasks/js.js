@@ -15,11 +15,11 @@ export const js = () => {
   //   app.isDev,
   //   map.init()
   // ))
-  .pipe(stripComments())
-  // .pipe(app.plugins.if(
-  //   app.isBuild,
-  //   stripComments()
-  // ))
+  // .pipe(stripComments())
+  .pipe(app.plugins.if(
+    app.isBuild,
+    stripComments()
+  ))
   // .pipe(app.plugins.if(
   //   app.isBuild,
   //   webpack({

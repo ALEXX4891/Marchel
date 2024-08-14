@@ -8,14 +8,14 @@ function testWebP(callback) {
   webP.onload = webP.onerror = function () {
     callback(webP.height == 2);
   };
-  webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+  webP.src =
+    "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 }
 // добавление класса webp или no-webp для <html>
 testWebP(function (support) {
-  let className = support === true ? 'webp' : 'no-webp';
+  let className = support === true ? "webp" : "no-webp";
   document.documentElement.classList.add(className);
 });
-
 
 // -------------------------------------------- start Fancybox: ---------------------------------------------
 Fancybox.bind("[data-fancybox]", {
@@ -49,7 +49,6 @@ navLinks.forEach((item) => {
 //     el: ".swiper-scrollbar",
 //   },
 // });
-
 
 new Swiper(".news__slider", {
   // Optional parameters
@@ -284,7 +283,6 @@ if (previews) {
 const filterItems = document.querySelectorAll(".filter__link");
 
 if (filterItems) {
-
   const cards = document.querySelectorAll(".services__card");
   let id = 0;
   let cardsLength = cards.length;
@@ -294,8 +292,10 @@ if (filterItems) {
   const input = document.querySelector(".filter__input");
   const inpetSearchBtn = document.querySelector(".filter__icon_search");
   const inputCloseBtn = document.querySelector(".filter__icon_close");
-  const filterDropdownList = document.querySelector(".filter__dropdown"); 
-  const filterDropdownItems = document.querySelectorAll(".filter__dropdown-item");
+  const filterDropdownList = document.querySelector(".filter__dropdown");
+  const filterDropdownItems = document.querySelectorAll(
+    ".filter__dropdown-item"
+  );
 
   if (id == 0) {
     cards.forEach((item) => {
@@ -312,9 +312,8 @@ if (filterItems) {
         if (id == item.getAttribute("data-service")) {
           item.style.display = "block";
           cardsLength++;
-
         } else {
-          item.style.display = "none";          
+          item.style.display = "none";
         }
       });
       // console.log(`cardsLength: ${cardsLength}`);
@@ -325,16 +324,17 @@ if (filterItems) {
         notFoundMessage.style.display = "none";
         addServToShowBtn.style.display = "block";
       }
-    });    
+    });
   });
-
 
   if (input) {
     input.addEventListener("input", function (e) {
       filterDropdownList.classList.add("filter__dropdown_active");
       filterDropdownList.innerHTML = "";
       filterDropdownItems.forEach((item) => {
-        if (item.innerText.toLowerCase().includes(e.target.value.toLowerCase())) {
+        if (
+          item.innerText.toLowerCase().includes(e.target.value.toLowerCase())
+        ) {
           filterDropdownList.append(item);
         }
 
@@ -344,8 +344,8 @@ if (filterItems) {
           inpetSearchBtn.style.display = "none";
           inputCloseBtn.style.display = "block";
         });
-      })
-  
+      });
+
       if (e.target.value == "") {
         filterDropdownList.classList.remove("filter__dropdown_active");
       }
@@ -359,22 +359,19 @@ if (filterItems) {
     });
 
     filterDropdownItems.forEach((item) => {
-        item.addEventListener("click", function (e) {
-          // console.log(e.target.getAttribute("data-service"));
-          id = item.getAttribute("data-service");
-          cards.forEach((item) => {
-            if (id == item.getAttribute("data-service")) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
-
+      item.addEventListener("click", function (e) {
+        // console.log(e.target.getAttribute("data-service"));
+        id = item.getAttribute("data-service");
+        cards.forEach((item) => {
+          if (id == item.getAttribute("data-service")) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
       });
     });
   }
-
-
 }
 // -------------------------------------------- end filter ---------------------------------------------
 
@@ -446,7 +443,7 @@ if (menuTowns) {
   let key = false;
   menuTowns.forEach((town) => {
     town.addEventListener("click", function (e) {
-  // town.classList.add("nav__item_town_active");
+      // town.classList.add("nav__item_town_active");
 
       key = !key;
       console.log(key);
@@ -538,3 +535,175 @@ if (cookieCloseBtn) {
   });
 }
 // -------------------------------------------- end Куки ---------------------------------------------
+//--------------------------Запрос к БД----------------------------
+// Загружаем список из БД:
+async function fetchToDB(options) {
+  // Блок try выполнится полностью, если не будет ошибок:
+  try {
+    // Выполняем запрос:
+    const responce = await fetch("files/main.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(options),
+    });
+    const infoList = await responce.json();
+    return infoList; // Возвращаем результат запроса
+  } catch (err) {
+    // Блок catch сработает только если будут какие-то ошибки в блоке try:
+    // Выведем в консоли информацию об ошибке:
+    console.log("При запросе к БД произошла ошибка, детали ниже:");
+    console.error(err);
+    // Вернем исключение с текстом поясняющим детали ошибки:
+    alert("Произошла ошибка при запросе к БД!");
+    throw new Error("Запрос завершился неудачно.");
+  }
+}
+
+let optionsNews = {
+  // опции для получения списка всех контрагентов
+  function: "getAll",
+  table: "news",
+  all: "*",
+};
+
+const news = await fetchToDB(optionsNews);
+const newsForRender = [...news];
+console.log(newsForRender);
+
+let optionsServices = {
+  // опции для получения списка всех контрагентов
+  function: "getAll",
+  table: "services",
+  all: "*",
+};
+
+const services = await fetchToDB(optionsServices);
+const servicesForRender = [...services];
+console.log(servicesForRender);
+
+
+// ------------------------------ start замена контактов на сайте-------------------------------
+let optionsContacts = {
+  // опции для получения списка всех контрагентов
+  function: "getAll",
+  table: "contacts",
+  all: "*",
+};
+
+const contacts = await fetchToDB(optionsContacts);
+const contactsForRender = [...contacts];
+console.log(contactsForRender);
+const phone_1 = contactsForRender.filter((item) => {
+  return item.name === "phone_1";
+});
+
+const email_1 = contactsForRender.filter((item) => {
+  return item.name === "email_1";
+});
+
+const phoneInfo = document.querySelectorAll(".phone-info");
+if (phoneInfo) {
+  phoneInfo.forEach((item) => {
+    item.innerHTML = phone_1[0].value;
+    item.setAttribute("href", `tel:${phone_1[0].value}`);
+  });
+}
+
+const emailInfo = document.querySelectorAll(".email-info");
+if (emailInfo) {
+  emailInfo.forEach((item) => {
+    item.innerHTML = email_1[0].value;
+    item.setAttribute("href", `mailto:${email_1[0].value}`);
+  });
+}
+
+const popup = document.querySelector(".popup");
+if (popup) {
+  const popupTel = document.querySelector(".popup__icon-link_tel");
+  if (popupTel) {
+    popupTel.setAttribute("href", `tel:${phone_1[0].value}`);
+  }
+}
+
+const telegramInfo = document.querySelectorAll(".telegram-info");
+if (telegramInfo) {
+  telegramInfo.forEach((item) => {
+    // item.innerHTML = phone_1[0].value;
+    item.setAttribute("href", `https://t.me/+${phone_1[0].value.replace(/[^0-9]/g, "")}`);
+  });
+}
+
+const whatsappInfo = document.querySelectorAll(".whatsapp-info");
+if (whatsappInfo) {
+  whatsappInfo.forEach((item) => {
+    // item.innerHTML = phone_1[0].value;
+    item.setAttribute("href", `https://api.whatsapp.com/send?phone=${phone_1[0].value.replace(/[^0-9]/g, "")}`);
+  });
+}
+
+const viberInfo = document.querySelectorAll(".viber-info");
+if (viberInfo) {
+  viberInfo.forEach((item) => {
+    // item.innerHTML = phone_1[0].value;
+    item.setAttribute("href", `viber://chat?number=%2B${phone_1[0].value.replace(/[^0-9]/g, "")}`);
+  });
+}
+
+// ------------------------------ end замена контактов на сайте-------------------------------
+
+
+const servicesCardWrap = document.querySelector(".services__card-wrap");
+if (servicesCardWrap) {
+  servicesCardWrap.innerHTML = "";
+  servicesForRender.forEach((item) => {
+    const card = document.createElement("li");    
+    card.classList.add("services__card");
+    card.setAttribute('data-services', `${item.type}`);
+    card.innerHTML = `
+      <img class="services__img" src="img/${item.photo}" alt="${item.name}">
+      
+      <a class="services__card-link" href="services-item.html?id=${item.id}">
+      <p class="services__card-title">
+        ${item.name}
+      </p>
+        <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z" fill="white"></path>
+        </svg>
+      </a>
+    `;
+
+    servicesCardWrap.append(card);
+  });
+}
+
+const serviceItemPage = document.querySelector(".services-item-page");
+if (serviceItemPage) {
+  var url = new URL(window.location.href);
+  const id = url.searchParams.get("id");
+  // console.log(id);
+  const service = servicesForRender.find((item) => item.id == id);
+  // console.log(service);
+  const photo = serviceItemPage.querySelector(".banner__photo");
+  const name = serviceItemPage.querySelector(".banner__title");
+  const description = serviceItemPage.querySelector(".banner__text");
+  const title_1 = serviceItemPage.querySelector(".work__title");
+  const title_2 = serviceItemPage.querySelector(".article__title");
+  const text = serviceItemPage.querySelector(".article__card-text");
+
+  photo.setAttribute("src", `img/${service.photo}`);
+  name.textContent = service.name;
+  description.textContent = service.description;
+  title_1.textContent = service.title_1;
+  title_2.textContent = service.title_2;
+  text.textContent = service.text;
+}
+
+
+
+
+// console.log(options);
+// await fetchToDB(options);
+// требуется подключить скрипт как модуль, иначе await не работает!!!
+//--------------------------end Запрос к БД----------------------------
