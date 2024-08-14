@@ -1,8 +1,4 @@
-// import * as flsFunctions from "./modules/functions.js";
-// flsFunctions.isWebp();
-// console.log(1);
 
-//проверка на поддержку webp браузером, добавление класса webp или no-webp в <html>
 function testWebP(callback) {
   let webP = new Image();
   webP.onload = webP.onerror = function () {
@@ -11,18 +7,13 @@ function testWebP(callback) {
   webP.src =
     "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 }
-// добавление класса webp или no-webp для <html>
 testWebP(function (support) {
   let className = support === true ? "webp" : "no-webp";
   document.documentElement.classList.add(className);
 });
 
-// -------------------------------------------- start Fancybox: ---------------------------------------------
 Fancybox.bind("[data-fancybox]", {
-  // Your custom options
 });
-// -------------------------------------------- end Fancybox: ---------------------------------------------
-// -------------------------------------------- start подсветка активного пункта меню:---------------------------------------------------------
 const page = window.location.pathname.split("/").pop();
 const navLinks = document.querySelectorAll(".nav__link");
 navLinks.forEach((item) => {
@@ -30,43 +21,16 @@ navLinks.forEach((item) => {
     item.classList.add("nav__link_active");
   }
 });
-// -------------------------------------------- end подсветка активного пункта меню:---------------------------------------------------------
-// -------------------------------------------- start swiper: ---------------------------------------------
-// const swiper = new Swiper(".swiper", {
-//   // Optional parameters
-//   direction: "horizontal",
-//   loop: true,
-//   slidesPerView: 3,
-//   spaceBetween: 30,
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
 
-//   // And if we need scrollbar
-//   scrollbar: {
-//     el: ".swiper-scrollbar",
-//   },
-// });
 
 new Swiper(".services__slider", {
-  // Optional parameters
   direction: "horizontal",
-  // loop: true,
-  // allowTouchMove: true,
-  slidesPerView: 4, // сколько слайдов показывать, можно дробно
-  // slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
-  // slidersPerGroup: 3, // сколько слайдов в группе
-  // centeredSlides: true, //выравнивание слайдов по центру
-  // initialSlide: 1, //начальный слайд (c нуля)
+  slidesPerView: 4, 
 
   spaceBetween: 19,
-  // slideToClickedSlide: true, //перелистывание слайдов по клику
-  grabCursor: true, //меняет курсор при наведении на руку
-  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+  grabCursor: true, 
+  watchOverflow: true, 
 
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -75,15 +39,6 @@ new Swiper(".services__slider", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  // mousewheel: { //перелистывание слайдов по мышке
-  //   sensitivity: 1,
-  //   eventsTarget: ".news__slider",
-  // },
-  // keyboard: { //перелистывание слайдов по нажатию клавиш
-  //   enabled: true,
-  //   onlyInViewport: true,
-  //   // pageUpDown: true,
-  // },
   breakpoints: {
     0: {
       slidesPerView: 2,
@@ -97,23 +52,11 @@ new Swiper(".services__slider", {
   },
 });
 
-// var swiper = new Swiper(".news__slider", {
-//   slidesPerView: 3,
-//   spaceBetween: 30,
-//   centeredSlides: false,
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-// });
 
-// -------------------------------------------- end swiper: ---------------------------------------------
-// -------------------------------------------- start popup: ---------------------------------------------
 const popupLinks = document.querySelectorAll(".popup-link");
 const lockPadding = document.querySelectorAll(".lock-padding");
 const body = document.querySelector("body");
 
-// const btn = document.querySelector(".project-btn");
 
 let unlock = true;
 const timeout = 800;
@@ -123,7 +66,7 @@ if (popupLinks.length > 0) {
     const popupLink = popupLinks[index];
     popupLink.addEventListener("click", function (e) {
       const popupName = popupLink.getAttribute("href").replace("#", "");
-      const curentPopup = document.getElementById(popupName); //получаем id попап-окна
+      const curentPopup = document.getElementById(popupName); 
       popupOpen(curentPopup);
       e.preventDefault();
     });
@@ -135,7 +78,7 @@ if (popupCloseIcon.length > 0) {
   for (let index = 0; index < popupCloseIcon.length; index++) {
     const el = popupCloseIcon[index];
     el.addEventListener("click", function (e) {
-      popupClose(el.closest(".popup")); //ближайший родитель класса popup
+      popupClose(el.closest(".popup")); 
       e.preventDefault();
     });
   }
@@ -145,7 +88,6 @@ function popupOpen(curentPopup) {
   if (curentPopup && unlock) {
     const popupActive = document.querySelector(".popup.open");
     if (popupActive) {
-      // закрываем текущий открытый попап, если он есть
       popupClose(popupActive, false);
     } else {
       bodyLock();
@@ -153,7 +95,6 @@ function popupOpen(curentPopup) {
     curentPopup.classList.add("open");
     curentPopup.addEventListener("click", function (e) {
       if (!e.target.closest(".popup__content")) {
-        // если клик был по области вокруг попапа то ничего не делаем
         popupClose(e.target.closest(".popup"));
       }
     });
@@ -169,19 +110,14 @@ function popupClose(popupActive, doUnlock = true) {
   }
 }
 
-// добавляем боди padding-right при открытии попапа, на ширину скролл-бара
 function bodyLock() {
-  // console.log(window.innerWidth);
-  // console.log(document.querySelector(".header").offsetWidth);
   const lockPaddingValue =
     window.innerWidth - document.querySelector(".header").offsetWidth + "px";
   for (let index = 0; index < lockPadding.length; index++) {
     const el = lockPadding[index];
     el.style.marginRight = lockPaddingValue;
-    // console.log(el.style.marginRight);
   }
   body.style.paddingRight = lockPaddingValue;
-  // console.log(body.style.paddingRight);
   body.classList.add("lock");
 
   unlock = false;
@@ -212,9 +148,7 @@ document.addEventListener("keydown", function (e) {
     popupClose(popupActive);
   }
 });
-// -------------------------------------------- end popup: ---------------------------------------------
 
-// -------------------------------------------- start gallery: ---------------------------------------------
 const previews = document.querySelectorAll(".slider_img");
 
 if (previews) {
@@ -229,9 +163,7 @@ if (previews) {
   });
 }
 
-// -------------------------------------------- end gallery: ---------------------------------------------
 
-// -------------------------------------------- start filter: ---------------------------------------------
 
 const filterItems = document.querySelectorAll(".filter__link");
 
@@ -269,7 +201,6 @@ if (filterItems) {
           item.style.display = "none";
         }
       });
-      // console.log(`cardsLength: ${cardsLength}`);
       if (cardsLength == 0) {
         notFoundMessage.style.display = "block";
         addServToShowBtn.style.display = "none";
@@ -313,7 +244,6 @@ if (filterItems) {
 
     filterDropdownItems.forEach((item) => {
       item.addEventListener("click", function (e) {
-        // console.log(e.target.getAttribute("data-service"));
         id = item.getAttribute("data-service");
         cards.forEach((item) => {
           if (id == item.getAttribute("data-service")) {
@@ -326,9 +256,7 @@ if (filterItems) {
     });
   }
 }
-// -------------------------------------------- end filter ---------------------------------------------
 
-// -------------------------------------------- start BURGER: ---------------------------------------------
 
 const burger = document.querySelector(".burger");
 const headerNav = document.querySelector(".header__nav");
@@ -346,9 +274,7 @@ if (burger) {
     }
   });
 }
-// -------------------------------------------- end BURGER ---------------------------------------------
 
-// -------------------------------------------- start Search: ---------------------------------------------
 const headerSearchWrap = document.querySelector(".header__search-form-wrap");
 
 if (headerSearchWrap) {
@@ -366,7 +292,6 @@ if (headerSearchWrap) {
 
   if (closeSearchBtn) {
     closeSearchBtn.addEventListener("click", function (e) {
-      // e.preventDefault();
       headerSearchWrap.classList.remove("header__search-form-wrap_active");
       inputField.value = "";
       console.log("100");
@@ -386,9 +311,7 @@ if (headerSearchWrap) {
   });
 }
 
-// -------------------------------------------- end Search ---------------------------------------------
 
-// -------------------------------------------- start меню: ---------------------------------------------
 
 const menuTowns = document.querySelectorAll(".nav__item_town");
 
@@ -396,7 +319,6 @@ if (menuTowns) {
   let key = false;
   menuTowns.forEach((town) => {
     town.addEventListener("click", function (e) {
-      // town.classList.add("nav__item_town_active");
 
       key = !key;
       console.log(key);
@@ -426,12 +348,10 @@ function setTownSelected(town, key) {
   }
 }
 
-// -------------------------------------------- end меню ---------------------------------------------
 
 $("#phone_1").mask("+7(999) 999 99 99");
 $("#phone_2").mask("+7(999) 999 99 99");
 
-// -------------------------------------------- start Куки: ---------------------------------------------
 function setCookie(name, value, lifetimeDays = 30, path = "/") {
   var expires = "";
   if (lifetimeDays) {
@@ -460,7 +380,6 @@ if (!getCookie("CookiePolicyAccepted")) {
 }
 
 function acceptCookiePolicy() {
-  // console.log("acceptCookiePolicy");
   setCookie("CookiePolicyAccepted", true);
   $(".cookie").fadeTo(500, 0);
   setTimeout(() => {
@@ -468,7 +387,6 @@ function acceptCookiePolicy() {
   }, 500);
 }
 function closeCookiePolicyNotification() {
-  // console.log("closeCookiePolicyNotification");
   $(".cookie").fadeOut(300);
 }
 
@@ -487,13 +405,8 @@ if (cookieCloseBtn) {
     closeCookiePolicyNotification();
   });
 }
-// -------------------------------------------- end Куки ---------------------------------------------
-//--------------------------Запрос к БД----------------------------
-// Загружаем список из БД:
 async function fetchToDB(options) {
-  // Блок try выполнится полностью, если не будет ошибок:
   try {
-    // Выполняем запрос:
     const responce = await fetch("files/main.php", {
       method: "POST",
       headers: {
@@ -502,21 +415,16 @@ async function fetchToDB(options) {
       body: JSON.stringify(options),
     });
     const infoList = await responce.json();
-    return infoList; // Возвращаем результат запроса
+    return infoList; 
   } catch (err) {
-    // Блок catch сработает только если будут какие-то ошибки в блоке try:
-    // Выведем в консоли информацию об ошибке:
     console.log("При запросе к БД произошла ошибка, детали ниже:");
     console.error(err);
-    // Вернем исключение с текстом поясняющим детали ошибки:
     alert("Произошла ошибка при запросе к БД!");
     throw new Error("Запрос завершился неудачно.");
   }
 }
 
-// ------------------------------ start контакты на сайте-------------------------------
 let optionsContacts = {
-  // опции для получения списка всех контрагентов
   function: "getAll",
   table: "contacts",
   all: "*",
@@ -524,7 +432,6 @@ let optionsContacts = {
 
 const contacts = await fetchToDB(optionsContacts);
 const contactsForRender = [...contacts];
-// console.log(contactsForRender);
 
 const phone_1 = contactsForRender.filter((item) => {
   return item.name === "phone_1";
@@ -561,7 +468,6 @@ if (popup) {
 const telegramInfo = document.querySelectorAll(".telegram-info");
 if (telegramInfo) {
   telegramInfo.forEach((item) => {
-    // item.innerHTML = phone_1[0].value;
     item.setAttribute(
       "href",
       `https://t.me/+${phone_1[0].value.replace(/[^0-9]/g, "")}`
@@ -572,7 +478,6 @@ if (telegramInfo) {
 const whatsappInfo = document.querySelectorAll(".whatsapp-info");
 if (whatsappInfo) {
   whatsappInfo.forEach((item) => {
-    // item.innerHTML = phone_1[0].value;
     item.setAttribute(
       "href",
       `https://api.whatsapp.com/send?phone=${phone_1[0].value.replace(
@@ -586,7 +491,6 @@ if (whatsappInfo) {
 const viberInfo = document.querySelectorAll(".viber-info");
 if (viberInfo) {
   viberInfo.forEach((item) => {
-    // item.innerHTML = phone_1[0].value;
     item.setAttribute(
       "href",
       `viber://chat?number=%2B${phone_1[0].value.replace(/[^0-9]/g, "")}`
@@ -594,11 +498,8 @@ if (viberInfo) {
   });
 }
 
-// ------------------------------ end контакты на сайте-------------------------------
 
-// ------------------------------ start услуги на сайте-------------------------------
 let optionsServices = {
-  // опции для получения списка всех контрагентов
   function: "getAll",
   table: "services",
   all: "*",
@@ -606,7 +507,6 @@ let optionsServices = {
 
 const services = await fetchToDB(optionsServices);
 const servicesForRender = [...services];
-// console.log(servicesForRender);
 
 const servicesCardWrap = document.querySelector(".services__card-wrap");
 if (servicesCardWrap) {
@@ -636,9 +536,7 @@ const serviceItemPage = document.querySelector(".services-item-page");
 if (serviceItemPage) {
   var url = new URL(window.location.href);
   const id = url.searchParams.get("id");
-  // console.log(id);
   const service = servicesForRender.find((item) => item.id == id);
-  // console.log(service);
   const photo = serviceItemPage.querySelector(".banner__photo");
   const name = serviceItemPage.querySelector(".banner__title");
   const description = serviceItemPage.querySelector(".banner__text");
@@ -654,10 +552,7 @@ if (serviceItemPage) {
   text.textContent = service.text;
 }
 
-// ------------------------------ end услуги на сайте-------------------------------
-// ------------------------------ start новости на сайте-------------------------------
 let optionsNews = {
-  // опции для получения списка всех контрагентов
   function: "getAll",
   table: "news",
   all: "*",
@@ -670,7 +565,6 @@ let optionsNews = {
 
 const news = await fetchToDB(optionsNews);
 let newsForRender = [...news];
-// console.log(newsForRender);
 
 const newsCardWrap = document.querySelector(".news__card-wrap");
 if (newsCardWrap) {
@@ -722,39 +616,17 @@ if (newsCardWrap) {
   });
 
   new Swiper(".news__slider", {
-    // Optional parameters
     direction: "horizontal",
-    // loop: true,
-    // allowTouchMove: true,
-    slidesPerView: 3, // сколько слайдов показывать, можно дробно
-    // slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
-    // slidersPerGroup: 3, // сколько слайдов в группе
-    // centeredSlides: true, //выравнивание слайдов по центру
-    // initialSlide: 1, //начальный слайд (c нуля)
+    slidesPerView: 3, 
 
     spaceBetween: 19,
-    // slideToClickedSlide: true, //перелистывание слайдов по клику
-    grabCursor: true, //меняет курсор при наведении на руку
-    watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+    grabCursor: true, 
+    watchOverflow: true, 
 
-    // Navigation arrows
-    // navigation: {
-    //   nextEl: ".swiper-button-next",
-    //   prevEl: ".swiper-button-prev",
-    // },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
-    // mousewheel: { //перелистывание слайдов по мышке
-    //   sensitivity: 1,
-    //   eventsTarget: ".news__slider",
-    // },
-    // keyboard: { //перелистывание слайдов по нажатию клавиш
-    //   enabled: true,
-    //   onlyInViewport: true,
-    //   // pageUpDown: true,
-    // },
     breakpoints: {
       0: {
         slidesPerView: 1,
@@ -772,9 +644,7 @@ if (newsCardWrap) {
   if (newsItemPage) {
     var url = new URL(window.location.href);
     const id = url.searchParams.get("id");
-    // console.log(id);
     const newsItem = news.find((item) => item.id == id);
-    // console.log(news);
     const photo = newsItemPage.querySelector(".content__img-wrap").querySelector("img");
     const date = newsItemPage.querySelector(".content__date");
     const title = newsItemPage.querySelector(".content__title");
@@ -789,9 +659,4 @@ if (newsCardWrap) {
 
 }
 
-// --------------------------------- end новости на сайте-------------------------------
 
-// console.log(options);
-// await fetchToDB(options);
-// требуется подключить скрипт как модуль, иначе await не работает!!!
-//--------------------------end Запрос к БД----------------------------
