@@ -50,53 +50,6 @@ navLinks.forEach((item) => {
 //   },
 // });
 
-new Swiper(".news__slider", {
-  // Optional parameters
-  direction: "horizontal",
-  // loop: true,
-  // allowTouchMove: true,
-  slidesPerView: 3, // сколько слайдов показывать, можно дробно
-  // slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
-  // slidersPerGroup: 3, // сколько слайдов в группе
-  // centeredSlides: true, //выравнивание слайдов по центру
-  // initialSlide: 1, //начальный слайд (c нуля)
-
-  spaceBetween: 19,
-  // slideToClickedSlide: true, //перелистывание слайдов по клику
-  grabCursor: true, //меняет курсор при наведении на руку
-  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
-
-  // Navigation arrows
-  // navigation: {
-  //   nextEl: ".swiper-button-next",
-  //   prevEl: ".swiper-button-prev",
-  // },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // mousewheel: { //перелистывание слайдов по мышке
-  //   sensitivity: 1,
-  //   eventsTarget: ".news__slider",
-  // },
-  // keyboard: { //перелистывание слайдов по нажатию клавиш
-  //   enabled: true,
-  //   onlyInViewport: true,
-  //   // pageUpDown: true,
-  // },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-    },
-    500: {
-      slidesPerView: 2,
-    },
-    800: {
-      slidesPerView: 3,
-    },
-  },
-});
-
 new Swiper(".services__slider", {
   // Optional parameters
   direction: "horizontal",
@@ -561,30 +514,7 @@ async function fetchToDB(options) {
   }
 }
 
-let optionsNews = {
-  // опции для получения списка всех контрагентов
-  function: "getAll",
-  table: "news",
-  all: "*",
-};
-
-const news = await fetchToDB(optionsNews);
-const newsForRender = [...news];
-console.log(newsForRender);
-
-let optionsServices = {
-  // опции для получения списка всех контрагентов
-  function: "getAll",
-  table: "services",
-  all: "*",
-};
-
-const services = await fetchToDB(optionsServices);
-const servicesForRender = [...services];
-console.log(servicesForRender);
-
-
-// ------------------------------ start замена контактов на сайте-------------------------------
+// ------------------------------ start контакты на сайте-------------------------------
 let optionsContacts = {
   // опции для получения списка всех контрагентов
   function: "getAll",
@@ -594,7 +524,8 @@ let optionsContacts = {
 
 const contacts = await fetchToDB(optionsContacts);
 const contactsForRender = [...contacts];
-console.log(contactsForRender);
+// console.log(contactsForRender);
+
 const phone_1 = contactsForRender.filter((item) => {
   return item.name === "phone_1";
 });
@@ -631,7 +562,10 @@ const telegramInfo = document.querySelectorAll(".telegram-info");
 if (telegramInfo) {
   telegramInfo.forEach((item) => {
     // item.innerHTML = phone_1[0].value;
-    item.setAttribute("href", `https://t.me/+${phone_1[0].value.replace(/[^0-9]/g, "")}`);
+    item.setAttribute(
+      "href",
+      `https://t.me/+${phone_1[0].value.replace(/[^0-9]/g, "")}`
+    );
   });
 }
 
@@ -639,7 +573,13 @@ const whatsappInfo = document.querySelectorAll(".whatsapp-info");
 if (whatsappInfo) {
   whatsappInfo.forEach((item) => {
     // item.innerHTML = phone_1[0].value;
-    item.setAttribute("href", `https://api.whatsapp.com/send?phone=${phone_1[0].value.replace(/[^0-9]/g, "")}`);
+    item.setAttribute(
+      "href",
+      `https://api.whatsapp.com/send?phone=${phone_1[0].value.replace(
+        /[^0-9]/g,
+        ""
+      )}`
+    );
   });
 }
 
@@ -647,20 +587,34 @@ const viberInfo = document.querySelectorAll(".viber-info");
 if (viberInfo) {
   viberInfo.forEach((item) => {
     // item.innerHTML = phone_1[0].value;
-    item.setAttribute("href", `viber://chat?number=%2B${phone_1[0].value.replace(/[^0-9]/g, "")}`);
+    item.setAttribute(
+      "href",
+      `viber://chat?number=%2B${phone_1[0].value.replace(/[^0-9]/g, "")}`
+    );
   });
 }
 
-// ------------------------------ end замена контактов на сайте-------------------------------
+// ------------------------------ end контакты на сайте-------------------------------
 
+// ------------------------------ start услуги на сайте-------------------------------
+let optionsServices = {
+  // опции для получения списка всех контрагентов
+  function: "getAll",
+  table: "services",
+  all: "*",
+};
+
+const services = await fetchToDB(optionsServices);
+const servicesForRender = [...services];
+// console.log(servicesForRender);
 
 const servicesCardWrap = document.querySelector(".services__card-wrap");
 if (servicesCardWrap) {
   servicesCardWrap.innerHTML = "";
   servicesForRender.forEach((item) => {
-    const card = document.createElement("li");    
-    card.classList.add("services__card");
-    card.setAttribute('data-services', `${item.type}`);
+    const card = document.createElement("li");
+    card.classList.add("services__card", "swiper-slide");
+    card.setAttribute("data-services", `${item.type}`);
     card.innerHTML = `
       <img class="services__img" src="img/${item.photo}" alt="${item.name}">
       
@@ -700,8 +654,142 @@ if (serviceItemPage) {
   text.textContent = service.text;
 }
 
+// ------------------------------ end услуги на сайте-------------------------------
+// ------------------------------ start новости на сайте-------------------------------
+let optionsNews = {
+  // опции для получения списка всех контрагентов
+  function: "getAll",
+  table: "news",
+  all: "*",
+  limit: 3,
+  order: "date",
+  dir: "asc",
+  sort: "date",
+  offset: 0,
+};
+
+const news = await fetchToDB(optionsNews);
+let newsForRender = [...news];
+// console.log(newsForRender);
+
+const newsCardWrap = document.querySelector(".news__card-wrap");
+if (newsCardWrap) {
+
+  function getNewsCard(item) {
+    return `
+      <div class="news__card-img-wrap">
+        <img class="news__card-img" src="img/${item.photo}" alt="${item.name}">
+      </div>
+      <p class="news__card-date">
+        ${item.date}
+      </p>
+      <h3 class="news__card-title">
+        ${item.name}
+      </h3>
+      <a class="news__card-link" href="news-item.html?id=${item.id}">
+        <p class="news__link-title">
+          Читать новость
+        </p>
+        <svg width="30" height="27" viewBox="0 0 30 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 13.5H19.5M19.5 13.5L15.5 10M19.5 13.5L15.5 17" stroke="#777E85"></path>
+        </svg>
+      </a> 
+      `;
+  }
+
+  if (window.location.href.includes("o-nas.html")) {
+    newsForRender = newsForRender
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .splice(0, 3);
+  }
+
+  if (window.location.href.includes("news-item.html")) {
+    newsForRender = newsForRender
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .splice(0, 3);
+  }
+
+  if (window.location.href.includes("novosti.html")) {
+    newsForRender = newsForRender.sort((a, b) => new Date(b.date) - new Date(a.date));
+  }
+
+  newsCardWrap.innerHTML = "";
+  newsForRender.forEach((item) => {
+    const card = document.createElement("li");
+    card.classList.add("news__card", "swiper-slide");
+    card.innerHTML = getNewsCard(item);
+    newsCardWrap.append(card);
+  });
+
+  new Swiper(".news__slider", {
+    // Optional parameters
+    direction: "horizontal",
+    // loop: true,
+    // allowTouchMove: true,
+    slidesPerView: 3, // сколько слайдов показывать, можно дробно
+    // slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
+    // slidersPerGroup: 3, // сколько слайдов в группе
+    // centeredSlides: true, //выравнивание слайдов по центру
+    // initialSlide: 1, //начальный слайд (c нуля)
+
+    spaceBetween: 19,
+    // slideToClickedSlide: true, //перелистывание слайдов по клику
+    grabCursor: true, //меняет курсор при наведении на руку
+    watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+
+    // Navigation arrows
+    // navigation: {
+    //   nextEl: ".swiper-button-next",
+    //   prevEl: ".swiper-button-prev",
+    // },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    // mousewheel: { //перелистывание слайдов по мышке
+    //   sensitivity: 1,
+    //   eventsTarget: ".news__slider",
+    // },
+    // keyboard: { //перелистывание слайдов по нажатию клавиш
+    //   enabled: true,
+    //   onlyInViewport: true,
+    //   // pageUpDown: true,
+    // },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      500: {
+        slidesPerView: 2,
+      },
+      800: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  const newsItemPage = document.querySelector(".news-item-page");
+  if (newsItemPage) {
+    var url = new URL(window.location.href);
+    const id = url.searchParams.get("id");
+    // console.log(id);
+    const newsItem = news.find((item) => item.id == id);
+    // console.log(news);
+    const photo = newsItemPage.querySelector(".content__img-wrap").querySelector("img");
+    const date = newsItemPage.querySelector(".content__date");
+    const title = newsItemPage.querySelector(".content__title");
+    const text = newsItemPage.querySelector(".content__text");
+
+    photo.setAttribute("src", `img/${newsItem.photo}`);
+    date.textContent = newsItem.date;
+    title.textContent = newsItem.name;
+    text.textContent = newsItem.text;
+  }
 
 
+}
+
+// --------------------------------- end новости на сайте-------------------------------
 
 // console.log(options);
 // await fetchToDB(options);

@@ -241,13 +241,13 @@ if ($function == 'update' && $table == 'carton') { // не работает
 // }
 
  
-if ($function == 'create') {
-  $sql = "INSERT INTO `contractor` (`name`, `taxNumber`, `address`, `telephone`, `email`, `idContractor`) VALUES ('$name', '$taxNumber', '$address', '$telephone', '$email', '$idContractor')";
-  if ($mode == 'dev') {
-    echo $sql;
-    echo '<br>';
-  }
-}
+// if ($function == 'create') {
+//   $sql = "INSERT INTO `contractor` (`name`, `taxNumber`, `address`, `telephone`, `email`, `idContractor`) VALUES ('$name', '$taxNumber', '$address', '$telephone', '$email', '$idContractor')";
+//   if ($mode == 'dev') {
+//     echo $sql;
+//     echo '<br>';
+//   }
+// }
 
 
 
