@@ -1244,6 +1244,7 @@ a {
   visibility: visible;
 }
 .popup .form {
+  position: relative;
   display: grid;
   align-content: start;
   position: relative;
@@ -1255,6 +1256,20 @@ a {
   padding: 30px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+}
+.popup .form::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5) url(../img/loading.gif) center/50px no-repeat;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+}
+.popup .form._sending::after {
+  opacity: 1;
+  visibility: visible;
 }
 .popup .form .popup__title {
   margin-bottom: 5px;
@@ -1299,6 +1314,9 @@ a {
   height: 120px;
   margin-bottom: 7px;
   resize: vertical;
+}
+.popup .form .form__input-block .form__input._error {
+  border: 1px solid #ca2020;
 }
 .popup .form .form__btn {
   max-width: 100%;
@@ -1962,6 +1980,7 @@ a {
   }
 }
 .form-block .big-form {
+  position: relative;
   padding: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1981,6 +2000,20 @@ a {
     padding: 30px 34px;
     grid-template-columns: 1fr;
   }
+}
+.form-block .big-form::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5) url(../img/loading.gif) center/50px no-repeat;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+}
+.form-block .big-form._sending::after {
+  opacity: 1;
+  visibility: visible;
 }
 .form-block .big-form .big-form__title {
   grid-column: 2 span;
@@ -2071,6 +2104,9 @@ a {
     line-height: 16.41px;
     text-align: left;
   }
+}
+.form-block .big-form .big-form__input._error {
+  border: 1px solid #ca2020;
 }
 @media (max-width: 960px) {
   .form-block .big-form .big-form__input_name {

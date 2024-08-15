@@ -580,7 +580,7 @@
 
 <div class="popup" id="call">
   <div class="popup__body">
-    <form class="popup__content form" action="#" enctype="multipart/form-data">
+    <form class="popup__content form main-form" action="#" enctype="multipart/form-data">
       <h3 class="popup__title">
         Отправьте заявку
       </h3>
@@ -589,13 +589,13 @@
       </p>
 
       <div class="form__input-block">
-        <input class="form__input form__input_name" type="text" name="name" placeholder="Имя">
-        <input class="form__input form__input_phone phone-mask" type="tel" name="phone" placeholder="Номер телефона">
-        <textarea class="form__input form__input_message" name="message" rows="5" cols="30"
+        <input class="form__input form__input_name _req" type="text" name="name" placeholder="Имя">
+        <input class="form__input form__input_phone phone-mask _req" type="tel" name="phone" placeholder="Номер телефона">
+        <textarea class="form__input form__input_message _req" name="message" rows="5" cols="30"
           placeholder="Опишите ситуацию, например: “Спустило колесо”"></textarea>
       </div>
 
-      <button type="submit" class="btn btn_green btn_reset form__btn popup-link" href="#error">
+      <button type="submit" class="btn btn_green btn_reset form__btn">
         Отправить
       </button>
 

@@ -673,7 +673,6 @@ let newsForRender = [...news];
 
 const newsCardWrap = document.querySelector(".news__card-wrap");
 if (newsCardWrap) {
-
   function getNewsCard(item) {
     return `
       <div class="news__card-img-wrap">
@@ -709,7 +708,9 @@ if (newsCardWrap) {
   }
 
   if (window.location.href.includes("novosti.html")) {
-    newsForRender = newsForRender.sort((a, b) => new Date(b.date) - new Date(a.date));
+    newsForRender = newsForRender.sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
   }
 
   newsCardWrap.innerHTML = "";
@@ -774,7 +775,9 @@ if (newsCardWrap) {
     // console.log(id);
     const newsItem = news.find((item) => item.id == id);
     // console.log(news);
-    const photo = newsItemPage.querySelector(".content__img-wrap").querySelector("img");
+    const photo = newsItemPage
+      .querySelector(".content__img-wrap")
+      .querySelector("img");
     const date = newsItemPage.querySelector(".content__date");
     const title = newsItemPage.querySelector(".content__title");
     const text = newsItemPage.querySelector(".content__text");
@@ -784,8 +787,6 @@ if (newsCardWrap) {
     title.textContent = newsItem.name;
     text.textContent = newsItem.text;
   }
-
-
 }
 
 // --------------------------------- end новости на сайте-------------------------------
@@ -795,31 +796,121 @@ if (newsCardWrap) {
 // требуется подключить скрипт как модуль, иначе await не работает!!!
 //--------------------------end Запрос к БД----------------------------
 
+const formAll = document.querySelectorAll(".main-form");
 
-const submitBtn = document.querySelectorAll(".big-form__btn");
+if (formAll) {
+  formAll.forEach((form) => {
+    form.addEventListener("submit", sendForm);
 
-if (submitBtn) {
-  submitBtn.forEach((item) => {
-    item.addEventListener("click", function (e) {
+    async function sendForm(e) {
       e.preventDefault();
-      sendForm();
-    });
-  });
-}
 
-function sendForm() {
-  const form = document.querySelector(".big-form");
-  const formData = new FormData(form);
-  // console.log(formData);
-  fetch("files/post-mail.php", {
-    method: "POST",
-    body: formData, // данные формы
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+      let errore = formvalidation(form); //проверка на ошибки
+
+      if (errore === 0) {
+        form.classList.add("_sending");
+        let formData = new FormData(form);
+        // formData.append("image", formImage.files[0]); // добавляем картинку в formData
+
+        // // проверка данных в formData:
+        // for (let value of formData.entries()) {
+        //   console.log(value);
+        // }
+
+        let response = await fetch("files/post-mail.php", { // отправляем форму
+          method: "POST",
+          body: formData, // данные формы
+        });
+
+        if (response.ok) {
+          let result = await response.json(); // получаем ответ
+          alert(result.message); // сообщение об успешной отправке
+          form.reset(); // очистка формы
+          form.classList.remove("_sending");
+        } else {
+          alert("Что-то пошло не так...");
+          form.classList.remove("_sending");
+        }
+
+        // fetch("files/post-mail.php", {
+        //   method: "POST",
+        //   body: formData, // данные формы
+        // })
+        //   .then((response) => response.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //   })
+        //   .catch((error) => {
+        //     console.error(error);
+        //   });
+      } else {
+        alert("Заполните обязательные поля");
+      }
+
+      // const form = document.querySelector(".big-form");
+      // const formData = new FormData(form);
+      // // console.log(formData);
+      // fetch("files/post-mail.php", {
+      //   method: "POST",
+      //   body: formData, // данные формы
+      // })
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     console.log(data);
+      //   })
+      //   .catch((error) => {
+      //     console.error(error);
+      //   });
+    }
+  });
+
+  function formvalidation(item) { // проверка на ошибки
+    let error = 0;
+    let formReq = item.querySelectorAll("._req");
+
+    for (let index = 0; index < formReq.length; index++) {
+      const input = formReq[index];
+
+      formRemoveError(input); // удаляем ошибки
+
+      if (input.classList.contains("_email")) {
+        //проверка на email
+        if (emailTest(input)) {
+          formAddError(input);
+          error++;
+        }
+      } else if (
+        //проверка на checkbox
+        input.getAttribute("type") === "checkbox" &&
+        input.checked === false
+      ) {
+        formAddError(input);
+        error++;
+      } else {
+        //проверка на пустоту
+        if (input.value === "") { 
+          formAddError(input);
+          error++;
+        }
+      }
+    }
+    return error;
+  }
+
+  // добавляем ошибки
+  function formAddError(input) {
+    input.parentElement.classList.add("_error");
+    input.classList.add("_error");
+  }
+  
+  // удаляем ошибки
+  function formRemoveError(input) {
+    input.parentElement.classList.remove("_error");
+    input.classList.remove("_error");
+  }
+
+  //проверка на email
+  function emailTest(input) {
+    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+  }
 }
