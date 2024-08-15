@@ -5277,18 +5277,18 @@ a {
   padding-bottom: 20px;
   grid-column: 2 span;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 0.5fr));
   grid-auto-rows: 1fr;
   gap: 16px 20px;
 }
 @media (max-width: 850px) {
   .services-page .services-page__container .services .services__container .services__card-wrap {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(190px, 0.5fr));
   }
 }
 @media (max-width: 660px) {
   .services-page .services-page__container .services .services__container .services__card-wrap {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 0.5fr));
   }
 }
 .services-page .services-page__container .services .services__container .services__card-wrap .services__card {
@@ -5355,6 +5355,9 @@ a {
   .services-page .services-page__container .services .services__container .services__card-wrap .services__card .services__card-link svg {
     display: none;
   }
+}
+.services-page .services-page__container .services .services__container .services__btn {
+  display: none;
 }
 .services-page .services-page__container .services .services__container .services__not-found {
   display: none;

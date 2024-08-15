@@ -15,7 +15,22 @@ $mail->isHTML(true); // включить html теги в письме
 $mail->setFrom('admin@marchel.ru', 'Автопомощь');
 
 // кому письмо
-$mail->addAddress('alexx4891@mail.ru', 'alexx4891@yandex.ru');
+$recipients = [
+  'alexx4891@mail.ru' => 'Person One',
+  'alexx4891@yandex.ru' => 'Person Two',
+];
+
+foreach ($recipients as $email => $name) {
+  $mail->addAddress($email, $name);
+}
+
+// $mail->addAddress('alexx4891@mail.ru');
+// $mail->addAddress('alexx4891@yandex.ru');
+
+
+//Добавляет адрес кому отправится скрытая копия:
+// $mailer->AddBCC('Ящик 3'); 
+
 
 // тема письма
 $mail->Subject = 'Заявка с marchel.ru';
@@ -47,7 +62,7 @@ if (trim(!empty($_POST['message']))) {
 //   }
 //   // $mail->addAttachment($_FILES['myfile']['tmp_name'], $_FILES['myfile']['name']);
 //   // $body .= '<p><strong>Прикреплен файл:</strong> <a href="' . $_FILES['myfile']['tmp_name'] . '">' . $_FILES['myfile']['name'] . '</a></p><br/>';
-  
+
 // }
 
 $mail->Body = $body;

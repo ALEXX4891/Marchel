@@ -209,7 +209,9 @@ function bodyUnLock() {
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
     const popupActive = document.querySelector(".popup.open");
+    if (popupActive) {
     popupClose(popupActive);
+    }
   }
 });
 // -------------------------------------------- end popup: ---------------------------------------------
@@ -233,98 +235,190 @@ if (previews) {
 
 // -------------------------------------------- start filter: ---------------------------------------------
 
-const filterItems = document.querySelectorAll(".filter__link");
-
-if (filterItems) {
+function filterInit() {
+  const filterItems = document.querySelectorAll(".filter__link");
   const cards = document.querySelectorAll(".services__card");
-  let id = 0;
+  let id = "";
   let cardsLength = cards.length;
   const notFoundMessage = document.querySelector(".services__not-found");
   const addServToShowBtn = document.querySelector(".services__btn");
 
   const input = document.querySelector(".filter__input");
-  const inpetSearchBtn = document.querySelector(".filter__icon_search");
+  const inputSearchBtn = document.querySelector(".filter__icon_search");
   const inputCloseBtn = document.querySelector(".filter__icon_close");
   const filterDropdownList = document.querySelector(".filter__dropdown");
   const filterDropdownItems = document.querySelectorAll(
     ".filter__dropdown-item"
   );
 
-  if (id == 0) {
+  filterItems.forEach((item) => {
+    item.addEventListener("click", function (e) {
+      console.log("тест");
+      cardsLength = 0;
+      id = item.getAttribute("data-service");
+      render(cards, id, "type");
+      clearSearchInput();
+    });
+  });
+
+  // поиск услуги:
+  input.addEventListener("input", function (e) {
+    console.log("тест");
+    cardsLength = 0;
+    render(cards, input.value, "name" );
+    filterDropdownList.classList.add("filter__dropdown_active");
+    filterDropdownList.innerHTML = "";
+
+    //добавляем подсказки в выпадающий список:
+    filterDropdownItems.forEach((item) => {
+      if (
+        item.innerText.toLowerCase().includes(e.target.value.toLowerCase())
+      ) {
+        filterDropdownList.append(item);
+      }
+    });
+
+    // // если в списке нет подходящих элементов, то показываем сообщение об отсутствии результатов:
+    if (e.target.value == "") {
+      console.log("пусто");
+      filterDropdownList.classList.remove("filter__dropdown_active");
+      clearSearchInput();
+    }
+  });
+
+  // выбор подсказки:
+  filterDropdownItems.forEach((item) => {
+    item.addEventListener("click", function (e) {
+      console.log("тест");
+
+      input.value = e.target.innerText.trim();
+      searchInput();
+      render(cards, input.value, "name-strict");
+    });
+  });
+
+  // кнопка поиска:
+  inputSearchBtn.addEventListener("click", function (e) {
+    console.log("тест");
+
+    render(cards, input.value, "name" );
+    searchInput();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      console.log("тест");
+      render(cards, input.value, "name" );
+      searchInput();
+    }
+
+    // if (e.key === "Escape") {
+    //   console.log("тест");
+    //   input.value = "";
+    //   clearSearchInput();
+    //   cards.forEach((item) => {
+    //     item.style.display = "block";
+    //   });
+    // }
+  });
+
+  // кнопка очистки поиска:
+  inputCloseBtn.addEventListener("click", function (e) {
+    console.log("тест");
+
+    input.value = "";
+    clearSearchInput();
     cards.forEach((item) => {
       item.style.display = "block";
     });
-  }
+  });
 
-  filterItems.forEach((item) => {
-    item.addEventListener("click", function (e) {
-      cardsLength = 0;
-      id = item.getAttribute("data-service");
-      console.log(`id: ${id}`);
+  // функция рентера карточек
+  function render(cards, id, mode) {
+    cardsLength = 0;
+    if (mode == "name") {
       cards.forEach((item) => {
-        if (id == item.getAttribute("data-service")) {
+        if (item.getAttribute("data-name").includes(id)) {
           item.style.display = "block";
           cardsLength++;
         } else {
           item.style.display = "none";
         }
       });
-      // console.log(`cardsLength: ${cardsLength}`);
-      if (cardsLength == 0) {
-        notFoundMessage.style.display = "block";
-        addServToShowBtn.style.display = "none";
-      } else {
-        notFoundMessage.style.display = "none";
-        addServToShowBtn.style.display = "block";
-      }
-    });
-  });
+    }
 
-  if (input) {
-    input.addEventListener("input", function (e) {
-      filterDropdownList.classList.add("filter__dropdown_active");
-      filterDropdownList.innerHTML = "";
-      filterDropdownItems.forEach((item) => {
-        if (
-          item.innerText.toLowerCase().includes(e.target.value.toLowerCase())
-        ) {
-          filterDropdownList.append(item);
+    if (mode == "name-strict") {
+      cards.forEach((item) => {
+        if (id === item.getAttribute("data-name")) {
+          item.style.display = "block";
+          cardsLength++;
+        } else {
+          item.style.display = "none";
         }
-
-        item.addEventListener("click", function (e) {
-          input.value = e.target.innerText.trim();
-          filterDropdownList.classList.remove("filter__dropdown_active");
-          inpetSearchBtn.style.display = "none";
-          inputCloseBtn.style.display = "block";
-        });
       });
+    }
+    
+    if (mode == "type") {
+      cards.forEach((item) => {
+        if (id === item.getAttribute("data-service")) {
+          item.style.display = "block";
+          cardsLength++;
+        } else {  
+          item.style.display = "none";
+        } 
+      });
+    }
 
-      if (e.target.value == "") {
-        filterDropdownList.classList.remove("filter__dropdown_active");
-      }
-    });
+    console.log(cardsLength);
 
-    inputCloseBtn.addEventListener("click", function (e) {
-      input.value = "";
-      filterDropdownList.classList.remove("filter__dropdown_active");
-      inpetSearchBtn.style.display = "block";
-      inputCloseBtn.style.display = "none";
-    });
+    if (cardsLength == 0) {
+      notFoundMessage.style.display = "block";
+      addServToShowBtn.style.display = "none";
+    } else {
+      notFoundMessage.style.display = "none";
+      addServToShowBtn.style.display = "block";
+    }
+  }
 
-    filterDropdownItems.forEach((item) => {
-      item.addEventListener("click", function (e) {
-        // console.log(e.target.getAttribute("data-service"));
-        id = item.getAttribute("data-service");
-        cards.forEach((item) => {
-          if (id == item.getAttribute("data-service")) {
-            item.style.display = "block";
-          } else {
-            item.style.display = "none";
-          }
-        });
+  // функция очистки поиска
+  function clearSearchInput() {  
+    filterDropdownList.classList.remove("filter__dropdown_active");
+    inputSearchBtn.style.display = "block";
+    inputCloseBtn.style.display = "none";
+  }
+
+  // функция выбора поиска
+  function searchInput() {  
+    filterDropdownList.classList.remove("filter__dropdown_active");
+    inputSearchBtn.style.display = "none";
+    inputCloseBtn.style.display = "block";
+  }
+
+  // функция отоброжения карточек при клике на кнопку "показать еще"
+  function addServToShow() {
+    addServToShowBtn.addEventListener("click", function (e) {
+      cards.forEach((item) => {
+        item.style.display = "block";
       });
     });
   }
+
+
+    // filterDropdownItems.forEach((item) => {
+    //   item.addEventListener("click", function (e) {
+    //     // console.log(e.target.getAttribute("data-service"));
+    //     id = item.getAttribute("data-service");
+
+    //     cards.forEach((item) => {
+    //       if (id == item.getAttribute("data-service")) {
+    //         item.style.display = "block";
+    //       } else {
+    //         item.style.display = "none";
+    //       }
+    //     });
+    //   });
+    // });
+  
 }
 // -------------------------------------------- end filter ---------------------------------------------
 
@@ -513,6 +607,7 @@ async function fetchToDB(options) {
   }
 }
 
+//--------------------------end Запрос к БД----------------------------
 // ------------------------------ start контакты на сайте-------------------------------
 let optionsContacts = {
   // опции для получения списка всех контрагентов
@@ -594,7 +689,6 @@ if (viberInfo) {
 }
 
 // ------------------------------ end контакты на сайте-------------------------------
-
 // ------------------------------ start услуги на сайте-------------------------------
 let optionsServices = {
   // опции для получения списка всех контрагентов
@@ -604,32 +698,62 @@ let optionsServices = {
 };
 
 const services = await fetchToDB(optionsServices);
-const servicesForRender = [...services];
-// console.log(servicesForRender);
+let servicesForRender = [...services];
+console.log(servicesForRender);
 
 const servicesCardWrap = document.querySelector(".services__card-wrap");
 if (servicesCardWrap) {
   servicesCardWrap.innerHTML = "";
+  let cardsQuantity = 12;
+  servicesForRender = [...services].splice(0, cardsQuantity);
+  console.log(servicesForRender);
+  shuffle(servicesForRender); // перемешиваем массив
+  console.log(servicesForRender);
+  
+  const addServToShowBtn = document.querySelector(".services__btn");
+  if (addServToShowBtn) {
+    addServToShowBtn.style.display = "block";
+  }
+  
   servicesForRender.forEach((item) => {
     const card = document.createElement("li");
     card.classList.add("services__card", "swiper-slide");
-    card.setAttribute("data-services", `${item.type}`);
-    card.innerHTML = `
-      <img class="services__img" src="img/${item.photo}" alt="${item.name}">
-      
-      <a class="services__card-link" href="services-item.html?id=${item.id}">
-      <p class="services__card-title">
-        ${item.name}
-      </p>
-        <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z" fill="white"></path>
-        </svg>
-      </a>
-    `;
-
+    card.setAttribute("data-service", `${item.type}`);
+    card.setAttribute("data-name", `${item.name}`);
+    card.innerHTML = getServicesCard(item);
     servicesCardWrap.append(card);
   });
 }
+
+
+function shuffle(array) {
+  let currentIndex = array.length;
+  // Пока есть есть еще элементы для перемешивания...
+  while (currentIndex != 0) {
+    // Выберите оставшийся элемент...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    // И поменяйте его с текущим элементом.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
+function getServicesCard(item) {
+  return `
+  <img class="services__img" src="img/${item.photo}" alt="${item.name}">
+  
+  <a class="services__card-link" href="services-item.html?id=${item.id}">
+  <p class="services__card-title">
+    ${item.name}
+  </p>
+    <svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.9884 3.15206C17.0724 2.60619 16.6979 2.09561 16.1521 2.01163L7.25671 0.643113C6.71085 0.559134 6.20026 0.933565 6.11628 1.47943C6.03231 2.02529 6.40674 2.53588 6.9526 2.61986L14.8596 3.83631L13.6431 11.7433C13.5591 12.2891 13.9336 12.7997 14.4794 12.8837C15.0253 12.9677 15.5359 12.5933 15.6199 12.0474L16.9884 3.15206ZM1.59136 14.8064L16.5914 3.8064L15.4086 2.19359L0.408636 13.1936L1.59136 14.8064Z" fill="white"></path>
+    </svg>
+  </a>
+`;
+}
+
 
 const serviceItemPage = document.querySelector(".services-item-page");
 if (serviceItemPage) {
@@ -651,6 +775,40 @@ if (serviceItemPage) {
   title_1.textContent = service.title_1;
   title_2.textContent = service.title_2;
   text.textContent = service.text;
+}
+
+const filter = document.querySelector(".services-page__filter");
+if (filter) {
+  const filterDropdown = filter.querySelector(".filter__dropdown");
+  const hints = new Set(servicesForRender.map((item) => item.name));
+  console.log(hints);
+
+  hints.forEach((hint) => {
+    const option = document.createElement("option");
+    const filterHint = document.createElement("li");
+    filterHint.classList.add("filter__dropdown-item");
+    filterHint.innerHTML = hint;
+    filterDropdown.append(filterHint);
+
+    // option.value = hint;
+    // option.textContent = hint;
+    // filterDropdown.append(option);
+  });
+
+  filterInit();
+  console.log("filterInit");
+
+  // function initHints(hints) {
+  //   const select = document.querySelector(".services-page__select");
+  //   if (select) {
+  //     const options = hints.map((hint) => {
+  //         return `<option value="${hint}">${hint}</option>`;
+  //       })
+  //       .join("");
+
+  //     select.innerHTML = options;
+  //   }
+  // }
 }
 
 // ------------------------------ end услуги на сайте-------------------------------
@@ -790,11 +948,7 @@ if (newsCardWrap) {
 }
 
 // --------------------------------- end новости на сайте-------------------------------
-
-// console.log(options);
-// await fetchToDB(options);
-// требуется подключить скрипт как модуль, иначе await не работает!!!
-//--------------------------end Запрос к БД----------------------------
+// --------------------------------- start отправка формы-------------------------------
 
 const formAll = document.querySelectorAll(".main-form");
 
@@ -817,18 +971,22 @@ if (formAll) {
         //   console.log(value);
         // }
 
-        let response = await fetch("files/post-mail.php", { // отправляем форму
+        let response = await fetch("files/post-mail.php", {
+          // отправляем форму
           method: "POST",
           body: formData, // данные формы
         });
 
         if (response.ok) {
+          console.log("Отправлено");
           let result = await response.json(); // получаем ответ
-          alert(result.message); // сообщение об успешной отправке
+          // alert(result.message); // сообщение об успешной отправке
           form.reset(); // очистка формы
+          popupOpen(document.getElementById("success"));
           form.classList.remove("_sending");
         } else {
-          alert("Что-то пошло не так...");
+          // alert("Что-то пошло не так...");
+          popupOpen(document.getElementById("error"));
           form.classList.remove("_sending");
         }
 
@@ -864,7 +1022,8 @@ if (formAll) {
     }
   });
 
-  function formvalidation(item) { // проверка на ошибки
+  function formvalidation(item) {
+    // проверка на ошибки
     let error = 0;
     let formReq = item.querySelectorAll("._req");
 
@@ -888,7 +1047,7 @@ if (formAll) {
         error++;
       } else {
         //проверка на пустоту
-        if (input.value === "") { 
+        if (input.value === "") {
           formAddError(input);
           error++;
         }
@@ -902,7 +1061,7 @@ if (formAll) {
     input.parentElement.classList.add("_error");
     input.classList.add("_error");
   }
-  
+
   // удаляем ошибки
   function formRemoveError(input) {
     input.parentElement.classList.remove("_error");
@@ -914,3 +1073,5 @@ if (formAll) {
     return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
   }
 }
+
+// --------------------------------- end отправка формы-------------------------------
