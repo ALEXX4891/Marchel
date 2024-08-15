@@ -411,7 +411,7 @@
 
     <section class="glavnaya__section glavnaya__form-block form-block">
       <div class="form-block__container container">
-        <form class="form-block__big-form big-form" action="#" enctype="multipart/form-data">
+        <form class="form-block__big-form big-form" method="post" action="post-form.php" enctype="multipart/form-data">
 
           <h2 class="big-form__title">
             Отправьте срочную заявку
@@ -422,13 +422,13 @@
 
           <input class="big-form__input big-form__input_name" type="text" name="name" placeholder="Имя">
 
-          <input class="big-form__input big-form__input_phone" type="text" name="phone" placeholder="Номер телефона"
+          <input class="big-form__input big-form__input_phone phone-mask" type="tel" name="phone" placeholder="Номер телефона"
             inputmode="numeric">
 
           <textarea class="big-form__input big-form__input_message" name="message" rows="5" cols="30"
             placeholder="Опишите ситуацию, например: “Спустило колесо”"></textarea>
 
-          <button class="big-form__btn popup-link" href="#success">
+          <button class="big-form__btn submit-btn" type="submit">
             Отправить
           </button>
 

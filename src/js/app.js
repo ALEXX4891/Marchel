@@ -18,9 +18,9 @@ testWebP(function (support) {
 });
 
 // -------------------------------------------- start Fancybox: ---------------------------------------------
-Fancybox.bind("[data-fancybox]", {
-  // Your custom options
-});
+// Fancybox.bind("[data-fancybox]", {
+//   // Your custom options
+// });
 // -------------------------------------------- end Fancybox: ---------------------------------------------
 // -------------------------------------------- start подсветка активного пункта меню:---------------------------------------------------------
 const page = window.location.pathname.split("/").pop();
@@ -428,8 +428,7 @@ function setTownSelected(town, key) {
 
 // -------------------------------------------- end меню ---------------------------------------------
 
-$("#phone_1").mask("+7(999) 999 99 99");
-$("#phone_2").mask("+7(999) 999 99 99");
+$(".phone-mask").mask("+7(999) 999 99 99");
 
 // -------------------------------------------- start Куки: ---------------------------------------------
 function setCookie(name, value, lifetimeDays = 30, path = "/") {
@@ -795,3 +794,32 @@ if (newsCardWrap) {
 // await fetchToDB(options);
 // требуется подключить скрипт как модуль, иначе await не работает!!!
 //--------------------------end Запрос к БД----------------------------
+
+
+const submitBtn = document.querySelectorAll(".big-form__btn");
+
+if (submitBtn) {
+  submitBtn.forEach((item) => {
+    item.addEventListener("click", function (e) {
+      e.preventDefault();
+      sendForm();
+    });
+  });
+}
+
+function sendForm() {
+  const form = document.querySelector(".big-form");
+  const formData = new FormData(form);
+  // console.log(formData);
+  fetch("files/post-mail.php", {
+    method: "POST",
+    body: formData, // данные формы
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}

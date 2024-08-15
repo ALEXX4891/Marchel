@@ -1808,8 +1808,10 @@ a {
 
         &.form__input_message {
           // width: 345px;
+          max-width: 100%;
           height: 120px;
           margin-bottom: 7px;
+          resize: vertical;
         }
       }
     }
@@ -2930,9 +2932,10 @@ a {
     }
     .big-form__input_message {
       grid-column: 2 span;
-      max-width: 1117px;
+      max-width: 100%;
       height: 145px;
       padding: 25px 20px;
+      resize: vertical;
 
       @media (max-width: 960px) {
         grid-column: 3 span;
