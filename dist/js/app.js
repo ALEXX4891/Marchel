@@ -1,8 +1,4 @@
-// import * as flsFunctions from "./modules/functions.js";
-// flsFunctions.isWebp();
-// console.log(1);
 
-//проверка на поддержку webp браузером, добавление класса webp или no-webp в <html>
 function testWebP(callback) {
   let webP = new Image();
   webP.onload = webP.onerror = function () {
@@ -11,18 +7,11 @@ function testWebP(callback) {
   webP.src =
     "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 }
-// добавление класса webp или no-webp для <html>
 testWebP(function (support) {
   let className = support === true ? "webp" : "no-webp";
   document.documentElement.classList.add(className);
 });
 
-// -------------------------------------------- start Fancybox: ---------------------------------------------
-// Fancybox.bind("[data-fancybox]", {
-//   // Your custom options
-// });
-// -------------------------------------------- end Fancybox: ---------------------------------------------
-// -------------------------------------------- start подсветка активного пункта меню:---------------------------------------------------------
 const page = window.location.pathname.split("/").pop();
 const navLinks = document.querySelectorAll(".nav__link");
 navLinks.forEach((item) => {
@@ -30,43 +19,16 @@ navLinks.forEach((item) => {
     item.classList.add("nav__link_active");
   }
 });
-// -------------------------------------------- end подсветка активного пункта меню:---------------------------------------------------------
-// -------------------------------------------- start swiper: ---------------------------------------------
-// const swiper = new Swiper(".swiper", {
-//   // Optional parameters
-//   direction: "horizontal",
-//   loop: true,
-//   slidesPerView: 3,
-//   spaceBetween: 30,
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
 
-//   // And if we need scrollbar
-//   scrollbar: {
-//     el: ".swiper-scrollbar",
-//   },
-// });
 
 new Swiper(".services__slider", {
-  // Optional parameters
   direction: "horizontal",
-  // loop: true,
-  // allowTouchMove: true,
-  slidesPerView: 4, // сколько слайдов показывать, можно дробно
-  // slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
-  // slidersPerGroup: 3, // сколько слайдов в группе
-  // centeredSlides: true, //выравнивание слайдов по центру
-  // initialSlide: 1, //начальный слайд (c нуля)
+  slidesPerView: 4, 
 
   spaceBetween: 19,
-  // slideToClickedSlide: true, //перелистывание слайдов по клику
-  grabCursor: true, //меняет курсор при наведении на руку
-  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+  grabCursor: true, 
+  watchOverflow: true, 
 
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -75,15 +37,6 @@ new Swiper(".services__slider", {
     el: ".swiper-pagination",
     clickable: true,
   },
-  // mousewheel: { //перелистывание слайдов по мышке
-  //   sensitivity: 1,
-  //   eventsTarget: ".news__slider",
-  // },
-  // keyboard: { //перелистывание слайдов по нажатию клавиш
-  //   enabled: true,
-  //   onlyInViewport: true,
-  //   // pageUpDown: true,
-  // },
   breakpoints: {
     0: {
       slidesPerView: 2,
@@ -97,23 +50,11 @@ new Swiper(".services__slider", {
   },
 });
 
-// var swiper = new Swiper(".news__slider", {
-//   slidesPerView: 3,
-//   spaceBetween: 30,
-//   centeredSlides: false,
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-// });
 
-// -------------------------------------------- end swiper: ---------------------------------------------
-// -------------------------------------------- start popup: ---------------------------------------------
 const popupLinks = document.querySelectorAll(".popup-link");
 const lockPadding = document.querySelectorAll(".lock-padding");
 const body = document.querySelector("body");
 
-// const btn = document.querySelector(".project-btn");
 
 let unlock = true;
 const timeout = 800;
@@ -123,7 +64,7 @@ if (popupLinks.length > 0) {
     const popupLink = popupLinks[index];
     popupLink.addEventListener("click", function (e) {
       const popupName = popupLink.getAttribute("href").replace("#", "");
-      const curentPopup = document.getElementById(popupName); //получаем id попап-окна
+      const curentPopup = document.getElementById(popupName); 
       popupOpen(curentPopup);
       e.preventDefault();
     });
@@ -135,7 +76,7 @@ if (popupCloseIcon.length > 0) {
   for (let index = 0; index < popupCloseIcon.length; index++) {
     const el = popupCloseIcon[index];
     el.addEventListener("click", function (e) {
-      popupClose(el.closest(".popup")); //ближайший родитель класса popup
+      popupClose(el.closest(".popup")); 
       e.preventDefault();
     });
   }
@@ -145,7 +86,6 @@ function popupOpen(curentPopup) {
   if (curentPopup && unlock) {
     const popupActive = document.querySelector(".popup.open");
     if (popupActive) {
-      // закрываем текущий открытый попап, если он есть
       popupClose(popupActive, false);
     } else {
       bodyLock();
@@ -153,7 +93,6 @@ function popupOpen(curentPopup) {
     curentPopup.classList.add("open");
     curentPopup.addEventListener("click", function (e) {
       if (!e.target.closest(".popup__content")) {
-        // если клик был по области вокруг попапа то ничего не делаем
         popupClose(e.target.closest(".popup"));
       }
     });
@@ -169,19 +108,14 @@ function popupClose(popupActive, doUnlock = true) {
   }
 }
 
-// добавляем боди padding-right при открытии попапа, на ширину скролл-бара
 function bodyLock() {
-  // console.log(window.innerWidth);
-  // console.log(document.querySelector(".header").offsetWidth);
   const lockPaddingValue =
     window.innerWidth - document.querySelector(".header").offsetWidth + "px";
   for (let index = 0; index < lockPadding.length; index++) {
     const el = lockPadding[index];
     el.style.marginRight = lockPaddingValue;
-    // console.log(el.style.marginRight);
   }
   body.style.paddingRight = lockPaddingValue;
-  // console.log(body.style.paddingRight);
   body.classList.add("lock");
 
   unlock = false;
@@ -210,13 +144,11 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
     const popupActive = document.querySelector(".popup.open");
     if (popupActive) {
-    popupClose(popupActive);
+      popupClose(popupActive);
     }
   }
 });
-// -------------------------------------------- end popup: ---------------------------------------------
 
-// -------------------------------------------- start gallery: ---------------------------------------------
 const previews = document.querySelectorAll(".slider_img");
 
 if (previews) {
@@ -231,9 +163,7 @@ if (previews) {
   });
 }
 
-// -------------------------------------------- end gallery: ---------------------------------------------
 
-// -------------------------------------------- start filter: ---------------------------------------------
 
 function filterInit() {
   const filterItems = document.querySelectorAll(".filter__link");
@@ -253,7 +183,6 @@ function filterInit() {
 
   filterItems.forEach((item) => {
     item.addEventListener("click", function (e) {
-      console.log("тест");
       cardsLength = 0;
       id = item.getAttribute("data-service");
       render(cards, id, "type");
@@ -261,35 +190,26 @@ function filterInit() {
     });
   });
 
-  // поиск услуги:
   input.addEventListener("input", function (e) {
-    console.log("тест");
     cardsLength = 0;
-    render(cards, input.value, "name" );
+    render(cards, input.value, "name");
     filterDropdownList.classList.add("filter__dropdown_active");
     filterDropdownList.innerHTML = "";
 
-    //добавляем подсказки в выпадающий список:
     filterDropdownItems.forEach((item) => {
-      if (
-        item.innerText.toLowerCase().includes(e.target.value.toLowerCase())
-      ) {
+      if (item.innerText.toLowerCase().includes(e.target.value.toLowerCase())) {
         filterDropdownList.append(item);
       }
     });
 
-    // // если в списке нет подходящих элементов, то показываем сообщение об отсутствии результатов:
     if (e.target.value == "") {
-      console.log("пусто");
       filterDropdownList.classList.remove("filter__dropdown_active");
       clearSearchInput();
     }
   });
 
-  // выбор подсказки:
   filterDropdownItems.forEach((item) => {
     item.addEventListener("click", function (e) {
-      console.log("тест");
 
       input.value = e.target.innerText.trim();
       searchInput();
@@ -297,43 +217,27 @@ function filterInit() {
     });
   });
 
-  // кнопка поиска:
   inputSearchBtn.addEventListener("click", function (e) {
-    console.log("тест");
 
-    render(cards, input.value, "name" );
+    render(cards, input.value, "name");
     searchInput();
   });
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-      console.log("тест");
-      render(cards, input.value, "name" );
+      render(cards, input.value, "name");
       searchInput();
     }
 
-    // if (e.key === "Escape") {
-    //   console.log("тест");
-    //   input.value = "";
-    //   clearSearchInput();
-    //   cards.forEach((item) => {
-    //     item.style.display = "block";
-    //   });
-    // }
   });
 
-  // кнопка очистки поиска:
   inputCloseBtn.addEventListener("click", function (e) {
-    console.log("тест");
-
-    input.value = "";
     clearSearchInput();
     cards.forEach((item) => {
       item.style.display = "block";
     });
   });
 
-  // функция рентера карточек
   function render(cards, id, mode) {
     cardsLength = 0;
     if (mode == "name") {
@@ -357,19 +261,18 @@ function filterInit() {
         }
       });
     }
-    
+
     if (mode == "type") {
       cards.forEach((item) => {
         if (id === item.getAttribute("data-service")) {
           item.style.display = "block";
           cardsLength++;
-        } else {  
+        } else {
           item.style.display = "none";
-        } 
+        }
       });
     }
 
-    console.log(cardsLength);
 
     if (cardsLength == 0) {
       notFoundMessage.style.display = "block";
@@ -380,21 +283,19 @@ function filterInit() {
     }
   }
 
-  // функция очистки поиска
-  function clearSearchInput() {  
+  function clearSearchInput() {
+    input.value = "";
     filterDropdownList.classList.remove("filter__dropdown_active");
     inputSearchBtn.style.display = "block";
     inputCloseBtn.style.display = "none";
   }
 
-  // функция выбора поиска
-  function searchInput() {  
+  function searchInput() {
     filterDropdownList.classList.remove("filter__dropdown_active");
     inputSearchBtn.style.display = "none";
     inputCloseBtn.style.display = "block";
   }
 
-  // функция отоброжения карточек при клике на кнопку "показать еще"
   function addServToShow() {
     addServToShowBtn.addEventListener("click", function (e) {
       cards.forEach((item) => {
@@ -404,25 +305,8 @@ function filterInit() {
   }
 
 
-    // filterDropdownItems.forEach((item) => {
-    //   item.addEventListener("click", function (e) {
-    //     // console.log(e.target.getAttribute("data-service"));
-    //     id = item.getAttribute("data-service");
-
-    //     cards.forEach((item) => {
-    //       if (id == item.getAttribute("data-service")) {
-    //         item.style.display = "block";
-    //       } else {
-    //         item.style.display = "none";
-    //       }
-    //     });
-    //   });
-    // });
-  
 }
-// -------------------------------------------- end filter ---------------------------------------------
 
-// -------------------------------------------- start BURGER: ---------------------------------------------
 
 const burger = document.querySelector(".burger");
 const headerNav = document.querySelector(".header__nav");
@@ -440,16 +324,13 @@ if (burger) {
     }
   });
 }
-// -------------------------------------------- end BURGER ---------------------------------------------
 
-// -------------------------------------------- start Search: ---------------------------------------------
 const headerSearchWrap = document.querySelector(".header__search-form-wrap");
 
 if (headerSearchWrap) {
   if (window.screen.width <= 920) {
     headerSearchWrap.addEventListener("click", function (e) {
       headerSearchWrap.classList.add("header__search-form-wrap_active");
-      console.log("200");
     });
   }
 
@@ -460,10 +341,8 @@ if (headerSearchWrap) {
 
   if (closeSearchBtn) {
     closeSearchBtn.addEventListener("click", function (e) {
-      // e.preventDefault();
       headerSearchWrap.classList.remove("header__search-form-wrap_active");
       inputField.value = "";
-      console.log("100");
       e.stopPropagation();
     });
   }
@@ -475,14 +354,11 @@ if (headerSearchWrap) {
     ) {
       headerSearchWrap.classList.remove("header__search-form-wrap_active");
       inputField.value = "";
-      console.log("400");
     }
   });
 }
 
-// -------------------------------------------- end Search ---------------------------------------------
 
-// -------------------------------------------- start меню: ---------------------------------------------
 
 const menuTowns = document.querySelectorAll(".nav__item_town");
 
@@ -490,10 +366,8 @@ if (menuTowns) {
   let key = false;
   menuTowns.forEach((town) => {
     town.addEventListener("click", function (e) {
-      // town.classList.add("nav__item_town_active");
 
       key = !key;
-      console.log(key);
       if (key) {
         menuTowns.forEach((town) => {
           town.classList.add("nav__item_town_show");
@@ -520,11 +394,9 @@ function setTownSelected(town, key) {
   }
 }
 
-// -------------------------------------------- end меню ---------------------------------------------
 
 $(".phone-mask").mask("+7(999) 999 99 99");
 
-// -------------------------------------------- start Куки: ---------------------------------------------
 function setCookie(name, value, lifetimeDays = 30, path = "/") {
   var expires = "";
   if (lifetimeDays) {
@@ -553,7 +425,6 @@ if (!getCookie("CookiePolicyAccepted")) {
 }
 
 function acceptCookiePolicy() {
-  // console.log("acceptCookiePolicy");
   setCookie("CookiePolicyAccepted", true);
   $(".cookie").fadeTo(500, 0);
   setTimeout(() => {
@@ -561,7 +432,6 @@ function acceptCookiePolicy() {
   }, 500);
 }
 function closeCookiePolicyNotification() {
-  // console.log("closeCookiePolicyNotification");
   $(".cookie").fadeOut(300);
 }
 
@@ -580,13 +450,8 @@ if (cookieCloseBtn) {
     closeCookiePolicyNotification();
   });
 }
-// -------------------------------------------- end Куки ---------------------------------------------
-//--------------------------Запрос к БД----------------------------
-// Загружаем список из БД:
 async function fetchToDB(options) {
-  // Блок try выполнится полностью, если не будет ошибок:
   try {
-    // Выполняем запрос:
     const responce = await fetch("files/main.php", {
       method: "POST",
       headers: {
@@ -595,22 +460,16 @@ async function fetchToDB(options) {
       body: JSON.stringify(options),
     });
     const infoList = await responce.json();
-    return infoList; // Возвращаем результат запроса
+    return infoList; 
   } catch (err) {
-    // Блок catch сработает только если будут какие-то ошибки в блоке try:
-    // Выведем в консоли информацию об ошибке:
     console.log("При запросе к БД произошла ошибка, детали ниже:");
     console.error(err);
-    // Вернем исключение с текстом поясняющим детали ошибки:
     alert("Произошла ошибка при запросе к БД!");
     throw new Error("Запрос завершился неудачно.");
   }
 }
 
-//--------------------------end Запрос к БД----------------------------
-// ------------------------------ start контакты на сайте-------------------------------
 let optionsContacts = {
-  // опции для получения списка всех контрагентов
   function: "getAll",
   table: "contacts",
   all: "*",
@@ -618,7 +477,6 @@ let optionsContacts = {
 
 const contacts = await fetchToDB(optionsContacts);
 const contactsForRender = [...contacts];
-// console.log(contactsForRender);
 
 const phone_1 = contactsForRender.filter((item) => {
   return item.name === "phone_1";
@@ -655,7 +513,6 @@ if (popup) {
 const telegramInfo = document.querySelectorAll(".telegram-info");
 if (telegramInfo) {
   telegramInfo.forEach((item) => {
-    // item.innerHTML = phone_1[0].value;
     item.setAttribute(
       "href",
       `https://t.me/+${phone_1[0].value.replace(/[^0-9]/g, "")}`
@@ -666,7 +523,6 @@ if (telegramInfo) {
 const whatsappInfo = document.querySelectorAll(".whatsapp-info");
 if (whatsappInfo) {
   whatsappInfo.forEach((item) => {
-    // item.innerHTML = phone_1[0].value;
     item.setAttribute(
       "href",
       `https://api.whatsapp.com/send?phone=${phone_1[0].value.replace(
@@ -680,7 +536,6 @@ if (whatsappInfo) {
 const viberInfo = document.querySelectorAll(".viber-info");
 if (viberInfo) {
   viberInfo.forEach((item) => {
-    // item.innerHTML = phone_1[0].value;
     item.setAttribute(
       "href",
       `viber://chat?number=%2B${phone_1[0].value.replace(/[^0-9]/g, "")}`
@@ -688,10 +543,7 @@ if (viberInfo) {
   });
 }
 
-// ------------------------------ end контакты на сайте-------------------------------
-// ------------------------------ start услуги на сайте-------------------------------
 let optionsServices = {
-  // опции для получения списка всех контрагентов
   function: "getAll",
   table: "services",
   all: "*",
@@ -699,22 +551,19 @@ let optionsServices = {
 
 const services = await fetchToDB(optionsServices);
 let servicesForRender = [...services];
-console.log(servicesForRender);
 
 const servicesCardWrap = document.querySelector(".services__card-wrap");
 if (servicesCardWrap) {
   servicesCardWrap.innerHTML = "";
   let cardsQuantity = 12;
   servicesForRender = [...services].splice(0, cardsQuantity);
-  console.log(servicesForRender);
-  shuffle(servicesForRender); // перемешиваем массив
-  console.log(servicesForRender);
-  
+  shuffle(servicesForRender); 
+
   const addServToShowBtn = document.querySelector(".services__btn");
   if (addServToShowBtn) {
     addServToShowBtn.style.display = "block";
   }
-  
+
   servicesForRender.forEach((item) => {
     const card = document.createElement("li");
     card.classList.add("services__card", "swiper-slide");
@@ -725,17 +574,15 @@ if (servicesCardWrap) {
   });
 }
 
-
 function shuffle(array) {
   let currentIndex = array.length;
-  // Пока есть есть еще элементы для перемешивания...
   while (currentIndex != 0) {
-    // Выберите оставшийся элемент...
     let randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-    // И поменяйте его с текущим элементом.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
 }
 
@@ -754,14 +601,11 @@ function getServicesCard(item) {
 `;
 }
 
-
 const serviceItemPage = document.querySelector(".services-item-page");
 if (serviceItemPage) {
   var url = new URL(window.location.href);
   const id = url.searchParams.get("id");
-  // console.log(id);
   const service = servicesForRender.find((item) => item.id == id);
-  // console.log(service);
   const photo = serviceItemPage.querySelector(".banner__photo");
   const name = serviceItemPage.querySelector(".banner__title");
   const description = serviceItemPage.querySelector(".banner__text");
@@ -781,7 +625,6 @@ const filter = document.querySelector(".services-page__filter");
 if (filter) {
   const filterDropdown = filter.querySelector(".filter__dropdown");
   const hints = new Set(servicesForRender.map((item) => item.name));
-  console.log(hints);
 
   hints.forEach((hint) => {
     const option = document.createElement("option");
@@ -790,31 +633,14 @@ if (filter) {
     filterHint.innerHTML = hint;
     filterDropdown.append(filterHint);
 
-    // option.value = hint;
-    // option.textContent = hint;
-    // filterDropdown.append(option);
   });
 
   filterInit();
-  console.log("filterInit");
 
-  // function initHints(hints) {
-  //   const select = document.querySelector(".services-page__select");
-  //   if (select) {
-  //     const options = hints.map((hint) => {
-  //         return `<option value="${hint}">${hint}</option>`;
-  //       })
-  //       .join("");
 
-  //     select.innerHTML = options;
-  //   }
-  // }
 }
 
-// ------------------------------ end услуги на сайте-------------------------------
-// ------------------------------ start новости на сайте-------------------------------
 let optionsNews = {
-  // опции для получения списка всех контрагентов
   function: "getAll",
   table: "news",
   all: "*",
@@ -827,7 +653,6 @@ let optionsNews = {
 
 const news = await fetchToDB(optionsNews);
 let newsForRender = [...news];
-// console.log(newsForRender);
 
 const newsCardWrap = document.querySelector(".news__card-wrap");
 if (newsCardWrap) {
@@ -880,39 +705,17 @@ if (newsCardWrap) {
   });
 
   new Swiper(".news__slider", {
-    // Optional parameters
     direction: "horizontal",
-    // loop: true,
-    // allowTouchMove: true,
-    slidesPerView: 3, // сколько слайдов показывать, можно дробно
-    // slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
-    // slidersPerGroup: 3, // сколько слайдов в группе
-    // centeredSlides: true, //выравнивание слайдов по центру
-    // initialSlide: 1, //начальный слайд (c нуля)
+    slidesPerView: 3, 
 
     spaceBetween: 19,
-    // slideToClickedSlide: true, //перелистывание слайдов по клику
-    grabCursor: true, //меняет курсор при наведении на руку
-    watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+    grabCursor: true, 
+    watchOverflow: true, 
 
-    // Navigation arrows
-    // navigation: {
-    //   nextEl: ".swiper-button-next",
-    //   prevEl: ".swiper-button-prev",
-    // },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
-    // mousewheel: { //перелистывание слайдов по мышке
-    //   sensitivity: 1,
-    //   eventsTarget: ".news__slider",
-    // },
-    // keyboard: { //перелистывание слайдов по нажатию клавиш
-    //   enabled: true,
-    //   onlyInViewport: true,
-    //   // pageUpDown: true,
-    // },
     breakpoints: {
       0: {
         slidesPerView: 1,
@@ -930,9 +733,7 @@ if (newsCardWrap) {
   if (newsItemPage) {
     var url = new URL(window.location.href);
     const id = url.searchParams.get("id");
-    // console.log(id);
     const newsItem = news.find((item) => item.id == id);
-    // console.log(news);
     const photo = newsItemPage
       .querySelector(".content__img-wrap")
       .querySelector("img");
@@ -947,8 +748,6 @@ if (newsCardWrap) {
   }
 }
 
-// --------------------------------- end новости на сайте-------------------------------
-// --------------------------------- start отправка формы-------------------------------
 
 const formAll = document.querySelectorAll(".main-form");
 
@@ -959,94 +758,56 @@ if (formAll) {
     async function sendForm(e) {
       e.preventDefault();
 
-      let errore = formvalidation(form); //проверка на ошибки
+      let errore = formvalidation(form); 
 
       if (errore === 0) {
         form.classList.add("_sending");
         let formData = new FormData(form);
-        // formData.append("image", formImage.files[0]); // добавляем картинку в formData
 
-        // // проверка данных в formData:
-        // for (let value of formData.entries()) {
-        //   console.log(value);
-        // }
 
         let response = await fetch("files/post-mail.php", {
-          // отправляем форму
           method: "POST",
-          body: formData, // данные формы
+          body: formData, 
         });
 
         if (response.ok) {
-          console.log("Отправлено");
-          let result = await response.json(); // получаем ответ
-          // alert(result.message); // сообщение об успешной отправке
-          form.reset(); // очистка формы
+          let result = await response.json(); 
+          form.reset(); 
           popupOpen(document.getElementById("success"));
           form.classList.remove("_sending");
         } else {
-          // alert("Что-то пошло не так...");
           popupOpen(document.getElementById("error"));
           form.classList.remove("_sending");
         }
 
-        // fetch("files/post-mail.php", {
-        //   method: "POST",
-        //   body: formData, // данные формы
-        // })
-        //   .then((response) => response.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //   })
-        //   .catch((error) => {
-        //     console.error(error);
-        //   });
       } else {
         alert("Заполните обязательные поля");
       }
 
-      // const form = document.querySelector(".big-form");
-      // const formData = new FormData(form);
-      // // console.log(formData);
-      // fetch("files/post-mail.php", {
-      //   method: "POST",
-      //   body: formData, // данные формы
-      // })
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     console.log(data);
-      //   })
-      //   .catch((error) => {
-      //     console.error(error);
-      //   });
     }
   });
 
   function formvalidation(item) {
-    // проверка на ошибки
     let error = 0;
     let formReq = item.querySelectorAll("._req");
 
     for (let index = 0; index < formReq.length; index++) {
       const input = formReq[index];
 
-      formRemoveError(input); // удаляем ошибки
+      formRemoveError(input); 
 
       if (input.classList.contains("_email")) {
-        //проверка на email
         if (emailTest(input)) {
           formAddError(input);
           error++;
         }
       } else if (
-        //проверка на checkbox
         input.getAttribute("type") === "checkbox" &&
         input.checked === false
       ) {
         formAddError(input);
         error++;
       } else {
-        //проверка на пустоту
         if (input.value === "") {
           formAddError(input);
           error++;
@@ -1056,22 +817,18 @@ if (formAll) {
     return error;
   }
 
-  // добавляем ошибки
   function formAddError(input) {
     input.parentElement.classList.add("_error");
     input.classList.add("_error");
   }
 
-  // удаляем ошибки
   function formRemoveError(input) {
     input.parentElement.classList.remove("_error");
     input.classList.remove("_error");
   }
 
-  //проверка на email
   function emailTest(input) {
     return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
   }
 }
 
-// --------------------------------- end отправка формы-------------------------------

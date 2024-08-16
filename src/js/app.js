@@ -210,7 +210,7 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
     const popupActive = document.querySelector(".popup.open");
     if (popupActive) {
-    popupClose(popupActive);
+      popupClose(popupActive);
     }
   }
 });
@@ -251,9 +251,10 @@ function filterInit() {
     ".filter__dropdown-item"
   );
 
+  // фильтрация по типу из бокового меню:
   filterItems.forEach((item) => {
     item.addEventListener("click", function (e) {
-      console.log("тест");
+      //console.log("тест");
       cardsLength = 0;
       id = item.getAttribute("data-service");
       render(cards, id, "type");
@@ -263,24 +264,22 @@ function filterInit() {
 
   // поиск услуги:
   input.addEventListener("input", function (e) {
-    console.log("тест");
+    //console.log("тест");
     cardsLength = 0;
-    render(cards, input.value, "name" );
+    render(cards, input.value, "name");
     filterDropdownList.classList.add("filter__dropdown_active");
     filterDropdownList.innerHTML = "";
 
     //добавляем подсказки в выпадающий список:
     filterDropdownItems.forEach((item) => {
-      if (
-        item.innerText.toLowerCase().includes(e.target.value.toLowerCase())
-      ) {
+      if (item.innerText.toLowerCase().includes(e.target.value.toLowerCase())) {
         filterDropdownList.append(item);
       }
     });
 
     // // если в списке нет подходящих элементов, то показываем сообщение об отсутствии результатов:
     if (e.target.value == "") {
-      console.log("пусто");
+      //console.log("пусто");
       filterDropdownList.classList.remove("filter__dropdown_active");
       clearSearchInput();
     }
@@ -289,7 +288,7 @@ function filterInit() {
   // выбор подсказки:
   filterDropdownItems.forEach((item) => {
     item.addEventListener("click", function (e) {
-      console.log("тест");
+      //console.log("тест");
 
       input.value = e.target.innerText.trim();
       searchInput();
@@ -299,21 +298,21 @@ function filterInit() {
 
   // кнопка поиска:
   inputSearchBtn.addEventListener("click", function (e) {
-    console.log("тест");
+    //console.log("тест");
 
-    render(cards, input.value, "name" );
+    render(cards, input.value, "name");
     searchInput();
   });
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-      console.log("тест");
-      render(cards, input.value, "name" );
+      //console.log("тест");
+      render(cards, input.value, "name");
       searchInput();
     }
 
     // if (e.key === "Escape") {
-    //   console.log("тест");
+    //   //console.log("тест");
     //   input.value = "";
     //   clearSearchInput();
     //   cards.forEach((item) => {
@@ -324,9 +323,7 @@ function filterInit() {
 
   // кнопка очистки поиска:
   inputCloseBtn.addEventListener("click", function (e) {
-    console.log("тест");
-
-    input.value = "";
+    //console.log("тест");
     clearSearchInput();
     cards.forEach((item) => {
       item.style.display = "block";
@@ -357,19 +354,19 @@ function filterInit() {
         }
       });
     }
-    
+
     if (mode == "type") {
       cards.forEach((item) => {
         if (id === item.getAttribute("data-service")) {
           item.style.display = "block";
           cardsLength++;
-        } else {  
+        } else {
           item.style.display = "none";
-        } 
+        }
       });
     }
 
-    console.log(cardsLength);
+    //console.log(cardsLength);
 
     if (cardsLength == 0) {
       notFoundMessage.style.display = "block";
@@ -381,14 +378,15 @@ function filterInit() {
   }
 
   // функция очистки поиска
-  function clearSearchInput() {  
+  function clearSearchInput() {
+    input.value = "";
     filterDropdownList.classList.remove("filter__dropdown_active");
     inputSearchBtn.style.display = "block";
     inputCloseBtn.style.display = "none";
   }
 
   // функция выбора поиска
-  function searchInput() {  
+  function searchInput() {
     filterDropdownList.classList.remove("filter__dropdown_active");
     inputSearchBtn.style.display = "none";
     inputCloseBtn.style.display = "block";
@@ -403,22 +401,20 @@ function filterInit() {
     });
   }
 
+  // filterDropdownItems.forEach((item) => {
+  //   item.addEventListener("click", function (e) {
+  //     // console.log(e.target.getAttribute("data-service"));
+  //     id = item.getAttribute("data-service");
 
-    // filterDropdownItems.forEach((item) => {
-    //   item.addEventListener("click", function (e) {
-    //     // console.log(e.target.getAttribute("data-service"));
-    //     id = item.getAttribute("data-service");
-
-    //     cards.forEach((item) => {
-    //       if (id == item.getAttribute("data-service")) {
-    //         item.style.display = "block";
-    //       } else {
-    //         item.style.display = "none";
-    //       }
-    //     });
-    //   });
-    // });
-  
+  //     cards.forEach((item) => {
+  //       if (id == item.getAttribute("data-service")) {
+  //         item.style.display = "block";
+  //       } else {
+  //         item.style.display = "none";
+  //       }
+  //     });
+  //   });
+  // });
 }
 // -------------------------------------------- end filter ---------------------------------------------
 
@@ -449,7 +445,7 @@ if (headerSearchWrap) {
   if (window.screen.width <= 920) {
     headerSearchWrap.addEventListener("click", function (e) {
       headerSearchWrap.classList.add("header__search-form-wrap_active");
-      console.log("200");
+      //console.log("200");
     });
   }
 
@@ -463,7 +459,7 @@ if (headerSearchWrap) {
       // e.preventDefault();
       headerSearchWrap.classList.remove("header__search-form-wrap_active");
       inputField.value = "";
-      console.log("100");
+      //console.log("100");
       e.stopPropagation();
     });
   }
@@ -475,7 +471,7 @@ if (headerSearchWrap) {
     ) {
       headerSearchWrap.classList.remove("header__search-form-wrap_active");
       inputField.value = "";
-      console.log("400");
+      //console.log("400");
     }
   });
 }
@@ -493,7 +489,7 @@ if (menuTowns) {
       // town.classList.add("nav__item_town_active");
 
       key = !key;
-      console.log(key);
+      //console.log(key);
       if (key) {
         menuTowns.forEach((town) => {
           town.classList.add("nav__item_town_show");
@@ -699,22 +695,22 @@ let optionsServices = {
 
 const services = await fetchToDB(optionsServices);
 let servicesForRender = [...services];
-console.log(servicesForRender);
+// console.log(servicesForRender);
 
 const servicesCardWrap = document.querySelector(".services__card-wrap");
 if (servicesCardWrap) {
   servicesCardWrap.innerHTML = "";
   let cardsQuantity = 12;
   servicesForRender = [...services].splice(0, cardsQuantity);
-  console.log(servicesForRender);
+  //console.log(servicesForRender);
   shuffle(servicesForRender); // перемешиваем массив
-  console.log(servicesForRender);
-  
+  //console.log(servicesForRender);
+
   const addServToShowBtn = document.querySelector(".services__btn");
   if (addServToShowBtn) {
     addServToShowBtn.style.display = "block";
   }
-  
+
   servicesForRender.forEach((item) => {
     const card = document.createElement("li");
     card.classList.add("services__card", "swiper-slide");
@@ -725,7 +721,6 @@ if (servicesCardWrap) {
   });
 }
 
-
 function shuffle(array) {
   let currentIndex = array.length;
   // Пока есть есть еще элементы для перемешивания...
@@ -735,7 +730,9 @@ function shuffle(array) {
     currentIndex--;
     // И поменяйте его с текущим элементом.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
 }
 
@@ -753,7 +750,6 @@ function getServicesCard(item) {
   </a>
 `;
 }
-
 
 const serviceItemPage = document.querySelector(".services-item-page");
 if (serviceItemPage) {
@@ -781,7 +777,7 @@ const filter = document.querySelector(".services-page__filter");
 if (filter) {
   const filterDropdown = filter.querySelector(".filter__dropdown");
   const hints = new Set(servicesForRender.map((item) => item.name));
-  console.log(hints);
+  //console.log(hints);
 
   hints.forEach((hint) => {
     const option = document.createElement("option");
@@ -796,7 +792,7 @@ if (filter) {
   });
 
   filterInit();
-  console.log("filterInit");
+  //console.log("filterInit");
 
   // function initHints(hints) {
   //   const select = document.querySelector(".services-page__select");
@@ -968,7 +964,7 @@ if (formAll) {
 
         // // проверка данных в formData:
         // for (let value of formData.entries()) {
-        //   console.log(value);
+        //  //console.log(value);
         // }
 
         let response = await fetch("files/post-mail.php", {
@@ -978,7 +974,7 @@ if (formAll) {
         });
 
         if (response.ok) {
-          console.log("Отправлено");
+          // console.log("Отправлено");
           let result = await response.json(); // получаем ответ
           // alert(result.message); // сообщение об успешной отправке
           form.reset(); // очистка формы
@@ -996,7 +992,7 @@ if (formAll) {
         // })
         //   .then((response) => response.json())
         //   .then((data) => {
-        //     console.log(data);
+        //    //console.log(data);
         //   })
         //   .catch((error) => {
         //     console.error(error);
@@ -1014,7 +1010,7 @@ if (formAll) {
       // })
       //   .then((response) => response.json())
       //   .then((data) => {
-      //     console.log(data);
+      //    //console.log(data);
       //   })
       //   .catch((error) => {
       //     console.error(error);
