@@ -370,10 +370,10 @@ function filterInit() {
 
     if (cardsLength == 0) {
       notFoundMessage.style.display = "block";
-      addServToShowBtn.style.display = "none";
+      // addServToShowBtn.style.display = "none";
     } else {
       notFoundMessage.style.display = "none";
-      addServToShowBtn.style.display = "block";
+      // addServToShowBtn.style.display = "block";
     }
   }
 
@@ -706,10 +706,10 @@ if (servicesCardWrap) {
   shuffle(servicesForRender); // перемешиваем массив
   //console.log(servicesForRender);
 
-  const addServToShowBtn = document.querySelector(".services__btn");
-  if (addServToShowBtn) {
-    addServToShowBtn.style.display = "block";
-  }
+  // const addServToShowBtn = document.querySelector(".services__btn");
+  // if (addServToShowBtn) {
+  //   addServToShowBtn.style.display = "block";
+  // }
 
   servicesForRender.forEach((item) => {
     const card = document.createElement("li");
